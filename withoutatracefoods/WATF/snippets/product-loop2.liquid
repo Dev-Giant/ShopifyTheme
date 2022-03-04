@@ -1,0 +1,38 @@
+{% assign product_found = false %}
+{% assign skip = false %}
+{% assign collection_group = products | map: 'id' %}
+{% assign collection_group_thumb = collection_group | append : 'thumb' %}
+{% assign collection_group_mobile = collection_group | append : 'mobile' %}
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ListItem",
+    "itemListElement": [
+      {% for product in products %}
+        {
+          "@type": "ListItem",
+          "position": "{{ forloop.index | json }}",
+          "url": "{{ shop.url }}{{ product.url }}",
+          "name": "{{ product.title }}"
+        } {%- unless forloop.last -%},{%- endunless -%}
+      {% endfor %}
+    ]
+  }
+</script>
+
+<div class="products">
+  {% for product in products limit: limit %}
+    {% capture mobile_thumbnail_view %}
+      {% cycle collection_group_mobile: 'even', 'odd' %}
+    {% endcapture %}
+      {% render 'product-thumbnail',
+              product: product,
+              products_per_row: products_per_row,
+              thumbnail_view: thumbnail_view,
+              mobile_thumbnail_view: mobile_thumbnail_view,
+              sidebar: sidebar
+      %}
+  {% endfor %}
+</div>

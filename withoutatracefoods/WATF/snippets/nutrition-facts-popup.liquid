@@ -1,0 +1,11 @@
+{% unless no-nfi %}
+<div class="nfp_container">
+  <div class="nfp-img">
+    <img src="{{ nfp_img | replace: '-subscription', '' | prepend: 'NFP_' | append: '.jpg' | asset_url }}" alt="{{nfp_img}}">
+  </div>
+  <div class="inner">
+    <h4>INGREDIENTS</h4>
+    {{ingredients}}
+  </div>
+</div>
+{% endunless %}

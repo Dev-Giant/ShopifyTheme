@@ -1,0 +1,49 @@
+{% for block in section.blocks %}
+  {%- assign blog = blogs[block.settings.blog_select] -%}
+  {% for article in blog.articles limit: 1 %}
+    <a href="{{blog.url}}"
+    class="recipes featured-blogs-item"
+    style="background-image: url({{article.image | img_url: '500x' }});"
+    >
+      <div class="base-button white-button">{{blog.title}}</div>
+    </a>
+  {% endfor %}
+{% endfor %}
+
+
+{% schema %}
+  {
+    "class": "featured-blogs-section",
+    "max_blocks": 3,
+    "blocks": [
+      {
+        "type": "featured_blogs",
+        "name": "Blog",
+        "settings": [
+          {
+            "type": "blog",
+            "id": "blog_select",
+            "label": "Blog"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Featured Blogs",
+        "category": "Blog",
+        "blocks": [
+          {
+            "type": "featured_blogs"
+          },
+          {
+            "type": "featured_blogs"
+          },
+          {
+            "type": "featured_blogs"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

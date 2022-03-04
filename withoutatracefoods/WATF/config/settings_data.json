@@ -1,0 +1,1370 @@
+{
+  "current": {
+    "top_bar_bg_color": "rgba(0,0,0,0)",
+    "top_bar_color": "#ffffff",
+    "top_bar_color_hover": "#f29897",
+    "logo_color": "#000000",
+    "nav_color": "#084d8a",
+    "nav_color_active": "#a65754",
+    "nav_color_hover": "#a65754",
+    "header_social_icons_color": "#404040",
+    "header_social_icons_color_hover": "#a65754",
+    "dropdown_background_color": "#fdf7ea",
+    "dropdown_transparency": false,
+    "regular_color": "#084d8a",
+    "headline_color": "#404040",
+    "banner_color": "#ffffff",
+    "link_color": "#084d8a",
+    "link_hover_color": "#f37f7e",
+    "sale_price_color": "#a65754",
+    "was_price_color": "#888888",
+    "shop_bg_color": "#ffffff",
+    "custom_bg": "",
+    "repeat_bg": "repeat",
+    "bg_fixed": false,
+    "bg_stretched": false,
+    "table_styles_enabled": false,
+    "border_color": "#ffffff",
+    "btn_color": "#f37f7e",
+    "btn_hover_color": "#f37f7e",
+    "btn_txt_color": "#ffffff",
+    "sale_color": "#924a4d",
+    "new_banner_color": "#8b7569",
+    "modal_background_color": "#f2efea",
+    "quick_shop_button_color": "#000000",
+    "quick_shop_button_hover_color": "#f37f7e",
+    "quick_shop_text_color": "#ffffff",
+    "newsletter_popup_color": "#404040",
+    "newsletter_popup_background_color": "#ffffff",
+    "footer_border_color": "rgba(0,0,0,0)",
+    "footer_text_color": "#ffffff",
+    "headline_footer_text_color": "#ffffff",
+    "footer_link_color": "#ffffff",
+    "footer_link_color_hover": "#f37f7e",
+    "footer_button": "#f37f7e",
+    "footer_button_hover": "#f37f7e",
+    "social_icons_color": "#000000",
+    "social_icons_color_hover": "#a65754",
+    "footer_color": "#084d8a",
+    "password_page_text_color": "#ffffff",
+    "password_page_background_color": "#000000",
+    "password_page_footer_text_color": "#666666",
+    "password_page_footer_link_color": "#9c9c9c",
+    "logo__font": "questrial_n4",
+    "logo_font_style": "none",
+    "logo_font_size": 42,
+    "headline__font": "montserrat_n4",
+    "headline_font_style": "none",
+    "headline_alignment": "center",
+    "headline_font_size": 25,
+    "headline_letter_spacing": 0,
+    "nav__font": "montserrat_n5",
+    "nav_font_style": "uppercase",
+    "nav_font_size": 13,
+    "nav_letter_spacing": 1,
+    "nav_dropdown_weight": "normal",
+    "nav_dropdown_font_style": "none",
+    "nav_dropdown_font_size": 14,
+    "top_bar__font": "montserrat_n4",
+    "top_bar_font_style": "none",
+    "top_bar_font_size": 13,
+    "top_bar_letter_spacing": 0,
+    "display_text_shadow": false,
+    "regular__font": "nunito_sans_n4",
+    "regular_font_style": "none",
+    "regular_font_size": 15,
+    "footer_font_size": 13,
+    "slideshow_headline__font": "montserrat_n4",
+    "slideshow_headline_size": 42,
+    "slideshow_subtitle__font": "nunito_sans_n4",
+    "slideshow_subtitle_font_style": "none",
+    "slideshow_subtitle_size": 19,
+    "align_height": true,
+    "collection_height": 280,
+    "collection_price_position": "center",
+    "mobile_products_per_row": "2",
+    "collection_border": false,
+    "collection_secondary_image": true,
+    "display_vendor_collection": false,
+    "sale_banner_enabled": true,
+    "collection_swatches": false,
+    "display_product_quantity": true,
+    "limit_quantity": false,
+    "display_inventory_left": false,
+    "inventory_threshold": 10,
+    "product_form_style": "dropdown",
+    "free_price_text": "Free",
+    "size_chart": "",
+    "notify_me_form": true,
+    "notify_me_richtext": "<p>Notify me when this product is available:<\/p>",
+    "enable_shopify_review_comments": true,
+    "review_position": "bottom",
+    "enable_shopify_collection_badges": true,
+    "enable_shopify_product_badges": true,
+    "quick_shop_enabled": true,
+    "display_thumbnails": true,
+    "gallery_arrows": false,
+    "activate_zoom": false,
+    "slideshow_speed": 0,
+    "slideshow_transition": "slide",
+    "thumbnail_position": "bottom-thumbnails",
+    "enable_thumbnail_slider": false,
+    "product_description_position": "top",
+    "description_words": "15",
+    "show_payment_button": true,
+    "video_looping": false,
+    "newsletter_popup": false,
+    "newsletter_popup_mobile": true,
+    "newsletter_popup_title": "You can use this popup for more than just exciting email sign-ups!",
+    "newsletter_popup_image": "",
+    "popup_image_position": "left",
+    "newsletter_popup_text": "<p>Attracting new email subscriptions is a great use for a popup, but you can also use it for other purposes, like an 'agree-to-terms' entry point, or to link directly to pages and products in your shop.<\/p>",
+    "newsletter_popup_max_width": 600,
+    "newsletter_popup_seconds": 8,
+    "newsletter_popup_days": "2",
+    "newsletter_popup_form": true,
+    "display_first_name": true,
+    "display_last_name": true,
+    "rounded_social_icons": true,
+    "twitter_link": "https:\/\/twitter.com\/W_OaTraceFoods",
+    "facebook_link": "https:\/\/www.facebook.com\/withoutatracefoods\/",
+    "google_link": "",
+    "youtube_link": "",
+    "vimeo_link": "",
+    "pinterest_link": "https:\/\/www.pinterest.com\/withoutatracefoods\/",
+    "tumblr_link": "",
+    "instagram_link": "https:\/\/www.instagram.com\/withoutatracefoods\/",
+    "linkedin_link": "",
+    "flickr_link": "",
+    "email_link": "",
+    "og_image_fallback": "shopify:\/\/shop_images\/WAT_Crisps_Home_2x_8afbb5fa-739f-4642-9715-16e4a36819c1.jpg",
+    "disqus_enabled": false,
+    "disqus_shortname": "",
+    "cart_action": "reload_page",
+    "display_tos_checkbox": false,
+    "tos_richtext": "<p>I Agree with the Terms & Conditions<\/p>",
+    "show_shipping_calculator": false,
+    "shipping_calculator_default_country": "United States",
+    "currency_format": "money_format",
+    "search_option": "everything",
+    "organization_logo": "",
+    "favicon": "",
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/WAT_Logo_Royal_tm_2x_0a9c1291-3ffd-41da-8b37-fc73d9dd3a47.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "large",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fffefc",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#084d8a",
+    "checkout_heading_font": "Helvetica Neue",
+    "checkout_body_font": "Helvetica Neue",
+    "checkout_accent_color": "#084d8a",
+    "checkout_button_color": "#f37f7e",
+    "checkout_error_color": "#fc1111",
+    "display_social_buttons": true,
+    "header_social_icons": true,
+    "enable_social_links": true,
+    "product_slideshow_animation": "fade",
+    "newsletter_bg": "",
+    "newsletter_bg_stretched": false,
+    "newsletter_popup_link": "",
+    "logo_font": "Google_Josefin+Sans",
+    "logo_weight": "normal",
+    "headline_font": "Google_Cabin",
+    "headline_weight": "normal",
+    "nav_font": "Google_Cabin",
+    "nav_weight": "bold",
+    "top_bar_font": "Google_Josefin+Sans",
+    "top_bar_weight": "normal",
+    "regular_font": "Google_Merriweather",
+    "regular_weight": "normal",
+    "slideshow_headline_weight": "normal",
+    "slideshow_subtitle_font": "Google_Ubuntu",
+    "slideshow_subtitle_weight": "normal",
+    "slideshow_subtitle_font_text": "normal",
+    "use_logo": false,
+    "logo_width": "360",
+    "logo_alignment": "center",
+    "main_linklist": "main-menu",
+    "menu_alignment": "center",
+    "nav_border": "double",
+    "nav_separator": "solid",
+    "featured_content_page": "",
+    "secondary_btn_color": "#f2f2f2",
+    "use_custom_bg_image": false,
+    "custom_bg_image_select": "custom_bg.png",
+    "use_custom_top_bar_image": false,
+    "custom_top_bar_image_select": "custom_top_bar.png",
+    "use_newsletter_bg_image": false,
+    "logo_typeface_method": "google_webfonts",
+    "logo_websafe_font": "Futura, 'Century Gothic', AppleGothic, sans-serif",
+    "headline_typeface_method": "google_webfonts",
+    "headline_websafe_font": "Futura, 'Century Gothic', AppleGothic, sans-serif",
+    "nav_typeface_method": "google_webfonts",
+    "nav_websafe_font": "Futura, 'Century Gothic', AppleGothic, sans-serif",
+    "top_bar_typeface_method": "websafe",
+    "top_bar_google_webfont_font": "Merriweather",
+    "regular_typeface_method": "google_webfonts",
+    "regular_websafe_font": "Futura, 'Century Gothic', AppleGothic, sans-serif",
+    "search_box_top_bar": true,
+    "fix_top_bar": true,
+    "top_bar_linklist": "",
+    "slideshow_enabled": true,
+    "slideshow_animation": "fade",
+    "slideshow_stretch": true,
+    "slideshow_width_narrow": false,
+    "slideshow_subtitle_typeface_method": "google_webfonts",
+    "slideshow_subtitle_websafe_font": "'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+    "video_embed": "",
+    "video_width": "set",
+    "video_width_px": "",
+    "video_position": "1",
+    "slideshow_1_enabled": true,
+    "image_1_alt_text": "The Responsive Shopify Theme",
+    "image_1_headline": "The Responsive Shopify Theme",
+    "image_1_subtitle": "",
+    "image_1_text_color": "#ffffff",
+    "image_1_text_align": "center",
+    "image_1_button_text": "",
+    "image_1_link": "",
+    "slideshow_2_enabled": true,
+    "image_2_text_color": "#ffffff",
+    "image_2_text_align": "center",
+    "image_2_button_text": "",
+    "image_2_link": "",
+    "slideshow_3_enabled": false,
+    "image_3_alt_text": "",
+    "image_3_headline": "",
+    "image_3_subtitle": "",
+    "image_3_text_color": "#ffffff",
+    "image_3_text_align": "center",
+    "image_3_button_text": "",
+    "image_3_link": "",
+    "slideshow_4_enabled": false,
+    "image_4_alt_text": "",
+    "image_4_headline": "",
+    "image_4_subtitle": "",
+    "image_4_text_color": "#ffffff",
+    "image_4_text_align": "center",
+    "image_4_button_text": "",
+    "image_4_link": "",
+    "slideshow_5_enabled": false,
+    "image_5_alt_text": "",
+    "image_5_headline": "",
+    "image_5_subtitle": "",
+    "image_5_text_color": "#ffffff",
+    "image_5_text_align": "center",
+    "image_5_button_text": "",
+    "image_5_link": "",
+    "slideshow_6_enabled": false,
+    "image_6_alt_text": "",
+    "image_6_headline": "",
+    "image_6_subtitle": "",
+    "image_6_text_color": "#ffffff",
+    "image_6_text_align": "center",
+    "image_6_button_text": "",
+    "image_6_link": "",
+    "banner_1_enabled": false,
+    "banner_1_text_color": "#ffffff",
+    "banner_1_text_align": "center",
+    "banner_2_enabled": false,
+    "banner_2_text_color": "#ffffff",
+    "banner_2_text_align": "center",
+    "banner_3_enabled": false,
+    "banner_3_text_color": "#ffffff",
+    "banner_3_text_align": "center",
+    "homepage": "",
+    "homepage2": "",
+    "homepage3": "",
+    "homepage4": "",
+    "frontpage_collections_per_row": "3",
+    "frontpage_collections_title": true,
+    "collection_title": true,
+    "frontpage_collection": "",
+    "frontpage_products_per_row": "4",
+    "frontpage_display_description": true,
+    "frontpage_product_stagger": false,
+    "blog_widget_select": "",
+    "home_page_articles": "3",
+    "product_breadcrumb": true,
+    "display_tags": true,
+    "display_type": true,
+    "display_vendor": true,
+    "display_collections": false,
+    "display_sku": false,
+    "show_product_recommendations": true,
+    "product_thumbs": true,
+    "product_images_position": "left",
+    "products_per_row": "3",
+    "pagination_limit": "48",
+    "collection_breadcrumb": true,
+    "collection_tags": true,
+    "collection_sort": true,
+    "quick_shop_full_description": false,
+    "collection_sidebar": false,
+    "collection_sidebar_linklist": "",
+    "collection_sidebar_linklist2": "",
+    "filter_by_category": false,
+    "filter_by_tag": false,
+    "collection_sidebar_products": false,
+    "collection_sidebar_vendors": false,
+    "collection_sidebar_page": "",
+    "tax_included": false,
+    "display_special_instructions": false,
+    "display_social_buttons_blog": true,
+    "blog_tags": true,
+    "blog_content_page": "",
+    "newsletter_enabled": true,
+    "newsletter_system": "shopify",
+    "mailchimp_link": "",
+    "footer_linklist_2": "footer",
+    "footer_linklist_1": "main-menu",
+    "copyright_text": "",
+    "use_paypal": false,
+    "use_bitcoin": false,
+    "use_visa": false,
+    "use_visaelectron": false,
+    "use_mastercard": false,
+    "use_amex": false,
+    "use_cirrus": false,
+    "use_delta": false,
+    "use_discover": false,
+    "use_western_union": false,
+    "newsletter_popup_page": "",
+    "checkout_use_header_image": false,
+    "checkout_banner_background_color": "#222222",
+    "checkout_logo": "",
+    "checkout_headline": "",
+    "checkout_call_to_action_color": "#DD4B39",
+    "shop_use_content_bg_color": "1",
+    "shop_content_bg_color": "#bb3131",
+    "blog_widget": true,
+    "checkout_background_color": "#ffffff",
+    "checkout_background_image": false,
+    "checkout_text_color": "#404040",
+    "checkout_headline_color": "#404040",
+    "collection_top_sidebar_page": "",
+    "newsletter_success_text": "Thank you for joining our mailing list!",
+    "newsletter_description": "Subscribe to our newsletter and always be the first to hear about what is happening.",
+    "display_borders": true,
+    "header_share_button": false,
+    "product_zoom_enabled": false,
+    "product_thumbnails_position": "side",
+    "shipping_calculator_heading": "Shipping rates calculator",
+    "shipping_calculator_submit_button_label": "Calculate shipping rates",
+    "shipping_calculator_submit_button_label_disabled": "Calculating...",
+    "quick_shop_text": "Quick Shop",
+    "sections": {
+      "slideshow": {
+        "type": "slideshow",
+        "disabled": true,
+        "blocks": {
+          "slideshow-0": {
+            "type": "image",
+            "settings": {
+              "title": "Allergen-Free Snacks",
+              "subtext": "All the Awesome. None of the Compromise.",
+              "button_label": "SHOP NOW",
+              "link": "shopify:\/\/collections",
+              "text_position": "right",
+              "text_align": "center"
+            }
+          }
+        },
+        "block_order": [
+          "slideshow-0"
+        ],
+        "settings": {
+          "image_stretch": true,
+          "enable_padding": true,
+          "slideshow_animation": "fade",
+          "slideshow_speed": 6,
+          "adaptive_height": true
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "show_announcement_message": true,
+          "announcement_homepage_only": false,
+          "announcement_message": "FREE SHIPPING ON ORDERS OF $49+",
+          "announcement_link": "https:\/\/withoutatrace.attn.tv\/p\/a91\/landing-page",
+          "announcement_color": "#ffe27d",
+          "announcement_text_color": "#084d8a",
+          "fix_top_bar": false,
+          "header_social_icons": false,
+          "main_linklist": "main-menu-0"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "button_hide": false,
+          "footer_linklist_1": "footer",
+          "footer_linklist_2": "legal-info",
+          "footer_newsletter": true,
+          "newsletter_heading": "Join the Trace Family to receive 10% off your first purchase.",
+          "newsletter_richtext": "<p>We're working hard to bring you something delicious.&lt;span&gt;Share your email and we'll send you a special offer when we launch.&lt;\/span&gt;<\/p>",
+          "footer_social_icons": true,
+          "copyright_text": "Want to get in touch with us?<a href=\"mailto:info@withoutatracefoods.com\">info@withoutatracefoods.com<\/a>"
+        }
+      },
+      "1589060201428": {
+        "type": "image-text",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/superhero.png",
+          "custom_class": "first-class",
+          "title": "What We<span>Stand For<\/span>",
+          "text": "<p>Kids are superheroes. Scientists in discovery. Rockstars in the making. And we will never let them be defined by their allergies.<\/p>",
+          "button_label": "Our Mission",
+          "d_text": "",
+          "button_hide": false,
+          "button_show": false,
+          "button_link": "shopify:\/\/pages\/our-mission",
+          "layout": "right",
+          "text_alignment": "center"
+        }
+      },
+      "1589060315383": {
+        "type": "image-text",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Sidekick.png",
+          "custom_class": "second-class",
+          "title": "Your Trusty Sidekick",
+          "text": "<p>The Linus to your Charlie Brown. The Robin to your Batman. That’s us. We’ve done the heavy lifting so you can rest easy, knowing your little one is snacking safely.<strong>(Plus, we look great in tights.)<\/strong><\/p>",
+          "button_label": "Learn More",
+          "d_text": "Safe Practices",
+          "button_hide": false,
+          "button_show": false,
+          "button_link": "shopify:\/\/pages\/safe-practices",
+          "layout": "left",
+          "text_alignment": "center"
+        }
+      },
+      "1589060384294": {
+        "type": "image-text",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/FamilySnacking.png",
+          "custom_class": "third-class",
+          "title": "For The<br>Whole Family",
+          "text": "<p>Sweet and savory treats delivered right to your door that satisfy the entire family. Pinky promise.<\/p>",
+          "button_label": "SUBSCRIBE & SAVE",
+          "d_text": "",
+          "button_hide": false,
+          "button_show": true,
+          "button_link": "shopify:\/\/products\/snack-box-subscribe-save",
+          "layout": "right",
+          "text_alignment": "center"
+        }
+      },
+      "1589060473848": {
+        "type": "image-text",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/FamilyPhotos.png",
+          "custom_class": "fourth-class",
+          "title": "No More Feeling<br>Left Out. <span>Ever Again.<\/span>",
+          "text": "<p>Food allergies have always been a part of my life. I witnessed my mom almost lose her life to anaphylaxis and I&#x27;ve been to the emergency room because of my own life-threatening reactions. From a young age I grew up fearful, experiencing the burden of keeping myself safe at school. Now, with a family of our own, we are navigating allergies for our daughter. But we are no longer living in fear. Please read our journey and what we promise to you and your family.<\/p>",
+          "button_label": "Read More",
+          "d_text": "Our Story",
+          "button_hide": false,
+          "button_show": true,
+          "button_link": "shopify:\/\/pages\/our-story",
+          "layout": "left",
+          "text_alignment": "center"
+        }
+      },
+      "1589062038742": {
+        "type": "gallery",
+        "blocks": {
+          "561c3308-e7e9-45bc-8c2a-ee056b7697ad": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Home_Prod_Crisps_02.png",
+              "link": "shopify:\/\/products\/crisps-sea-salt",
+              "alt": "Crisps"
+            }
+          },
+          "1589062038742-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Home_Prod_GranolaBars_Top9_260x320_2x_4e595156-ed26-472e-ba3e-aa29eca783d7.png",
+              "link": "shopify:\/\/collections\/chewy-granola-bar",
+              "alt": "Chewy Granola Bar"
+            }
+          },
+          "1589062038742-2": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Home_Prod_Cookie_Top9_260x320_2x_1f7c8412-fb9a-48ca-9ef5-8b8615c8e0f5.png",
+              "link": "shopify:\/\/products\/cookie",
+              "alt": "Cookie"
+            }
+          },
+          "1589062038742-3": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Home_PowerBites_Top9_260x320_2x_2e005fda-9074-4baf-b449-468a97416992.png",
+              "link": "shopify:\/\/collections\/power-bites",
+              "alt": "Power Bites"
+            }
+          },
+          "1589062038742-1": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Home_StarterPack_Top9_2x_f484ff40-cef7-4d2d-aeb7-ddb58bb2e9e9.png",
+              "link": "shopify:\/\/products\/starter-pack",
+              "alt": "Starter Pack"
+            }
+          }
+        },
+        "block_order": [
+          "561c3308-e7e9-45bc-8c2a-ee056b7697ad",
+          "1589062038742-0",
+          "1589062038742-2",
+          "1589062038742-3",
+          "1589062038742-1"
+        ],
+        "settings": {
+          "select_layout": false,
+          "title": ""
+        }
+      },
+      "cart-template": {
+        "type": "cart-template",
+        "settings": {
+          "display_special_instructions": true
+        }
+      },
+      "1589228749690": {
+        "type": "icon-bar",
+        "settings": {
+          "h1_show": false,
+          "h1": "Allergen-Free Snacks",
+          "h2_show": true,
+          "h2": "Allergens and Chemicals?<br>Nope, Nada, Never!",
+          "button_label": "OUR INGREDIENTS",
+          "button_link": "\/pages\/safe-practices#ingredients"
+        }
+      },
+      "1589443109795": {
+        "type": "featured-page",
+        "disabled": true,
+        "blocks": {
+          "1589443109795-0": {
+            "type": "linked_page",
+            "settings": {
+              "label": "RECIPES",
+              "image": "shopify:\/\/shop_images\/Blog_Recipes.jpg",
+              "link": "shopify:\/\/blogs\/trace-family"
+            }
+          },
+          "1589443109795-1": {
+            "type": "linked_page",
+            "settings": {
+              "label": "TIPS",
+              "image": "shopify:\/\/shop_images\/Blog_Tips.jpg",
+              "link": "shopify:\/\/blogs\/trace-family"
+            }
+          },
+          "1589443109795-2": {
+            "type": "linked_page",
+            "settings": {
+              "label": "EXPERT ADVICE",
+              "image": "shopify:\/\/shop_images\/Blog_Advice.jpg",
+              "link": "shopify:\/\/pages\/faq"
+            }
+          }
+        },
+        "block_order": [
+          "1589443109795-0",
+          "1589443109795-1",
+          "1589443109795-2"
+        ],
+        "settings": {
+        }
+      },
+      "list-collections-template": {
+        "type": "list-collections-template",
+        "settings": {
+          "collection_breadcrumb": true,
+          "collections_per_row": 3,
+          "pagination_limit": 48
+        }
+      },
+      "1591071546484": {
+        "type": "top-image",
+        "settings": {
+          "special_content": true,
+          "image": "shopify:\/\/shop_images\/Home_Hero_StrawberryGranola_TOP9_2x_3f827042-feb8-4e95-938b-6764d9a0e9c8.png",
+          "title": "Allergen-Free Snacks",
+          "text": "All the Awesome. <span>None of the Compromise.<\/span>",
+          "button_label": "SHOP NOW",
+          "button_link": "shopify:\/\/collections\/our-products",
+          "button_hide": false
+        }
+      },
+      "product__sidebar": {
+        "type": "product__sidebar",
+        "settings": {
+          "toggle": false
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "display_thumbnails": true,
+          "gallery_arrows": false,
+          "activate_zoom": false,
+          "slideshow_speed": 0,
+          "slideshow_transition": "slide",
+          "thumbnail_position": "right-thumbnails",
+          "enable_thumbnail_slider": true,
+          "banner_show": true,
+          "banner_image": "shopify:\/\/shop_images\/WAT_Valentine_Banner_2x_0ee1f538-4274-4337-8d64-5bfe7441363c.png",
+          "alt": "Valentine's Day special pack",
+          "link": "shopify:\/\/collections\/valentine",
+          "show_payment_button": true,
+          "product_images_position": "right",
+          "set_product_height": false,
+          "product_height": 500,
+          "video_looping": false
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "show_product_recommendations": true,
+          "product_recommendations_heading": "You May Also like",
+          "products_per_row": 3,
+          "recommended_products_limit": 3
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "collection_title": "Allergen-Free Snacks",
+          "banner_show": true,
+          "banner_image": "shopify:\/\/shop_images\/WAT_Valentine_Banner_2x_0ee1f538-4274-4337-8d64-5bfe7441363c.png",
+          "alt": "Valentine's Day special pack",
+          "link": "shopify:\/\/collections\/valentine",
+          "products_per_row": 3,
+          "pagination_limit": 48
+        }
+      },
+      "variety-box": {
+        "type": "variety-box",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Prod_VarietySubscriptionBox_Top9.png",
+          "title": "Snack Box<br>Subscribe & Save",
+          "text": "<p>A variety of allergen-free snacks, delivered to your door. Snack time has become easy-peasy.<\/p>",
+          "button_link": "shopify:\/\/products\/snack-box-subscribe-save",
+          "button_label": "SHOP NOW"
+        }
+      },
+      "icon-bar": {
+        "type": "icon-bar",
+        "settings": {
+          "h1_show": true,
+          "h1": "Allergen-Free Snacks",
+          "h2_show": false,
+          "h2": "Allergens and Chemicals?<br>Nope, Nada, Never!",
+          "button_label": "",
+          "button_link": ""
+        }
+      },
+      "page-faq-template": {
+        "type": "page-faq-template",
+        "blocks": {
+          "page-faq-template-0": {
+            "type": "heading",
+            "settings": {
+              "heading": "About Our Products"
+            }
+          },
+          "499236b1-1bb2-4e8c-995e-59dfbc42f899": {
+            "type": "Content",
+            "settings": {
+              "title": "What does Without A Trace mean?",
+              "subtitle": "<p>We do not use any of the Big 8 food allergens or sesame in our products, nor do we permit those ingredients in our dedicated facility where we manufacture and package all products. We conduct thorough diligence on our suppliers, working with single source suppliers when possible and confirming their allergen control protocols. And finally, we conduct routine testing as we work tirelessly to minimize risks. We take this multifaceted approach seriously.<\/p>"
+            }
+          },
+          "page-faq-template-1": {
+            "type": "Content",
+            "settings": {
+              "title": "What allergens are Without A Trace products free from?",
+              "subtitle": "<p>We’ve got you covered. Every Without A Trace product contains no peanuts, tree nuts, dairy, eggs, wheat, gluten, soy, shellfish, fish or sesame. We work closely with all of our suppliers to ensure our ingredients are allergen-free.<\/p>"
+            }
+          },
+          "page-faq-template-2": {
+            "type": "Content",
+            "settings": {
+              "title": "Are Without A Trace products non-GMO?",
+              "subtitle": "<p>All of our products are non-GMO except for our Strawberry Surprise granola bar. We are making every effort to offer only non-GMO products. Stay tuned as we work on this.<\/p>"
+            }
+          },
+          "page-faq-template-3": {
+            "type": "Content",
+            "settings": {
+              "title": "Are Without A Trace products organic?",
+              "subtitle": "<p>Our top priority is to ensure our products are allergen-free and made from ingredients that come from suppliers that take allergen-free as seriously as we do. In some cases we are able to use organic ingredients that meet our allergen-free standards, but not always. As we grow, our goal is to use all organic ingredients. We know this is important to our consumers.<\/p>"
+            }
+          },
+          "5a7a4fa8-97c8-4ba8-8727-aa5cdc72fdba": {
+            "type": "Content",
+            "settings": {
+              "title": "Who are your suppliers?",
+              "subtitle": "<p>Glad you asked. We work with suppliers committed to strict health, safety and allergen protocols. Whenever possible, we source ingredients from single-product suppliers to reduce the risk of cross-contamination. While our preference is for single source suppliers, we also understand the reality that many may handle allergens. If they do, we work to understand their control protocols. We also love to work with small family-owned farms or grower cooperatives that share our passion for wholesome ingredients (Brooke comes from a long line of family farmers and has a childhood’s worth of memories from her grandfather and aunt and uncles’ farms).<\/p>"
+            }
+          },
+          "be064195-d1ef-4756-9b8b-925d9c455cb2": {
+            "type": "Content",
+            "settings": {
+              "title": "Are Without A Trace products suitable for vegans?",
+              "subtitle": "<p>Yes! All of our products are plant-based and contain no animal products.<\/p>"
+            }
+          },
+          "27750a1f-3890-4c37-96c1-cc634a1f0d6e": {
+            "type": "Content",
+            "settings": {
+              "title": "Are Without A Trace products gluten-free?",
+              "subtitle": "<p>You bet! All of our products are certified gluten-free. Our dedicated manufacturing facility is gluten-free and we work closely with our suppliers to source only gluten-free ingredients.<\/p>"
+            }
+          },
+          "a84774bf-6dba-4079-bf78-fd6006b746af": {
+            "type": "Content",
+            "settings": {
+              "title": "Are your products kosher certified?",
+              "subtitle": "<p>Without A Trace products are not certified kosher, however, most of our ingredients are certified kosher. For questions on a specific product, drop us a line at <a href=\"mailto:info@withoutatracefoods.com\"><span style=\"text-decoration:underline\">info@withoutatracefoods.com<\/span><\/a>.<\/p>"
+            }
+          },
+          "page-faq-template-5": {
+            "type": "Content",
+            "settings": {
+              "title": "How long do Without A Trace products stay fresh?",
+              "subtitle": "<p>We doubt our products will stay on your shelf very long, but they should remain fresh for nine months from the manufacturing date. To be certain, all items have a best by date on the packaging.<\/p>"
+            }
+          },
+          "page-faq-template-4": {
+            "type": "heading",
+            "settings": {
+              "heading": "Our Dedicated Facility"
+            }
+          },
+          "page-faq-template-6": {
+            "type": "Content",
+            "settings": {
+              "title": "Where does Without A Trace manufacture its products?",
+              "subtitle": "<p>All Without A Trace products are manufactured in our own dedicated allergen-friendly facility in Raleigh, North Carolina. Our facility contains no peanuts, tree nuts, dairy, eggs, wheat, gluten, soy, shellfish, fish or sesame. All of our items are produced in accordance with strict guidelines by a team educated in the importance of proper handling of ingredients and finished products to ensure the allergen-friendly nature of our goods.<\/p>"
+            }
+          },
+          "page-faq-template-7": {
+            "type": "Content",
+            "settings": {
+              "title": "Does Without A Trace test for allergens?",
+              "subtitle": "<p>In addition to the diligence we conduct on all of our suppliers and their allergen-control procedures, Without A Trace routinely tests our facility and manufacturing equipment. We also routinely test raw ingredients and finished products. Without A Trace constantly strives to ensure the safety of our products.<\/p>"
+            }
+          },
+          "47cbfe11-fba7-4127-9481-b5c328204090": {
+            "type": "heading",
+            "settings": {
+              "heading": "Ordering & Shipping"
+            }
+          },
+          "f8d97e45-2c1f-4bfb-a32f-1e2c5f0377fb": {
+            "type": "Content",
+            "settings": {
+              "title": "Where can I buy Without A Trace products?",
+              "subtitle": "<p>You’ve come to the right place! All of our products can be purchased directly through our website and delivered straight to your door.<\/p>"
+            }
+          },
+          "81e6eeaa-fa17-4f37-993e-3c7ff1698341": {
+            "type": "Content",
+            "settings": {
+              "title": "Monthly Subscribe and Save",
+              "subtitle": "<p>Between work, kids, mowing the lawn, and finishing that book before book club (just once!), we know grocery shopping is just another hassle. You don’t have to worry about having everyone’s favorite snacks on hand with our monthly <a href=\"\/collections\/subscribe-save\" title=\"Subscribe &amp; Save\"><span style=\"text-decoration:underline\">Subscribe and Save option<\/span><\/a>. As a bonus, select <a href=\"\/collections\/subscribe-save\" title=\"Subscribe &amp; Save\"><span style=\"text-decoration:underline\">Subscribe and Save<\/span><\/a> and receive 10% off our regular prices!<\/p>"
+            }
+          },
+          "54d4c838-d4f1-4cff-9e21-b9f16825f97b": {
+            "type": "Content",
+            "settings": {
+              "title": "How do you ship your products and how much does it cost?",
+              "subtitle": "<p>We use common carrier ground shipping. Ground shipping within the contiguous United States is a flat $5 per order and free on orders of $49 or more. Shipping may incur additional costs outside of the contiguous United States.<\/p>"
+            }
+          },
+          "6946bfe0-c62a-4bf9-aadd-923ab7f0a78f": {
+            "type": "Content",
+            "settings": {
+              "title": "Do you ship internationally?",
+              "subtitle": "<p>Unfortunately, we can’t ship internationally right now. We do want to be able to share our mission and products with families around the world and hope to one day be able to ship outside the U.S. Fingers crossed.<\/p>"
+            }
+          },
+          "4f4c9213-1397-433a-b972-28b2feb6a0f7": {
+            "type": "Content",
+            "settings": {
+              "title": "What do I do if I have a problem with my order?",
+              "subtitle": "<p>We want to make it right! Please email us at <a href=\"mailto:info@withoutatracefoods.com\"><span style=\"text-decoration:underline\">info@withoutatracefoods.com<\/span><\/a> and we will resolve the issue as soon as possible.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "page-faq-template-0",
+          "499236b1-1bb2-4e8c-995e-59dfbc42f899",
+          "page-faq-template-1",
+          "page-faq-template-2",
+          "page-faq-template-3",
+          "5a7a4fa8-97c8-4ba8-8727-aa5cdc72fdba",
+          "be064195-d1ef-4756-9b8b-925d9c455cb2",
+          "27750a1f-3890-4c37-96c1-cc634a1f0d6e",
+          "a84774bf-6dba-4079-bf78-fd6006b746af",
+          "page-faq-template-5",
+          "page-faq-template-4",
+          "page-faq-template-6",
+          "page-faq-template-7",
+          "47cbfe11-fba7-4127-9481-b5c328204090",
+          "f8d97e45-2c1f-4bfb-a32f-1e2c5f0377fb",
+          "81e6eeaa-fa17-4f37-993e-3c7ff1698341",
+          "54d4c838-d4f1-4cff-9e21-b9f16825f97b",
+          "6946bfe0-c62a-4bf9-aadd-923ab7f0a78f",
+          "4f4c9213-1397-433a-b972-28b2feb6a0f7"
+        ],
+        "settings": {
+          "slideshow_post_darken": false,
+          "image_alignment": "right",
+          "faq__footer--heading": "Have a question<br>we didn’t answer?"
+        }
+      },
+      "article-template": {
+        "type": "article-template",
+        "blocks": {
+          "8acc2591-aba7-4885-b8cb-4eeaab3c91a4": {
+            "type": "recent_posts",
+            "settings": {
+            }
+          }
+        },
+        "block_order": [
+          "8acc2591-aba7-4885-b8cb-4eeaab3c91a4"
+        ],
+        "settings": {
+          "featured_product": "cookie",
+          "slideshow_post_enabled": false,
+          "blog_author": true,
+          "display_social_buttons": true,
+          "blog_additional_posts": false,
+          "toggle": false
+        }
+      },
+      "blog-template": {
+        "type": "blog-template",
+        "settings": {
+          "blog_title": "Trace Family",
+          "blog_posts_per_row": 3,
+          "blog_posts_per_page": 12
+        }
+      },
+      "contact-template": {
+        "type": "contact-template",
+        "settings": {
+          "newsletter_richtext": "",
+          "contact_image_position": "left",
+          "wide_display": false,
+          "enable_padding": true,
+          "title": "Come and visit!",
+          "address_and_hours": "<p>123 Fake Street<\/p><p>Toronto, Canada<\/p><p>Mon - Fri, 10am - 9pm<\/p><p>Saturday, 11am - 9pm<\/p><p>Sunday, 11am - 5pm<\/p>",
+          "map_address": "",
+          "button_label": "Get directions",
+          "text_alignment": "left",
+          "map_position": "left",
+          "zoom_level": 12,
+          "store_hours": true,
+          "show_pin": true,
+          "info_color": "#ffffff",
+          "info_text_color": "#000000",
+          "api_key": "",
+          "map_style": "default"
+        }
+      },
+      "1608327783749a06ca": {
+        "type": "carousel",
+        "blocks": {
+          "0945940d-f004-43b0-b64f-77e1ed442096": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/FF_Logo.png",
+              "link-alt": "Female Founder Collective",
+              "link-url": "\/pages\/press#accolades"
+            }
+          },
+          "9dbdbf97-2d60-4ec0-bdc7-22ebbb606360": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/press_momtastic2_2x_9bd53c36-62ed-4bb7-aaf7-2d6bef54a453.png",
+              "link-alt": "Momtastic",
+              "link-url": "\/pages\/press"
+            }
+          },
+          "1cd24cbd-76ad-4fd2-ace0-6051c3c69754": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/press_ncidea_2x_e11ec7d1-efc2-4e55-92d1-6af843f09165.png",
+              "link-alt": "NC IDEA",
+              "link-url": "\/pages\/press"
+            }
+          },
+          "2810bd36-65e6-4ad2-b459-7ba7123e3afb": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/press_texaslifestylemag_2x_9bebaa6b-2021-483b-aae3-a06f4b28ef69.png",
+              "link-alt": "Texas Lifestyle & Travel Magazine",
+              "link-url": "\/pages\/press"
+            }
+          },
+          "d55e2e64-6519-4938-bb57-c1e2978372d1": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/press_kiddos_2x_ed3da004-9d90-4e34-8fc6-59ade219c715.png",
+              "link-alt": "kiddos magazine",
+              "link-url": "\/pages\/press"
+            }
+          },
+          "5abd77a0-913b-42ea-9887-2c0a1f8c3dca": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Press_RedTrycycle_2x_eaf18980-4966-4706-9c92-a31efeecbfea.png",
+              "link-alt": "Red Tricycle",
+              "link-url": "\/pages\/press"
+            }
+          },
+          "5c6786cb-810c-4196-b4a0-cadd398a9c84": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/press_synchrony_2x_1c80b62e-c519-45c4-9e1e-765c5bb3fa21.png",
+              "link-alt": "Press",
+              "link-url": "\/pages\/press"
+            }
+          },
+          "9163500c-6d75-424f-bc22-58e8909b2be8": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/press_prevention_2x_f9f4a8cf-51d4-4e9c-853f-d1efb6a19dd0.png",
+              "link-alt": "Prevention",
+              "link-url": "\/pages\/press"
+            }
+          },
+          "31832f3e-ed79-4c57-965f-383a3f03713e": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/press_SFbayareaMoms_2x_03b5982a-e39e-4741-9cc2-949e83c4f3cf.png",
+              "link-alt": "San Francisco Bay Area Moms",
+              "link-url": "\/pages\/press"
+            }
+          },
+          "4c2d4aa3-32cc-42ee-8df1-5ca63ab92fe6": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/press_HypeMagazine_2x_1ed5cc04-8c7a-479d-818f-3ed9a4a29b8d.png",
+              "link-alt": "The Hype Magazine",
+              "link-url": "\/pages\/press"
+            }
+          },
+          "93b519f0-15f5-4829-83bd-d7a728db5f7d": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/press_abc10_2x_41c2f871-8b57-49e6-acf0-016f23074b53.png",
+              "link-alt": "abc10",
+              "link-url": "\/pages\/press"
+            }
+          },
+          "58931b71-fb73-4032-9a4c-193fc8109913": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/press_LivingLocal_2x_14c226dd-6279-4d66-b48f-4334fa57dafa.png",
+              "link-alt": "Fox News: Living Local",
+              "link-url": "\/pages\/press"
+            }
+          },
+          "9e288885-bfad-46da-8995-cedd75b55bca": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/press_FoodNutrition_2x_81ca15e2-5daa-41ff-b485-ce98ba4240be.png",
+              "link-alt": "Food & Nutrition",
+              "link-url": "\/pages\/press"
+            }
+          },
+          "b81db85b-4df1-4214-a03b-b3bafc604550": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/press_TheBeet_2x_a79cde96-5379-417b-bcd2-e97539a4cf89.png",
+              "link-alt": "The Beet.",
+              "link-url": "\/pages\/press"
+            }
+          },
+          "cd4dea0f-d32a-472e-93a7-980b016b7677": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/press_Medium_AuthorityMag_2x_fb42c0bb-4a0a-4494-98f3-2bd707ccf83e.png",
+              "link-alt": "Medium: Authority Magazine",
+              "link-url": "\/pages\/press"
+            }
+          },
+          "5ee76c55-826e-439b-a56b-6eed3dc4cb6a": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/press_VeganMagazine_2x_c9a1b094-0cc2-4880-8d89-3ee538523d6f.png",
+              "link-alt": "Vegan Magazine",
+              "link-url": "\/pages\/press"
+            }
+          },
+          "d848565d-0576-4e28-b835-65272799eb5b": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Press_FieldMag_2x_bf88e756-f823-4ed9-91f5-67c7ee9012a6.png",
+              "link-alt": "Field Mag",
+              "link-url": "\/pages\/press"
+            }
+          },
+          "da7d34f5-36b6-465e-b95a-27d6935d431f": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/press_ContenderCast2_2x_68ab8b83-6662-4d64-b068-fff9b2ebe57d.png",
+              "link-alt": "Contender Cast",
+              "link-url": "\/blogs\/expert-advice\/contendercast-with-justin-honaman"
+            }
+          },
+          "dfbefbaf-f7ee-4de9-95ae-db7bda077446": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/press_DowntownMagNY_2x_1204f08d-dcd8-4ded-86a9-8fe58cdc645c.png",
+              "link-alt": "9 Foods You Must Try",
+              "link-url": "\/pages\/press"
+            }
+          },
+          "01b7261a-f5cb-4b1a-b18f-8db31215f45e": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/press_SFWB.png",
+              "link-alt": "Snack Food & Wholesale Bakery",
+              "link-url": "\/pages\/press"
+            }
+          },
+          "54d957b9-2426-4034-bd53-15f72bb94701": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Press_Atthleisure.png",
+              "link-alt": "Athleisure magazine",
+              "link-url": "\/pages\/press"
+            }
+          },
+          "86e2ac78-134c-4b98-a882-397256a0f60b": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Press_OhBiteIt.png",
+              "link-alt": "Oh Bite It",
+              "link-url": "\/pages\/press"
+            }
+          },
+          "2fddbac2-4db7-452d-a86f-8a762c0d9e70": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Press_ItsFreeAtLast.png",
+              "link-alt": "Its Free at Last",
+              "link-url": "\/pages\/press"
+            }
+          },
+          "4e0c0c22-8dd5-4398-97a3-8fed07b1ecc7": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Press_NewsObserver_2x_398243f8-b59e-4719-b93f-e7579d30ca01.png",
+              "link-alt": "The News&Observer",
+              "link-url": "\/pages\/press"
+            }
+          }
+        },
+        "block_order": [
+          "0945940d-f004-43b0-b64f-77e1ed442096",
+          "9dbdbf97-2d60-4ec0-bdc7-22ebbb606360",
+          "1cd24cbd-76ad-4fd2-ace0-6051c3c69754",
+          "2810bd36-65e6-4ad2-b459-7ba7123e3afb",
+          "d55e2e64-6519-4938-bb57-c1e2978372d1",
+          "5abd77a0-913b-42ea-9887-2c0a1f8c3dca",
+          "5c6786cb-810c-4196-b4a0-cadd398a9c84",
+          "9163500c-6d75-424f-bc22-58e8909b2be8",
+          "31832f3e-ed79-4c57-965f-383a3f03713e",
+          "4c2d4aa3-32cc-42ee-8df1-5ca63ab92fe6",
+          "93b519f0-15f5-4829-83bd-d7a728db5f7d",
+          "58931b71-fb73-4032-9a4c-193fc8109913",
+          "9e288885-bfad-46da-8995-cedd75b55bca",
+          "b81db85b-4df1-4214-a03b-b3bafc604550",
+          "cd4dea0f-d32a-472e-93a7-980b016b7677",
+          "5ee76c55-826e-439b-a56b-6eed3dc4cb6a",
+          "d848565d-0576-4e28-b835-65272799eb5b",
+          "da7d34f5-36b6-465e-b95a-27d6935d431f",
+          "dfbefbaf-f7ee-4de9-95ae-db7bda077446",
+          "01b7261a-f5cb-4b1a-b18f-8db31215f45e",
+          "54d957b9-2426-4034-bd53-15f72bb94701",
+          "86e2ac78-134c-4b98-a882-397256a0f60b",
+          "2fddbac2-4db7-452d-a86f-8a762c0d9e70",
+          "4e0c0c22-8dd5-4398-97a3-8fed07b1ecc7"
+        ],
+        "settings": {
+          "autoplay": "true",
+          "number": 5,
+          "scroll-number": 1
+        }
+      },
+      "16122985456c481237": {
+        "type": "featured-review",
+        "blocks": {
+          "16122985456c481237-0": {
+            "type": "quote",
+            "settings": {
+              "review_product": "power-bites-rad-raspberry",
+              "stars_num": 5,
+              "title": "Nom nom nom",
+              "review": "My fav of them all! Tastes healthy and delicious - a great pick me up to keep you going. Nom nom nom!",
+              "reviwer": "Wei"
+            }
+          },
+          "16122985456c481237-1": {
+            "type": "quote",
+            "settings": {
+              "review_product": "chewy-granola-bar-cinnamon-swirl",
+              "stars_num": 5,
+              "title": "So Delicious!",
+              "review": "These are so soft and delicious! Perfect blend of maple and cinnamon! My kids and I love them.",
+              "reviwer": "David"
+            }
+          },
+          "16122985456c481237-2": {
+            "type": "quote",
+            "settings": {
+              "review_product": "cookie",
+              "stars_num": 5,
+              "title": "A+ Cookie",
+              "review": "These are hands down theeeee best ready made chocolate chip cookies I have ever eaten! Soft and chewy without the allergens and guilt of animal products too! Better than Enjoy Life and satisfies my cookie craving:)",
+              "reviwer": "VanAnn"
+            }
+          },
+          "f318d2d8-4de9-4758-8e1c-30f5ba081e3c": {
+            "type": "quote",
+            "settings": {
+              "review_product": "power-bites-apple-cinna-monster",
+              "stars_num": 5,
+              "title": "Apple cinnamon awesomeness",
+              "review": "Bought these for my son with multiple allergies and the whole family adores them. They certainly disappear quickly! It's truly awesome to finally have snacks that we don't have to worry about that also taste amazing.",
+              "reviwer": "Anna W."
+            }
+          },
+          "2406f008-e3a9-46d9-a335-b41be61443df": {
+            "type": "quote",
+            "settings": {
+              "review_product": "power-bites-rad-raspberry",
+              "stars_num": 5,
+              "title": "Rad about these!",
+              "review": "My toddler (and my husband and I!) absolutely loves these bites, including the cinnamonsters and all Without a trace treats as well! Sooo happy to finally be able to give my little girl a safe healthy delicious snack without having to read another label. Thank you!!",
+              "reviwer": "Mica"
+            }
+          },
+          "6a339100-f89a-48f3-9e5e-99a5c8c7e51a": {
+            "type": "quote",
+            "settings": {
+              "review_product": "snack-box-subscribe-save",
+              "stars_num": 5,
+              "title": "Best way to go",
+              "review": "We had started by ordering a few different packs initially - after the first two times, we were finding that the whole family was just devouring them! (those power bites are just so easy to keep grabbing throughout the day) The subscription box got us everything we wanted, without the pain of ever reaching the pantry and realizing were were out. Definitely worth it!",
+              "reviwer": "Adithya"
+            }
+          }
+        },
+        "block_order": [
+          "16122985456c481237-0",
+          "16122985456c481237-1",
+          "16122985456c481237-2",
+          "f318d2d8-4de9-4758-8e1c-30f5ba081e3c",
+          "2406f008-e3a9-46d9-a335-b41be61443df",
+          "6a339100-f89a-48f3-9e5e-99a5c8c7e51a"
+        ],
+        "settings": {
+          "title": "Snack Superhero Shout Outs",
+          "reviews_per_row": 3
+        }
+      },
+      "product-details-template": {
+        "type": "product-details-template",
+        "blocks": {
+          "product-details-template-0": {
+            "type": "rich_text_and_image",
+            "settings": {
+              "title": "This is an example headline",
+              "content": "<p>Vestibulum fringilla pede sit amet augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer tincidunt. Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Suspendisse potenti.<\/p>",
+              "text_size": "featured_text",
+              "text_alignment": "center",
+              "button_label": "Button",
+              "button_link": ""
+            }
+          },
+          "product-details-template-1": {
+            "type": "divider",
+            "settings": {
+              "divider_spacing": 20,
+              "divider_border": false
+            }
+          },
+          "product-details-template-2": {
+            "type": "image_gallery",
+            "settings": {
+            }
+          },
+          "product-details-template-3": {
+            "type": "divider",
+            "settings": {
+              "divider_spacing": 20,
+              "divider_border": false
+            }
+          },
+          "product-details-template-4": {
+            "type": "image_with_text",
+            "settings": {
+              "layout": "right",
+              "text_alignment": "left",
+              "title": "Headline",
+              "text": "<p>Vestibulum fringilla pede sit amet augue. Pellentesque habitant morbi tristique senecrutrum eu, nisl.<\/p>",
+              "button_label": "Button",
+              "button_link": ""
+            }
+          },
+          "product-details-template-5": {
+            "type": "divider",
+            "settings": {
+              "divider_spacing": 20,
+              "divider_border": false
+            }
+          }
+        },
+        "block_order": [
+          "product-details-template-0",
+          "product-details-template-1",
+          "product-details-template-2",
+          "product-details-template-3",
+          "product-details-template-4",
+          "product-details-template-5"
+        ],
+        "settings": {
+          "product_breadcrumb": false,
+          "display_thumbnails": true,
+          "gallery_arrows": false,
+          "activate_zoom": false,
+          "slideshow_speed": 0,
+          "slideshow_transition": "slide",
+          "thumbnail_position": "right-thumbnails",
+          "enable_thumbnail_slider": true,
+          "display_tags": false,
+          "display_type": false,
+          "display_vendor": false,
+          "display_sku": false,
+          "display_social_buttons": false,
+          "display_collections": false,
+          "product_description_position": "top",
+          "show_payment_button": true,
+          "product_images_position": "right",
+          "set_product_height": false,
+          "product_height": 500,
+          "video_looping": false
+        }
+      },
+      "collection-banner-template": {
+        "type": "collection-banner-template",
+        "settings": {
+          "collection_breadcrumb": true,
+          "collection_sort": false,
+          "collection_tags": false,
+          "products_per_row": 3,
+          "pagination_limit": 48,
+          "toggle": false
+        }
+      },
+      "page-faq2-template": {
+        "type": "page-faq2-template",
+        "blocks": {
+          "page-faq2-template-0": {
+            "type": "heading",
+            "settings": {
+              "heading": "Frequently Asked Questions"
+            }
+          },
+          "page-faq2-template-1": {
+            "type": "Content",
+            "settings": {
+              "title": "Do your products or facilities contain coconut?",
+              "subtitle": "<p>Nope.  We treat coconut in line with FDA regulations that classify it as a tree nut.  All of our products and our facility are free of tree nuts and coconut.<\/p>"
+            }
+          },
+          "page-faq2-template-2": {
+            "type": "Content",
+            "settings": {
+              "title": "Do your products contain peas, legumes or pea protein?",
+              "subtitle": "<p>Nope.  We do not use peas, legumes or pea protein in our products or in our facility.  However, please be aware that some of our suppliers may use these items in their facilities.  All of our suppliers are screened to ensure they adhere to industry-standard cross-contamination prevention protocols and diligent allergen-control practices.<\/p>"
+            }
+          },
+          "page-faq2-template-3": {
+            "type": "Content",
+            "settings": {
+              "title": "Do your products contain sunflower or sunflower-derived ingredients?",
+              "subtitle": "<p>We do not use sunflower in our products or our facility.  However, some of our raw materials may contain sunflower-derived ingredients.  If you have questions about sunflower, please reach out to us directly via text at 917.768.9704 or via email at <a href=\"mailto:info@withoutatracefoods.com\"><span style=\"text-decoration:underline\">info@withoutatracefoods.com<\/span><\/a>.<\/p>"
+            }
+          },
+          "page-faq2-template-5": {
+            "type": "Content",
+            "settings": {
+              "title": "Are your oats certified gluten free?",
+              "subtitle": "<p>Yes.  Our oats are certified gluten free by GFCP.  In addition, our oats are processed in an oat-only facility and we regularly test our products to ensure they are gluten-free.<\/p>"
+            }
+          },
+          "page-faq2-template-6": {
+            "type": "Content",
+            "settings": {
+              "title": "Are your products certified gluten-free?",
+              "subtitle": "<p>Yes!  All Without A Trace products are certified gluten free by the <a href=\"https:\/\/glutenfreefoodprogram.com\"><span style=\"text-decoration:underline\">Gluten Free Food Program<\/span><\/a>, which is endorsed by the National Celiac Association.  The Gluten Free Food Program evaluates all of our raw ingredients, processes, facility and finished products to ensure our products are safe for gluten free consumers.<\/p>"
+            }
+          },
+          "page-faq2-template-7": {
+            "type": "Content",
+            "settings": {
+              "title": "Do you have any of the top nine allergens in your manufacturing facility?",
+              "subtitle": "<p>Nope!  We have our own manufacturing facility, based in Raleigh, North Carolina.  We do not allow any of the top nine allergens in our facility and the only things manufactured in the facility are Without A Trace products. We screen all of our raw ingredients and suppliers to ensure they adhere to our strict allergen protocols.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "page-faq2-template-0",
+          "page-faq2-template-1",
+          "page-faq2-template-2",
+          "page-faq2-template-3",
+          "page-faq2-template-5",
+          "page-faq2-template-6",
+          "page-faq2-template-7"
+        ],
+        "settings": {
+          "slideshow_post_darken": false,
+          "image_alignment": "right",
+          "faq__footer--heading": ""
+        }
+      }
+    },
+    "content_for_index": [
+      "1591071546484",
+      "slideshow",
+      "1589062038742",
+      "1589228749690",
+      "1589060201428",
+      "1589060315383",
+      "1589060384294",
+      "1589060473848",
+      "1589443109795",
+      "16122985456c481237",
+      "1608327783749a06ca"
+    ]
+  }
+}

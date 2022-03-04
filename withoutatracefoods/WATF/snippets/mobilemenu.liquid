@@ -1,0 +1,55 @@
+
+<div id="mobile_menu">
+  <div id="mobile_menu_bt--close" class="mobile_menu_bt"><span class="icon-menu"></span></div>
+  <a href="{{ routes.root_url }}" title="{{ shop.name }}" class="logo">
+    <span class="icon_logo" aria-label="Without A Trace Logo"></span>
+  </a>
+  <ul class="mobile_menu_inner open_menu" role="navigation">
+    {% assign main_menu = linklists[section.settings.main_linklist] %}
+    {% for link in main_menu.links %}
+      {% if link.links == blank %}
+        <li class="no-dropdown">
+          <a tabindex="0" href="{{ link.url }}" {% if link.active %}class="active"{% endif %}>{{ link.title }}</a>
+        </li>
+      {% else %}
+        <li class="dropdown sub-menu" aria-haspopup="true" aria-expanded="false">
+          <a tabindex="0" class="disabled sub-menu--link {% if link.active or link.child_active %} active {% endif %} {% if link.url == 'http://' or link.url == '' or link.url == '/' or link.url == 'https://' or link.url == '#' %} slicknav_item {% endif %}"
+           href="#">
+          {{ link.title }}&nbsp;<span class="icon-down-arrow arrow menu-icon"></span>
+          </a>
+          <ul class="submenu_list">
+            {% render 'menu-list', link: link %}
+            {% if link.title == 'SHOP' %}
+              <li class="all_products">
+                <a href="/collections/our-products">View All Products</a>
+              </li>
+            {% endif %}
+          </ul>
+        </li>
+      {% endif %}
+    {% endfor %}
+
+    <li class="cart">
+      <a href="{{ routes.cart_url }}" class="cart_button with-icon">
+        <span class="icon-cart" aria-label="cart"></span><span class="cart_num">({{ cart.item_count }})</span>
+      </a>
+    </li>
+
+    {% if customer %}
+      {% if customer.name != blank %}
+        <li>
+          <a href="{{ routes.account_url }}" data-no-instant><span class="icon-account" aria-label="account"></span></a>
+        </li>
+      {% endif %}
+        <li>
+          <a href="{{ routes.account_logout_url }}" id="customer_logout_link" data-no-instant>{{ 'layout.customer.log_out' | t }}</a>
+        </li>
+    {% else %}
+      <li class="account">
+        <a href="{{ routes.account_login_url }}" id="customer_login_link" class="with-icon" data-no-instant>
+          <span class="icon-account" aria-label="account"></span><span class="show-sp">ACCOUNT</span>
+        </a>
+      </li>
+    {% endif %}
+  </ul>
+</div>

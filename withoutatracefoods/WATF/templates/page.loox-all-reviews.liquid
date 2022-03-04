@@ -1,0 +1,44 @@
+{% if shop.metafields.loox["global_stats"] %}
+{% assign looxstats = shop.metafields.loox["global_stats"] | split: "," %}
+<div itemscope itemtype="https://schema.org/Product">
+<meta itemprop="name" content="{{ shop.name | escape }}"/>
+<div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+<meta itemprop="ratingValue" content="{{ looxstats[0] }}"/>
+<meta itemprop="ratingCount" content="{{ looxstats[1] }}"/>
+</div>
+</div>
+{% endif %}
+<div class="page_contents">
+{% if page.handle != 'safe-practices' %}
+  {{ page.content }}
+{% else %}
+<div id="safe">
+{{ page.content }}
+<div class="page_body">
+<section class="icons-set">
+{% section 'icon-bar' %}
+<div class="icons_img"><img src="https://cdn.shopify.com/s/files/1/0284/8804/0557/files/Magnifyglass.png?v=1598917172" alt="Magnify glass" /></div>
+</section>
+<section id="ingredients" class="ing">
+<article>
+<h1>Real Ingredients</h1>
+<p>No artificial flavors or loads of sugar.<br /> Our products are rich in real ingredients.</p>
+</article>
+<div class="icons-set">
+<div><img src="https://cdn.shopify.com/s/files/1/0284/8804/0557/files/Strawberries1.png?v=1599091233" alt="Strawberries" /><span>Strawberries</span></div>
+<div><img src="https://cdn.shopify.com/s/files/1/0284/8804/0557/files/Raspberries1.png?v=1599091233" alt="Raspberries" /><span>Raspberries</span></div>
+<div><img src="https://cdn.shopify.com/s/files/1/0284/8804/0557/files/ChiaSeeds1.png?v=1599091232" alt="Chia Seeds" /><span>Chia Seeds</span></div>
+<div><img src="https://cdn.shopify.com/s/files/1/0284/8804/0557/files/Oats1.png?v=1599091233" alt="Oats" /><span>Oats</span></div>
+<div><img src="https://cdn.shopify.com/s/files/1/0284/8804/0557/files/Dates1.png?v=1599091233" alt="Dates" /><span>Dates</span></div>
+<div><img src="https://cdn.shopify.com/s/files/1/0284/8804/0557/files/Flaxseed1.png?v=1599091233" alt="Flaxseed" /><span>Flaxseed</span></div>
+<div><img src="https://cdn.shopify.com/s/files/1/0284/8804/0557/files/Cinnamon1.png?v=1599091232" alt="Cinnamon" /><span>Cinnamon</span></div>
+<div><img src="https://cdn.shopify.com/s/files/1/0284/8804/0557/files/Apples1.png?v=1599091232" alt="Apples" /><span>Apples</span></div>
+<div><img src="https://cdn.shopify.com/s/files/1/0284/8804/0557/files/Vanilla1.png?v=1599091233" alt="Vanilla" /><span>Vanilla</span></div>
+</div>
+<img class="img_bottom" src="https://cdn.shopify.com/s/files/1/0284/8804/0557/files/cookie.png?v=1598916490" alt="cookie" /></section>
+</div>
+</div>
+{% endif %}
+</div>
+
+<div id="looxReviews" data-loox-aggregate="" class="loox-reviews-default"></div>

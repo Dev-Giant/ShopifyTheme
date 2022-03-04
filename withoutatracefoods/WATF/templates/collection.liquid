@@ -1,0 +1,23 @@
+{% comment %}
+  The contents of the collection.liquid template can be found in /sections/collection-template.liquid
+{% endcomment %}
+
+{% if collection.handle == 'all' %}
+<script>window.location.replace("/collections/our-products");</script>
+{% endif %}
+{% assign collection_check = true %}
+{% if collection.title == "Our Products" or collection.title == "Subscribe & Save" %}
+  {% assign collection_check = false %}
+{% endif %}
+<div id="collection"{% if collection_check %} class="without-icons"{% endif %}>
+  <div class="page_header">
+    {% if collection_check %}
+      <h1>{{collection.title}}</h1>
+    {% else %}
+      {% section 'icon-bar' %}
+    {% endif %}
+  </div>
+</div>
+{% section 'collection-template' %}
+
+{% section 'variety-box' %}

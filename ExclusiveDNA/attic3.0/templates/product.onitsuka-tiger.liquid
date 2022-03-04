@@ -1,0 +1,201 @@
+
+{% include 'breadcrumbs' %}
+
+{% assign variant = product.selected_or_first_available_variant %}
+
+{% if collection == null or collection.handle == 'frontpage' or collection.handle == 'all' %}
+  {% assign found_a_collection = false %}
+  {% for c in product.collections %}
+    {% if found_a_collection == false and c.handle != 'frontpage' and c.handle != 'all' %}
+      {% assign found_a_collection = true %}
+      {% assign collection = c %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<div class="main-product-wrap product-wrap" itemscope itemtype="http://schema.org/Product" data-product-id="{{ product.id }}">
+
+  <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+  <meta itemprop="image" content="{{ product | img_url: 'grande' }}">
+
+  <div class="product-images">
+
+    {% if settings.product-images-layout == 'slideshow' %}
+
+      <div class="product-main-image">
+        {% assign mainImage = variant.featured_image | default: product.featured_image %}
+        {% if mainImage != blank %}
+          <img alt="{{ mainImage.alt | escape }}" src="{{ mainImage | img_url: '1024x1024' }}">
+        {% else %}
+          <img class="product-no-images" src="{{ 'no-image.svg' | asset_url }}" alt="{{ 'products.product.no_image' | t }}" />
+        {% endif %}
+
+        {% if settings.product-zoom %}
+          <div class="product-zoom"></div>
+        {% endif %}
+      </div>
+
+      {% if product.images.size > 1 %}
+        <div class="product-thumbnails-outer-wrapper">
+          {% if product.images.size > 4 %}
+            <span class="product-thumbnails-navigation-previous">&#xe601;</span>
+          {% endif %}
+          <div class="product-thumbnails-wrapper">
+            <div class="product-thumbnails {% if product.images.size > 4 %}has-side-scroll{% endif %}">
+              {% for image in product.images %}
+                <div class="product-thumbnail {% if mainImage == image %}active{% endif %}">
+                  <img alt="{{ image.alt | escape }}" data-high-res="{{ image | img_url: '1024x1024' }}" src="{{ image | img_url: 'compact' }}">
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% if product.images.size > 4 %}
+            <span class="product-thumbnails-navigation-next">&#xe600;</span>
+          {% endif %}
+        </div>
+      {% endif %}
+
+    {% else %}
+
+      {% for image in product.images %}
+        <div class="product-image">
+          <img alt="{{ image.alt | escape }}" src="{{ image | img_url: '1024x1024' }}">
+        </div>
+      {% endfor %}
+
+    {% endif %}
+  </div>
+
+  <div class="product-details-wrapper">
+    <div class="product-details">
+
+      {% if settings.product-vendor %}
+        <a class="product-vendor" href="{{ product.vendor | url_for_vendor }}">{{ product.vendor }}</a>
+      {% endif %}
+      <h1 class="product-title" itemprop="name">{{ product.title }}</h1>
+      <p class="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+
+        <span class="product-price-minimum money">
+          {{ variant.price_min | money }}
+        </span>
+
+        <span class="product-price-compare money">
+          {% if variant.compare_at_price_min > variant.price_min %}
+            {{ variant.compare_at_price_min | money }}
+          {% endif %}
+        </span>
+
+        {% if product.available %}
+          <link itemprop="availability" href="http://schema.org/InStock">
+        {% else %}
+          <link itemprop="availability" href="http://schema.org/OutOfStock">
+        {% endif %}
+
+      </p>
+
+      <form action="/cart/add" method="post">
+
+         <div class="product-options">
+         <select class="product-variants" name="id" id="product-variants-{{ product.id }}">
+            {% for variant in product.variants %}
+              <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="product-quantity inline-input-wrapper">
+          <label>{{ 'general.general.quantity' | t }}</label>
+          <input type="text" name="quantity" value="1" />
+        </div>
+
+        {% if settings.product-share-buttons %}
+          {% include 'share-buttons' %}
+        {% endif %}
+
+        <div class="add-to-cart">
+          {% if variant.available %}
+            <input type="submit" value="{{ 'products.product.add_to_cart' | t }}" />
+          {% else %}
+            <input type="button" class="disabled" disabled="disabled" value="{{ 'products.product.sold_out' | t }}" />
+          {% endif %}
+        </div>
+
+      </form>
+
+      {% if product.description != blank %}
+        <div class="product-description rte" itemprop="description">
+          {{ product.description }}
+        </div>
+      {% endif %}
+      
+      <!------- ACCORDION START --------->
+      
+  <ul class="accordion" >
+        {% unless settings.tab1 == blank %}
+        <li id="two" class="size">
+          <a href="#two"><h4 style="text-transform: uppercase;">{{ settings.tab1_title }}</h4></a>
+          <ul class="sub-menu">					
+            <li><p>Get information on how this product fits <a href="http://attic2zoo.com/pages/onitsuka-tiger-size-chart" target="_blank" title="size chart">click here</a></p></li>
+          </ul>
+        </li>
+        {% endunless %}
+        {% unless settings.tab2 == blank %}
+        <li id="three" class="delivery">
+          <a href="#three"><h4 style="text-transform: uppercase">{{ settings.tab2_title }}</h4></a>
+          <ul class="sub-menu">
+            <li><p>{{ settings.tab2 }}</p></li>
+          </ul>
+        </li>
+        {% endunless %}
+        {% unless settings.tab3 == blank %}
+        <li id="four" class="returns">
+          <a href="#four"><h4 style="text-transform: uppercase;">{{ settings.tab3_title }}</h4></a>
+          <ul class="sub-menu">					
+            <li><p>{{ settings.tab3 }}</p></li>
+          </ul>
+        </li>
+        {% endunless %}	
+      </ul>
+      
+      
+      <script type="text/javascript">
+        $(document).ready(function() {
+          // Store variables			
+          var accordion_head = $('.accordion > li > a'),
+              accordion_body = $('.accordion li > .sub-menu');
+          // Click function
+          accordion_head.on('click', function(event) {
+            // Disable header links				
+            event.preventDefault();
+            // Show and hide the tabs on click
+            if ($(this).attr('class') != 'active'){
+              accordion_body.slideUp('normal');
+              $(this).next().stop(true,true).slideToggle('normal');
+              accordion_head.removeClass('active');
+              $(this).addClass('active');
+            } else {
+              accordion_body.slideUp('normal');
+              accordion_head.removeClass('active');
+            }
+          });
+        });
+      </script>
+      
+      <!-------- ACCORDION END ------------>
+      
+  </div>
+
+</div>
+
+ <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+
+{% if settings.related-products %}
+  {% include 'related-products' %}
+{% endif %}
+
+<script>
+  // required for splitting variants
+  // see ProductView
+  window.products["{{ product.id }}"] = {{ product | json }};
+  FirstVariant["{{ product.id }}"] = {{ product.selected_or_first_available_variant.id | json }};
+</script>

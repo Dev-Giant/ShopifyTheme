@@ -1,0 +1,13 @@
+{% comment %}
+  DO NOT MODIFY THIS FILE DIRECTLY. THIS FILE WILL BE OVERWRITTEN.
+  YOU CAN MODIFY THE LIQUID CODE FOR THIS CUSTOM FIELD HERE:
+  https://customfields.bonify.io/dashboard/without-a-trace-foods.myshopify.com/articles/configure/227382/edit
+{% endcomment %}
+{% if article.metafields.custom_fields["shop_the_article"] != blank %}
+  <div class="custom-field custom-field__shop-the-article custom-field__type--text">
+    <h3 class="custom-field--title">Shop the article</h3>
+    <div class="custom-field--value">
+      {{ article.metafields.custom_fields["shop_the_article"] }}
+    </div>
+  </div>
+{% endif %}

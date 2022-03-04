@@ -1,0 +1,132 @@
+<footer class="lazyload bcg text-align--{{ section.settings.footer_alignment }}{% if section.settings.button_hide %} menu-hide{% endif %}">
+  {% if page.url  != "/pages/dojomojopromo"%}
+    <div class="search">
+      <p class="newsletter-heading">{{section.settings.newsletter_heading}}</p>
+      <div class="newsletter">
+          <div class="klaviyo-form-Tq8trD"></div>
+      </div>
+      {% if section.settings.footer_social_icons %}
+        <div class="social_icons">
+          {% render 'social-icons' %}
+        </div>
+      {% endif %}
+    </div>  
+	{% endif %}
+  <section class="menu">
+    <div class="menu-inner">
+      <div class="menu-inner-logo">
+        <a href="{{ routes.root_url }}" title="{{ shop.name }}">
+          <img src="{{ 'logo-pink2.svg' | asset_url }}" alt="{{ shop.name }} Logo">
+        </a>
+      </div>
+      {% if section.settings.copyright_text %}
+        <p class="copyright-txt">{{section.settings.copyright_text}}</p>
+      {% endif %}
+    {% unless section.settings.button_hide %}
+      {% if linklists[section.settings.footer_linklist_1] != blank %}
+          {% for link in linklists[section.settings.footer_linklist_1].links %}
+          <div class="menu-inner-item">
+            <h6>
+              {{ link.title }}
+            </h6>
+            <ul>
+            {% for sub_link in link.links %}
+              <li>
+                <a href="{{ sub_link.url }}">{{ sub_link.title }}</a>
+              </li>
+              {% for sub_sub_link in sub_link.links %}
+                <li>
+                  <a href="{{ sub_sub_link.url }}">{{ sub_sub_link.title }}</a>
+                </li>
+              {% endfor %}
+            {% endfor %}
+            </ul>
+          </div>
+          {% endfor %}
+      {% endif %}
+    {% endunless %}
+    </div>
+    {% if section.settings.button_hide %}
+    <div class="legal-info">
+    {% if linklists[section.settings.footer_linklist_2] != blank %}
+      <ul>
+        {% for link2 in linklists[section.settings.footer_linklist_2].links %}
+          <li>
+            <a href="{{ link2.url }}">{{ link2.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    </div>
+    {% endif %}
+    <p class="copyright">
+      &copy; {{ "now" | date: "%Y" }} {{ shop.name | link_to: '/' }}
+    </p>
+  </section>
+</footer> <!-- end footer -->
+
+{% schema %}
+{
+  "name": "Footer",
+  "class": "footer-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Center column"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_hide",
+      "label": "Button Hide"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_linklist_1",
+      "label": "Horizontal menu",
+      "info": "This menu won't show drop-down items"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_linklist_2",
+      "label": "Legal menu"
+    },
+    {
+      "type": "header",
+      "content": "Newsletter"
+    },
+    {
+      "type": "checkbox",
+      "id": "footer_newsletter",
+      "label": "Show newsletter form",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "newsletter_heading",
+      "label": "Newsletter heading",
+      "default": "Sign up for our newsletter"
+    },
+    {
+      "type": "richtext",
+      "id": "newsletter_richtext",
+      "label": "Text",
+      "default": "<p>Sign up to get the latest on sales, new releases and more…</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "footer_social_icons",
+      "label": "Show social media footer icons",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Sub footer"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright text"
+    }
+  ]
+}
+{% endschema %}

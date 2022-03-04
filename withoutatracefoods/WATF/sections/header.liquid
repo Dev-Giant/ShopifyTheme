@@ -1,0 +1,267 @@
+ <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "{{ shop.name }}",
+    "sameAs": [
+      "{{ settings.twitter_link }}",
+      "{{ settings.facebook_link }}",
+      "{{ settings.pinterest_link }}",
+      "{{ settings.instagram_link }}",
+      "{{ settings.tumblr_link }}",
+      "{{ settings.snapchat_link }}",
+      "{{ settings.youtube_link }}",
+      "{{ settings.vimeo_link }}"
+    ],
+    "url": "{{ shop.url }}{{ page.url }}"
+  }
+</script>
+
+ {% if template.name == 'index' %}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "{{ shop.name }}",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ routes.search_url }}?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "url": "{{ shop.url }}{{ page.url }}"
+    }
+  </script>
+{% endif %}
+
+{% assign disclosureEnabled = false %}
+
+<img id="icon-big8" src="{{ 'Icon_Top9.svg' | asset_url }}" alt="FREE FROM THE TOP9 ALLERGENS" />
+{% if section.settings.show_announcement_message != blank 
+	and section.settings.announcement_message != blank
+  	and page.url != '/pages/qq7naj'
+%}
+  <div class="announcementBar">
+    <div class="announcementBar__message">
+      {% if section.settings.announcement_link and section.settings.announcement_message != blank %}
+        <a href="{{ section.settings.announcement_link }}" tabindex="0">
+          <p>{{ section.settings.announcement_message }}</p>
+        </a>
+      {% elsif section.settings.announcement_message != blank %}
+        <p>{{ section.settings.announcement_message }}</p>
+      {% endif %}
+      <span class="ss-icon banner-close icon-close" tabindex="0"></span>
+    </div>
+  </div>
+{% endif %}
+
+<div id="header_inner"
+ {% if template.name == 'index' or page.handle == 'safe-practices' or page.handle == 'rad-rewards'%} class="white"{% endif %}>
+  <div id="mobile_bar" class="mobile_menu_bt">
+    <div class="mobile_menu_openbar">
+      <span id="mobile_menu_bt--open" class="icon-menu"></span>
+      <a href="/" class="mobile_logo"><img src="{{ 'logo-blue2.svg' | asset_url }}" alt="Without A Trace" /></a>
+      <a href="{{ routes.cart_url }}" class="cart_button">
+        <span class="icon-cart" aria-label="cart"></span><span class="cart_num">({{ cart.item_count }})</span>
+      </a>
+    </div>
+  </div>
+  <div id="top_bar" class="announcementBar--{{ section.settings.show_announcement_message }}">
+    <a href="{{ routes.root_url }}" title="{{ shop.name }}" class="logo">
+      <span class="icon_logo" aria-label="Without A Trace Logo"></span>
+    </a>
+
+  </div>
+  <div id="desktop_nav">
+    <div class="main_menu--left">
+      <ul class="menus
+     {% if page.url == "/pages/rad-rewards"%} selected_rad{% endif %}">
+        {% assign main_menu = linklists[section.settings.main_linklist] %}
+        {% for link in main_menu.links %}
+          {% assign current_dir = request.path | split: '/' %}
+          {% assign current_name = current_dir[1] %}
+          {% if current_name == 'products' %}
+            {% assign current_name = 'collections' %}
+          {% endif %}
+
+          {% assign current_link_type = link.type %}
+          {% if link.type == 'http_link' %}
+            {% assign current_link_type = 'blog_link' %}
+          {% endif %}
+          {% assign link_name = current_link_type | replace: '_link', 's' %}
+          {% if link.links == blank %}
+            <li class="no-dropdown">
+              <a tabindex="0" href="{{ link.url }}" {% if link.active %}class="active"{% endif %}>{{ link.title }}</a>
+            </li>
+          {% else %}
+            <li class="menu-item {{link.type}} {{current_dir[1]}}">
+             <a class="menu-item-title
+               {% if current_name  == link_name and page.url != "/pages/rad-rewards"%} selected
+               {% endif %}"
+             href="{{ link.url }}">
+             {{ link.title }}&nbsp;<span class="icon-down-arrow arrow menu-icon"></span>
+             </a>
+              	<ul class="dropdown_list{%if link.title == 'SHOP'%} shopmenu{% endif %}">
+                 {% render 'menu-list', link: link %}
+                 {% if link.title == 'SHOP' %}
+                   <li class="all_products">
+                     <a class="base-button pink-button" href="/collections/our-products">VIEW ALL PRODUCTS</a>
+                   </li>
+                 {% endif %}
+               </ul>
+           </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="top_bar_menu--right">
+      <ul>
+        <li class="account">
+          {% if customer %}
+            <a href="{{ routes.account_url }}" data-no-instant>
+          {% else %}
+            <a href="{{ routes.account_login_url }}" id="customer_login_link" data-no-instant>
+          {% endif %}
+            <span class="icon-account" aria-label="account"></span><span class="show-sp">ACCOUNT</span>
+          </a>
+        </li>
+        <li class="cart">
+          <a href="{{ routes.cart_url }}" class="cart_button">
+            <span class="icon-cart" aria-label="cart"></span><span class="show-sp">CART</span><span class="cart_num">({{ cart.item_count }})</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  <!--  {% if  template.name == 'collection' or template.name == 'product' %}
+    <div class="top_bar_menu--right">
+      <ul>
+        {% if customer %}
+          <li>
+            <a href="{{ routes.account_logout_url }}" id="customer_logout_link" data-no-instant>{{ 'layout.customer.log_out' | t }}</a>
+          </li>
+          {% if customer.name != blank %}
+            <li>
+              <a href="{{ routes.account_url }}" data-no-instant>{{ customer.name }}</a>
+            </li>
+          {% endif %}
+        {% else %}
+          <li class="account">
+            <a href="{{ routes.account_login_url }}" id="customer_login_link" data-no-instant>
+              <span class="icon-account" aria-label="account"></span><span class="show-sp">ACCOUNT</span>
+            </a>
+          </li>
+        {% endif %}
+
+        <li class="cart">
+          <a href="{{ routes.cart_url }}" class="cart_button">
+            <span class="icon-cart" aria-label="cart"></span><span class="show-sp">CART</span><span class="cart_num">({{ cart.item_count }})</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    {% endif %} -->
+  </div>
+</div>
+
+{% render 'mobilemenu' %}
+
+<style>
+  .featured_content a, .featured_content p {
+    color: {{ section.settings.announcement_color }};
+  }
+
+  .announcementBar .icon-close {
+    color: {{ section.settings.announcement_text_color }};
+  }
+
+  .promo_banner-show div.announcementBar {
+    background-color: {{ section.settings.announcement_color }};
+    {% if section.settings.announcement_homepage_only %}
+      display: none;
+    {% endif %}
+  }
+  {% if section.settings.announcement_homepage_only %}
+    .promo_banner-show.index div.announcementBar {
+      display: block;
+    }
+  {% endif %}
+
+  div.announcementBar__message a,
+  div.announcementBar__message p {
+    color: {{ section.settings.announcement_text_color }};
+  }
+
+</style>
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "header-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Announcement bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_announcement_message",
+      "label": "Show announcement",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "announcement_homepage_only",
+      "label": "Home page only",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "announcement_message",
+      "label": "Text",
+      "default": "Announcement message"
+    },
+    {
+      "type": "url",
+      "id": "announcement_link",
+      "label": "Link"
+    },
+    {
+      "type": "color",
+      "id": "announcement_color",
+      "label": "Bar",
+      "default": "#444"
+    },
+    {
+      "type": "color",
+      "id": "announcement_text_color",
+      "label": "Text",
+      "default": "#FFF"
+    },
+    {
+      "type": "header",
+      "content": "Top bar"
+    },
+    {
+     "type": "checkbox",
+     "id": "fix_top_bar",
+     "label": "Enable fixed ('sticky') top bar",
+     "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "header_social_icons",
+      "label": "Show social media header icons",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Navigation"
+    },
+    {
+      "type": "link_list",
+      "id": "main_linklist",
+      "label": "Main menu",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,20 @@
+{% assign blog_handles = "stories,recipes,tips" | split: "," %}
+
+{% assign alltags = '' | split: " " %}
+{% for handle in blog_handles %}
+  {% if blogs[handle].all_tags != blank %}
+    {% assign alltags = alltags | concat: blogs[handle].all_tags %}
+  {% endif %}
+{% endfor %}
+{% assign uniq_tags = alltags | uniq %}
+<script>console.log({{ all_tags | json }});</script>
+<div id="blog-tags">
+  <h2>Explore All Tags</h2>
+  <ul class="tags__block">
+    {% for tag in uniq_tags %}
+      <li>
+       <a href="{{ shop.url}}/blogs/trace-family/tagged/{{ tag | handleize }}" title="{{ tag }}">{{ tag }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

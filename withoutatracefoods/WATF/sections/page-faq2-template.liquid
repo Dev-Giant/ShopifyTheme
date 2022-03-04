@@ -1,0 +1,191 @@
+{% comment %}
+** FAQ(/pages/qq7naj) page - custom view **
+- Page template section
+- Uses blocks
+{% endcomment %}
+
+<section class="container faq-header">
+  <img src="https://cdn.shopify.com/s/files/1/0284/8804/0557/files/faq_hero.png?v=1643851768" alt="">
+  <div class="header_inner">
+    <h1>OH, HELLO!</h1>
+    <p>We’re so glad you’re here!  If you are reading this, it probably means you have questions about our products.<br>
+    We want to help you get the answers you need to figure out if our products work for you!</p>
+    <p>Below are answers to our most frequently asked questions. If you still have questions, we want to answer them! You can send us a text at:</p>
+    <a class="faqh2" href="sms:+19177689704"><img src="{{ 'icon_SMS.svg' | asset_url }}" alt="">917.768.9704</a>
+    </div>
+</section>
+<section class="container faq-body">
+  <div class="subtitle">Answers to Our Most</div>
+  <div class="faqContent {% if section.settings.page_image %}faqImage--true{% endif %} faqImage--{{ section.settings.image_alignment }}">
+    <div class="faqColumn">
+      {% if section.blocks.size > 0 %}
+        <dl class="faqAccordion">
+          {% for block in section.blocks %}
+            {% if block.type == "heading" and block.settings.heading != blank %}
+              <h2 class="faq-heading">{{ block.settings.heading }}</h2>
+            {% endif %}
+            {% if block.settings.title != blank %}
+              <dt><button type="button" aria-controls="panel-{{ block.id }}" aria-expanded="true">{{ block.settings.title }}<span class="icon-plus"></span></button></dt>
+              <dd id="panel-{{ block.id }}" aria-hidden="false">
+                {{ block.settings.subtitle }}
+              </dd>
+            {% endif %}
+          {% endfor %}
+        </dl>
+      {% endif %}
+    </div>
+  </div>
+</section>
+<section class="faqColumn faq-footer">
+  <h3>Don’t see an answer to<br>your question here?<br>Text us!</h3>
+  <a class="faqh2" href="sms:+19177689704"><img src="{{ 'icon_SMS.svg' | asset_url }}" alt="">917.768.9704</a>
+  <ul>
+    <li><a href="/pages/our-story">About Without A Trace Foods</a></li>
+    <li><a href="/collections/our-products">Shop Online</a></li>
+  </ul>
+</section>
+{% schema %}
+  {
+    "name": "FAQ for qq7naj",
+    "class": "faq-template-section image-with-text-overlay-section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image",
+        "info": "1600 x 600px recommended"
+      },
+      {
+        "type": "checkbox",
+        "id": "slideshow_post_darken",
+        "label": "Darken banner image",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "FAQ image"
+      },
+      {
+        "type": "image_picker",
+        "id": "page_image",
+        "label": "Image",
+        "info": "1000 x 1000px recommended"
+      },
+      {
+        "type": "select",
+        "id": "image_alignment",
+        "label": "Position",
+        "default": "right",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "faq__footer--heading",
+        "label": "FAQ Footer Heading"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Heading",
+        "type": "heading",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Title"
+          }
+        ]
+      },
+      {
+        "name": "Frequently asked question",
+        "type": "Content",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Question"
+          },
+          {
+            "type": "richtext",
+            "id": "subtitle",
+            "label": "Answer"
+          }
+        ]
+      }
+    ],
+    "default": {
+      "settings": {
+      },
+      "blocks": [
+        {
+          "type": "heading",
+          "settings": {
+            "heading": "Section"
+          }
+        },
+        {
+          "type": "Content",
+          "settings": {
+            "title": "Title",
+            "subtitle": "<p>Include a helpful and informative answer to the frequently asked question here.</p>"
+          }
+        },
+        {
+          "type": "Content",
+          "settings": {
+            "title": "Title",
+            "subtitle": "<p>Include a helpful and informative answer to the frequently asked question here.</p>"
+          }
+        },
+        {
+          "type": "Content",
+          "settings": {
+            "title": "Title",
+            "subtitle": "<p>Include a helpful and informative answer to the frequently asked question here.</p>"
+          }
+        },
+        {
+          "type": "heading",
+          "settings": {
+            "heading": "Section"
+          }
+        },
+        {
+          "type": "Content",
+          "settings": {
+            "title": "Title",
+            "subtitle": "<p>Include a helpful and informative answer to the frequently asked question here.</p>"
+          }
+        },
+        {
+          "type": "Content",
+          "settings": {
+            "title": "Title",
+            "subtitle": "<p>Include a helpful and informative answer to the frequently asked question here.</p>"
+          }
+        },
+        {
+          "type": "Content",
+          "settings": {
+            "title": "Title",
+            "subtitle": "<p>Include a helpful and informative answer to the frequently asked question here.</p>"
+          }
+        }
+      ]
+    }
+  }
+{% endschema %}

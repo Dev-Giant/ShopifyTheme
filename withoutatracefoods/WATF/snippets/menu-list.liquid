@@ -1,0 +1,26 @@
+{% for sub_link in link.links %}
+    <li class="sub-menu" aria-haspopup="true" aria-expanded="false">
+      <a tabindex="0" {% if sub_link.url == 'http://' or sub_link.url == '' or sub_link.url == '/' or sub_link.url == 'https://' or sub_link.url == '#' %}
+          class="slicknav_item {% if sub_link.active or sub_link.child_active %}active{% endif %}"
+        {% else %}
+          class="{% if sub_link.active or sub_link.child_active %}active{% endif %}" href="{{ sub_link.url }}"
+        {% endif %}>
+        {% if link.title == 'SHOP' %}
+          {% assign img_url = sub_link.url | replace: "/products/", "" | replace: "/collections/", "" | replace: "cookie", "cookies" | replace: "/pages/", "" %}
+          <img src="{{ '//cdn.shopify.com/s/files/1/0284/8804/0557/files/menu_' | append: img_url }}.png" alt="{{sub_link.title}}">
+          {% if img_url != "rad-rewards" %}
+          <span class="link-title">
+            <span class="featured_review_stars">
+              <i class="spr-icon spr-icon-star"></i>
+              <i class="spr-icon spr-icon-star"></i>
+              <i class="spr-icon spr-icon-star"></i>
+              <i class="spr-icon spr-icon-star"></i>
+              <i class="spr-icon spr-icon-star"></i>
+            </span>
+            {{ sub_link.title }}</span></a>
+          {% endif %}
+        {% else %}
+          <span class="link-title">{{ sub_link.title }}</span></a>
+        {% endif %}
+    </li>
+{% endfor %}

@@ -1,0 +1,15 @@
+{% if link.links == blank %}
+  <li class="no-dropdown">
+    <a tabindex="0" href="{{ link.url }}" {% if link.active %}class="active"{% endif %}>{{ link.title }}</a>
+  </li>
+{% else %}
+  <li class="dropdown sub-menu" aria-haspopup="true" aria-expanded="false">
+    <a tabindex="0" class="sub-menu--link {% if link.active or link.child_active %} active {% endif %} {% if link.url == 'http://' or link.url == '' or link.url == '/' or link.url == 'https://' or link.url == '#' %} slicknav_item {% endif %}"
+     href="{% if link.handle == 'shop' %}{{ link.url }}{% else %}#{% endif %}">
+    {{ link.title }}&nbsp;<span class="icon-down-arrow arrow menu-icon"></span>
+    </a>
+    <ul class="submenu_list">
+      {% render 'menu-list', link: link %}
+    </ul>
+  </li>
+{% endif %}

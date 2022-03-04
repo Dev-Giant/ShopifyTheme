@@ -1,0 +1,102 @@
+{% comment %}
+** Carousel - homepage partial **
+- Draggable section
+- Uses blocks
+{% endcomment %}
+<h2>As Seen In</h2>
+<span id="emailset"></span>
+{% if section.blocks.size > 0 %}
+  <section id="carousel" class="carousel">
+    {% for block in section.blocks %}
+      <div class="carousel-item">
+        <a {% if block.settings.link-url != blank %}href="{{ block.settings.link-url }}"{% endif %}>
+          {% if block.settings.image %}
+            {% render 'image-element',
+                    image: block.settings.image,
+                    alt: block.settings.image.link-alt
+            %}
+          {% endif %}
+        </a>
+      </div>
+    {% endfor %}
+  </section>
+
+  <script>
+
+  $(document).ready(function(){
+    $('#carousel').slick({
+      dots: false,
+      arrows: true,
+      infinite: true,
+      autoplay: {{section.settings.autoplay}},
+      slidesToShow: {{section.settings.number}},
+      slidesToScroll: {{section.settings.scroll-number}},
+      responsive: [
+        {
+          breakpoint: 960,
+          settings: {
+            slidesToShow: 2
+          }
+        }
+      ]
+    });
+  });
+  </script>
+{% endif %}
+{% schema %}
+{
+  "name": "Carousel",
+  "class": "carousel-section",
+  "settings": [
+    {
+      "type": "radio",
+      "id": "autoplay",
+      "label": "Autoplay",
+       "options": [
+         { "value": "true", "label": "True" },
+         { "value": "false", "label": "False" }
+       ],
+      "default": "true"
+    },
+    {
+      "type": "number",
+      "id": "number",
+      "label": "Image Number",
+      "default": 4
+    },
+    {
+      "type": "number",
+      "id": "scroll-number",
+      "label": "Scroll Image Number",
+      "default": 1
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "link-alt",
+          "label": "Link Alt"
+        },
+        {
+          "type": "text",
+          "id": "link-url",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Carousel",
+    "category": "Image"
+  }]
+}
+{% endschema %}

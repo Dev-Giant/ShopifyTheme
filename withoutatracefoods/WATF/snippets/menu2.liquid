@@ -1,0 +1,12 @@
+{% if link.links == blank %}
+  <li class="no-dropdown">
+    <a tabindex="0" href="{{ link.url }}" {% if link.active %}class="active"{% endif %}>{{ link.title }}</a>
+  </li>
+{% else %}
+  <li class="menu-item">
+    <a class="menu-item-title" href="{{ link.url }}">{{ link.title }}&nbsp;<span class="icon-down-arrow arrow menu-icon"></span></a>
+      <ul class="dropdown_list">
+        {% render 'menu-list', link: link %} 
+      </ul>
+  </li>
+{% endif %}

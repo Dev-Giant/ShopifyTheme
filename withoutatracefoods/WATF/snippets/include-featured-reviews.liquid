@@ -1,0 +1,36 @@
+{% comment %}
+  Featured Review
+{% endcomment %}
+
+{% for block in section.blocks %}
+  {%- assign product = all_products[block.settings.review_product] -%}
+  {%- assign img = product.media[0] -%}
+  {%- assign stars = block.settings.stars_num -%}
+  {%- assign empty_stars = 5 | minus: stars -%}
+  {%- assign title = block.settings.title -%}
+  {%- assign review = block.settings.review -%}
+  {%- assign reviwer = block.settings.reviwer -%}
+  <article class="featured_review_item">
+    <a href="{{ product.url | append: '#shopify-product-reviews'}}">
+      <img
+        class="review_img"
+        src="{{ img | img_url: '720x' }}"
+        data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+        data-src="{{ img | img_url: '2048x' }}"
+        alt="{{ img.alt | escape }}">
+      <div class="featured_review_stars">
+        {% for i in (1..stars) %}
+          <i class="spr-icon spr-icon-star"></i>
+        {% endfor %}
+        {% for i in (1..empty_stars) %}
+          <i class="spr-icon spr-icon-star-empty"></i>
+        {% endfor %}
+      </div>
+    <div class="featured_review_body">
+      <h3>{{title}}</h3>
+      <p>{{review  | truncate: 178}}</p>
+      <span class="reviewer">{{reviwer}}</span>
+    </div>
+    </a>
+  </article>
+{% endfor %}

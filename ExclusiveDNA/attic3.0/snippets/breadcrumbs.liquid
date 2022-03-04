@@ -1,0 +1,74 @@
+<div class="breadcrumbs">
+    <a href="/" title="Home">Home</a>
+    {% if template contains 'page' %}
+    <span class="divider">/</span>
+    <span>{{ page.title }}</span>
+	{% elsif template contains "product" %}
+		{% if product.collections %}
+    		<span class="divider">/</span>
+    		{{ 'collections.listing.header' | t }} 
+    	{% else %}
+    		<span class="divider">/</span>
+    		{{ 'general.breadcrumbs.products' | t }}
+    	{% endif %}
+	<span class="divider">/</span>
+	<span>{{ product.title }}</span>
+  
+	{% elsif template contains "list-collections" %}
+    <span class="divider">/</span>
+  	<span>{{ 'collections.listing.header' | t }}</span>
+	{% elsif template contains "collection" %}
+  	<span class="divider">/</span>
+	{{ 'collections.listing.header' | t }}
+  	<span class="divider">/</span>
+	{{ collection.title }}
+	
+	{% elsif template contains "blog" %}
+  	<a href="{{ blog.url }}">{{ blog.title }}</a>
+	{% elsif template contains "article" %}
+    <span>{{ blog.title | link_to: blog.url }}</span>
+    <span class="divider">/</span>
+	<span>{{ article.title | truncatewords: 2 }}</span>
+
+	{% elsif template contains "cart" %}
+    <span class="divider">/</span>
+	<span>{{ 'cart.general.header' | t }}</span>
+	{% elsif template contains "404" %}
+	<span class="divider">/</span>
+	<span>{{ 'general.breadcrumbs.404' | t }}</span>
+	{% elsif template contains "search" %}
+    <span class="divider">/</span>
+	<span>{{ 'general.search.header' | t }}</span>
+	{% elsif template contains "customers/login" %}
+    <span class="divider">/</span>
+	{{ 'general.breadcrumbs.account' | t }}
+	<span class="divider">/</span>
+	<span>{{ 'customers.login.header' | t }}</span>
+	{% elsif template contains "customers/reset_password" %}
+	<span class="divider">/</span>
+	{{ 'general.breadcrumbs.account' | t }}
+	<span class="divider">/</span> <span>
+	{{ 'customers.reset_password.header' | t }}</span>
+	{% elsif template contains "customers/activate_account" %}
+    <span class="divider">/</span>
+	{{ 'general.breadcrumbs.account' | t }}
+	<span class="divider">/</span>
+	<span>{{ 'customers.activate_account.header' | t }}</span>
+	{% elsif template contains "customers/account" %}
+	<span class="divider">/</span>
+	<span>{{ 'general.breadcrumbs.account' | t }}</span>
+	{% elsif template contains "customers/addresses" %}
+    <span class="divider">/</span>{{ 'general.breadcrumbs.account' | t }}
+	<span class="divider">/</span> <span>{{ 'customers.addresses.header' | t }}</span>
+	{% elsif template contains "customers/register" %}
+	<span class="divider">/</span>
+	{{ 'general.breadcrumbs.account' | t }}
+	<span class="divider">/</span>
+	<span>{{ 'customers.register.header' | t }}</span>
+    {% elsif template contains "customers/order" %}
+    <span class="divider">/</span>
+	{{ 'general.breadcrumbs.account' | t }}
+	<span class="divider">/</span>
+	<span>{{ 'customers.order.header' | t: order_number: order.name }}</span>  
+	{% endif %}
+</div>

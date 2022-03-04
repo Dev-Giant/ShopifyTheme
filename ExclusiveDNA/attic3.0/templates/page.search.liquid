@@ -1,0 +1,38 @@
+<h1 class="page-title" style="padding: 50px 0px;
+  height: 100px;">{{ page.title }}</h1>
+
+{% include 'breadcrumbs' %}
+
+<div class="page-content rte">
+  <script>
+	if (typeof _isp_host_prefix === 'undefined') {
+		var _isp_host_prefix = null;
+		try {
+			_isp_host_prefix = localStorage.getItem('_isp_host_prefix');
+			if (!_isp_host_prefix.match(/^[a-z0-9-]+$/)) {
+				_isp_host_prefix = null;
+			}
+		} catch (e) {}
+	}
+</script>
+<link rel="stylesheet" href="https://acp-magento.appspot.com/css/jquery.raty.css?v=1.0.1">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+		try{
+			var $jquery_isp = jQuery.noConflict(true);
+		} catch(e) {}
+		var __isp_serp_uuid 		= "a06d4a51-13f4-47ea-aaca-a730bb226454";
+		var __isp_serp_store_id 	= "5542497";
+	</script>
+
+<script type="text/javascript" src="https://acp-magento.appspot.com/js/jquery.history.js?v=1.0.6"></script>
+<link rel="stylesheet" type="text/css" href="https://acp-magento.appspot.com/css/search_result_page.css?v=1.2.29">
+<script type="text/javascript" src="https://acp-magento.appspot.com/js/search_result_page.js?isp_platform=shopify&amp;v=1.9.53"></script>
+<script type="text/javascript" src="https://acp-magento.appspot.com/js/jquery.raty.js?v=1.0.7"></script>
+
+<!-- IE8 fix - keep the comment open/close in different lines --> 
+<!-- [if lt IE 9]><style>LI.isp_grid_product .isp_product_image { position: static; 	margin-right:0;	}</style> <![endif] -->
+  {{ page.content }}
+</div>
+
+

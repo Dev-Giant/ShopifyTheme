@@ -1,0 +1,51 @@
+{% comment %}
+  The contents of the product.liquid template can be found in /sections/product-template.liquid
+{% endcomment %}
+{% render 'product-structured-data' %}
+<div id="product-detail">
+  {% section 'product-template' %}
+  {% if product.handle == "snack-box-subscribe-save"
+	or product.title contains "Snack Box Gift Subscription"
+    or product.title == "Starter Pack"
+    or product.title == "Super Snack Box Subscribe & Save"%}
+      {% section 'icon-bar' %}
+  {% endif %}
+  {% unless product.handle == 'gift-wrapping' %}
+  <div id="looxReviews" data-product-id="{{product.id}}" class="loox-reviews-default"></div>
+<!--   <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div> -->
+  {% unless product.handle == 'snack-box-subscribe-save' or product.handle =='big-easter-hop' or product.handle =='little-easter-hop' %}
+    {% section 'product-recommendations' %}
+    {% section 'variety-box' %}
+  {% endunless %}
+  </div>
+  {% endunless %}
+<div id="whitebg" class=""></div>
+
+<script type="text/javascript">
+  var _learnq = _learnq || [];
+
+  var item = {
+    Name: {{ product.title|json }},
+    ProductID: {{ product.id|json }},
+    Categories: {{ product.collections|map:'title'|json }},
+    ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
+    URL: "{{ shop.secure_url }}{{ product.url }}",
+    Brand: {{ product.vendor|json }},
+    Price: {{ product.price|money|json }},
+    CompareAtPrice: {{ product.compare_at_price_max|money|json }}
+  };
+
+  _learnq.push(['track', 'Viewed Product', item]);
+  _learnq.push(['trackViewedItem', {
+    Title: item.Name,
+    ItemId: item.ProductID,
+    Categories: item.Categories,
+    ImageUrl: item.ImageURL,
+    Url: item.URL,
+    Metadata: {
+      Brand: item.Brand,
+      Price: item.Price,
+      CompareAtPrice: item.CompareAtPrice
+    }
+  }]);
+</script>

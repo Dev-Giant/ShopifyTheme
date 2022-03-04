@@ -1,0 +1,53 @@
+{% if icon_color == 'blue'%}
+  {% assign icon_type = '_Solid.svg' %}
+{% else %}
+  {% assign icon_type = '_Line_W.svg' %}
+{% endif %}
+{% if icon_bottom_color == 'white'%}
+  {% assign icon_bottom_type = '_W.svg' %}
+{% else %}
+  {% assign icon_bottom_type = '.svg' %}
+{% endif %}
+
+<div class="icons-bar">
+  <div class="icons-bar-item">
+    <img src="{{ 'icon_NoPeanuts' | append: icon_type | asset_url }}" alt="NoPeanuts">
+    <span class="item-name"><span>No</span>Peanuts</span>
+  </div>
+  <div class="icons-bar-item">
+    <img src="{{ 'icon_NoTreeNuts' | append: icon_type | asset_url }}" alt="NoTreeNuts">
+    <span class="item-name"><span>No</span>Tree Nuts</span>
+  </div>
+  <div class="icons-bar-item">
+    <img src="{{ 'icon_NoMilk' | append: icon_type | asset_url }}" alt="NoMilk">
+    <span class="item-name"><span>No</span>Milk</span>
+  </div>
+  <div class="icons-bar-item">
+    <img src="{{ 'icon_NoEggs' | append: icon_type | asset_url }}" alt="NoEggs">
+    <span class="item-name"><span>No</span>Eggs</span>
+  </div>
+  <div class="icons-bar-item">
+    <img src="{{ 'icon_NoWheat' | append: icon_type | asset_url }}" alt="NoWheat">
+    <span class="item-name"><span>No</span>Wheat</span>
+  </div>
+  <div class="icons-bar-item">
+    <img src="{{ 'icon_NoSoybean' | append: icon_type | asset_url }}" alt="NoSoybean">
+    <span class="item-name"><span>No</span>Soybean</span>
+  </div>
+  <div class="icons-bar-item">
+    <img src="{{ 'icon_NoSesame' | append: icon_type | asset_url }}" alt="NoSesame">
+    <span class="item-name"><span>No</span>Sesame</span>
+  </div>
+  <div class="icons-bar-item">
+    <img src="{{ 'icon_NoShellfish' | append: icon_type | asset_url }}" alt="NoShellfish">
+    <span class="item-name"><span>No</span>Shellfish</span>
+  </div>
+  <div class="icons-bar-item">
+    <img src="{{ 'icon_NoFish' | append: icon_type | asset_url }}" alt="NoFish">
+    <span class="item-name"><span>No</span>Fish</span>
+  </div>
+</div>
+<div class="last-text icons-bar__bottom">
+    <img src="{{ 'GF-Certificate_Badge' | append: icon_bottom_type | asset_url }}" alt="Gluten Free">
+  	<img src="{{ 'Icon_PlantBased' | append: icon_bottom_type | asset_url }}" alt="Plant Based">
+</div>

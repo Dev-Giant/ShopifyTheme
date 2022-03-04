@@ -1,0 +1,67 @@
+{% assign icon_color = 'white' %}
+<div class="icons-bar-section">
+{% unless product.template_suffix == "one-column"
+	or product.handle == "snack-box-subscribe-save"
+	or product.title contains "Snack Box Gift Subscription"
+  or product.title == "Starter Pack"
+  or product.title == "Super Snack Box Subscribe & Save"%}
+  {% if section.settings.h1_show %}
+    <h1>
+      {{ section.settings.h1 | escape }}
+    </h1>
+  {% elsif section.settings.h2_show %}
+    <h2>
+      {{ section.settings.h2 }}
+    </h2>
+  {% endif %}
+	{% else %}
+		{% assign icon_color = 'blue' %}
+{% endunless %}
+{% include 'icons-bar-inner', icon-color: icon_color %}
+  {% if section.settings.button_label != blank%}
+    <a href="{{ section.settings.button_link }}" class="base-button pink-button">
+      {{ section.settings.button_label }}
+    </a>
+  {% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "Icon list",
+    "class": "icons-list-section",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "h1_show",
+        "label": "h1 Show"
+      },
+      {
+        "type": "text",
+        "id": "h1",
+        "label": "h1",
+        "default": "Allergen-Free Snacks"
+      },
+      {
+        "type": "checkbox",
+        "id": "h2_show",
+        "label": "h2 Show"
+      },
+      {
+        "type": "text",
+        "id": "h2",
+        "label": "h2",
+        "default": "Allergens and Chemicals?<br>Nope, Nada, Never!"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      }
+    ]
+  }
+{% endschema %}

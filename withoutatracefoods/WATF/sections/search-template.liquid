@@ -1,0 +1,209 @@
+{% assign search_pagination = section.settings.pagination_limit %}
+{% paginate search.results by search_pagination %}
+
+<div class="container faq-header">
+  <h1>{{ 'general.search.title' | t }}</h1>
+</div>
+<form class="faq-search" action="{{ routes.search_url }}">
+  <input type="text" name="q" class="search_box" placeholder="Help me with…" value="{{ search.terms }}" />
+  <button type="submit"><img src="{{ 'icon_magnifying_glass.svg' | asset_url }}" alt="Search Button"></button>
+</form>
+<div class="faq-body">
+  {% if search.performed %}
+    <div class="section clearfix">
+      {% if section.settings.search_breadcrumb %}
+      <div class="sixteen columns breadcrumb">
+        <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@id": "{{ shop.url }}",
+                  "name": "{{ 'general.breadcrumbs.home' | t }}"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@id": "{{ routes.search_url }}",
+                  "name": "{{ 'general.search.title' | t }}"
+                }
+              }
+            ]
+          }
+        </script>
+        <div class="breadcrumb eight columns alpha">
+          <span><a href="{{ shop.url }}" title="{{ shop.name | escape }}" class="breadcrumb_link"><span>{{ 'general.breadcrumbs.home' | t }}</span></a></span>
+          <span class="icon-right-arrow"></span>
+          <span><a href="{{ routes.search_url }}" class="breadcrumb_link"><span>{{ 'general.search.title' | t }}</span></a></span>
+
+          {% if paginate.pages != 0 %}
+            <span class="icon-right-arrow"></span>
+            {{ 'general.breadcrumbs.page' | t: current_page: paginate.current_page, pages: paginate.pages }}
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  {% endif %}
+  <div class="faqContent result">
+    {% if search.performed %}
+       {% if settings.search_option == 'everything' or search.results.first.price == blank %}
+          {% if search.results == empty %}
+            <div class="no-result ">
+              {{ 'general.search.no_results_html' | t: terms: search.terms }}
+            </div>
+          {% else %}
+            <h2>Result of {{ search.terms }}</h2>
+            {% for item in search.results %}
+              {% assign featured_image = false %}
+              {% assign result_img = item.featured_media.preview_image %}
+              {% if item.object_type == 'article' %}
+                {% assign featured_image = true %}
+                {% assign result_img = item.image %}
+              {% elsif item.featured_media.preview_image %}
+                {% assign featured_image = true %}
+              {% endif %}
+              {% if featured_image %}
+                <div class="result-item">
+                  <div class="image">
+                    <a href="{{ item.url }}" title="{{ item.title | escape }}">
+                     {% render 'image-element',
+                             image: result_img,
+                             alt: item.title,
+                             object_fit: true
+                     %}
+                    </a>
+                  </div>
+              {% else %}
+                <div class="result-item false">
+              {% endif %}
+                <div class="text">
+                  <h5 class="sub_title">
+                    <a href="{{ item.url }}" title="{{ item.title | escape }}">{{ item.title }}</a>
+                  </h5>
+                  {% if item.price %}
+                     <div class="info">
+                        <span class="product__price price">
+                          {% if item.compare_at_price_max > item.price %}
+                            <span class="was-price">
+                              <span class="money">
+                                {% render 'price-element', price: item.compare_at_price_max %}
+                              </span>
+                            </span>
+                          {% endif %}
+
+                          {% if item.available %}
+                            {% if item.price_varies %}
+                              {% if item.compare_at_price_max > item.price %}
+                                <br />
+                              {% endif %}
+                              <small><em>{{ 'products.general.from' | t }}</em></small>
+                            {% endif %}
+                            <span class="money">{% render 'price-element', price: item.price_min %}</span>
+                          {% else %}
+                            <span class="money">{% render 'price-element', price: item.price_min %}</span><!-- - {{ 'products.product.sold_out' | t }}-->
+                          {% endif %}
+                        </span>
+                    </div>
+                  {% endif %}
+                  {% if item.object_type == 'article' %}
+                    <p class="blog_meta">
+                      {% if section.settings.blog_author %}
+                        <span>{{ 'blogs.article.by_author' | t: author: item.author }}</span>
+                      {% endif %}
+
+                      {% if section.settings.blog_date %}
+                        <span>{{ item.published_at | date: format: "month_day_year" }}</span>
+                      {% endif %}
+                    </p>
+                  {% endif %}
+                  {% if item.excerpt %}
+                    <div class="excerpt">{{ item.excerpt }}</div>
+
+                    {% if section.settings.read_more_link %}
+                      <p>
+                        <a href="{{ item.url }}" title="{{ item.title | escape }}">{{ 'blogs.general.continue_reading_html' | t }}</a>
+                      </p>
+                    {% endif %}
+                  {% endif %}
+                  <p>
+                  <a href="{{ item.url }}" title="{{ item.title | escape }}">
+                    {{ item.content | strip_html | truncatewords: 40 | highlight: search.terms | replace: 'Description', '' | replace: 'Specs', '' | replace: 'Shipping', '' | replace: 'Size', '' }}
+                  </a>
+                  </p>
+                </div>
+              </div>
+            {% endfor %}
+          {% endif %}
+       {% else %}
+       {% endif %}
+       {% render 'pagination', paginate: paginate %}
+    {% else %}
+        <div class="no-result ">Oops! You forgot to type, try again :-)</div>
+    {% endif %}
+  </div>
+</div>
+{% endpaginate %}
+
+{% schema %}
+
+{
+  "name": "Search",
+  "class": "search-template-section",
+  "settings": [
+      {
+      "type": "checkbox",
+      "id": "search_breadcrumb",
+      "label": "Show breadcrumb",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "products_per_row",
+      "label": "Products per row",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "pagination_limit",
+      "label": "Products per page",
+      "min": 2,
+      "max": 50,
+      "step": 1,
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Blog results"
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_author",
+      "label": "Show author",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "read_more_link",
+      "label": "Show continue reading link for blog post excerpts",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_date",
+      "label": "Show date",
+      "default": true
+    }
+  ]
+}
+
+{% endschema %}

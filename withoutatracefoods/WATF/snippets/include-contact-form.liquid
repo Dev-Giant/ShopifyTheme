@@ -1,0 +1,50 @@
+<div class="contact-form__wrapper">
+  <div class="contact_content">
+  {% form 'contact' %}
+    {% if form.posted_successfully? %}
+      <p class="quote">{{ 'contact.form.post_success' | t }}</p>
+    {% endif %}
+
+    {% if form.errors %}
+      <p class="quote">{{ 'general.forms.post_error' | t }}</p>
+
+    {% assign message = 'contact.form.message' | t %}
+      <ul class="center">
+        {% for field in form.errors %}
+          {% if field == 'form' %}
+            <li>
+              {{ form.errors.messages[field] }}
+            </li>
+          {% else %}
+            <li>
+              {% assign field_name = field | replace: 'body', message %}
+              {{ 'general.forms.post_field_error_html' | t: field: field_name, error: form.errors.messages[field] }}
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    {% endif %}
+      <div class="item">
+        <label for="contactFormFirstName"><span>First Name</span></label>
+        <input type="text" id="contactFormFirstName" name="contact[first-name]" autocapitalize="words" value="{% if form.first-name %}{{ form.first-name }}{% elsif customer %}{{ customer.first-name }}{% endif %}" required="required">
+      </div>
+      <div class="item">
+        <label for="contactFormLastName"><span>Last Name</span></label>
+        <input type="text" id="contactFormLastName" name="contact[last-name]" autocapitalize="words" value="{% if form.last-name %}{{ form.last-name }}{% elsif customer %}{{ customer.last-name }}{% endif %}" required="required">
+      </div>
+      <div class="item">
+        <label for="contactFormEmail"><span>{{ 'contact.form.email' | t }}</span></label>
+        <input type="email" id="contactFormEmail" name="contact[email]" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" required="required">
+      </div>
+      <div class="item">
+        <label for="contactFormSubject"><span>Subject</span></label>
+        <input type="text" id="contactFormSubject" name="contact[subject]" autocapitalize="words" value="{% if form.subject %}{{ form.subject }}{% elsif customer %}{{ customer.subject }}{% endif %}" required="required">
+      </div>
+      <div class="item">
+        <label for="contactFormMessage"><span>{{ 'contact.form.message' | t }}</span></label>
+        <textarea rows="5" id="contactFormMessage" name="contact[body]" required="required">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+      </div>
+      <p>* Required Field</p>
+      <input type="submit" class="submit action_button" value="SUBMIT" />
+    {% endform %}
+</div>

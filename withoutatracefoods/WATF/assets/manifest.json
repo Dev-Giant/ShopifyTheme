@@ -1,0 +1,27 @@
+{
+  "name": "Without A Trace Foods",
+  "short_name": "Without A Trace",
+  "icons": [
+    {
+      "src": "\/\/cdn.shopify.com\/s\/files\/1\/0284\/8804\/0557\/files\/icon-192.png",
+      "type": "image\/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "\/\/cdn.shopify.com\/s\/files\/1\/0284\/8804\/0557\/files\/maskable_icom.png",
+      "type": "image\/png",
+      "sizes": "196x196",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "\/\/cdn.shopify.com\/s\/files\/1\/0284\/8804\/0557\/files\/icon-512.png",
+      "type": "image\/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "https:\/\/www.withoutatracefoods.com\/",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "\/",
+  "theme_color": "#ffffff"
+}

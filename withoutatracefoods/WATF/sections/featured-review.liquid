@@ -1,0 +1,102 @@
+{% if section.settings.title != blank %}
+  <h2 class="section-header home text-align--center">
+    {{ section.settings.title | escape }}
+  </h2>
+{% endif %}
+<section id="featured_review" class="carousel">
+  {% include 'include-featured-reviews' %}
+</section>
+<script>
+
+$(document).ready(function(){
+  $('#featured_review').slick({
+    arrows: true,
+    infinite: true,
+    slidesToShow: {{section.settings.reviews_per_row}},
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 960,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
+});
+</script>
+{% schema %}
+  {
+    "name": "Featured Review",
+    "class": "featured-review-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Snack Superhero Shout Outs"
+      },
+      {
+        "type": "range",
+        "id": "reviews_per_row",
+        "label": "Reviews per row",
+        "min": 1,
+        "max": 3,
+        "step": 1,
+        "default": 3
+      }
+    ],
+    "blocks": [
+      {
+        "type": "quote",
+        "name": "review",
+        "settings": [
+          {
+            "type": "product",
+            "id": "review_product",
+            "label": "Review Product"
+          },
+          {
+            "type": "number",
+            "id": "stars_num",
+            "label": "Number of Stars",
+            "info": "Maximum is 5"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "review",
+            "label": "Review",
+            "info": "Maximun is 178"
+          },
+          {
+            "type": "text",
+            "id": "reviwer",
+            "label": "Reviewer Name"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Featured Review",
+        "category": "Product",
+        "blocks": [
+          {
+            "type": "quote"
+          },
+          {
+            "type": "quote"
+          },
+          {
+            "type": "quote"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,10 @@
+{% capture linkHandle %}{{ link.title | handle }}{% endcapture %}
+{% capture megaNavTrigger %}{{ settings.mega-nav-trigger-1 | handle }}{% endcapture %}
+{% assign hasDropdown = false %}
+{% assign hasMegaNav = false %}
+{% if linkHandle == megaNavTrigger %}
+  {% assign hasMegaNav = true %}
+
+{% elsif linklists[linkHandle] and linklists men.links.size > 0 %}
+  {% assign hasDropdown = true %}
+{% endif %}
