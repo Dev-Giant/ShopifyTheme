@@ -1,20 +1,24 @@
 {% assign bundle_min = 0 %}
-{% assign bundle_max = 12 %}
-{% assign subscription_product = product.metafields.subscriptions %}
+{% assign bundle_max = 7 %}
+{% assign collection_handles = product.collections | map: 'handle' %}
 
 <div class="page-width" id="ProductSection-{{ section.id }}" data-section-id="{ { section.id }}" data-section-type="product" data-enable-history-state="true" data-ajax-enabled="{{ settings.enable_ajax }}">
-	<div class="section-header text-center">
-		<h1><span role="text">{{ product.title }}</span></h1>
-		<div class="product-single__description rte">{{ product.description }}</div>
+	<div class="bundle-header section-header text-center">
+		<h1><span role="text">Let's customize</span></h1>
+		<div class="product-single__description product-bundle__description rte">Mix and match any 7 snacks of our delicious absolutely allergen-friendly, certified gluten-free snacks to create your own custom subscription box!</div>
 	</div>
 	<div class="grid bundle">
-      <div class="grid__item medium-up--two-thirds">
+      <div class="grid__item medium-up--two-third">
         <div class="grid bundle-grid" data-bundle-min="{{ bundle_min }}" data-bundle-max="{{ bundle_max }}">
           {% for variant in product.variants %}
-          	<div class="grid__item small--one-half medium-up--one-third">
-              <div class="grid bundle-item" data-variant-id="{{ variant.id }}" data-qty=" 0">
-                <img src="{{ variant.image.src | img_url: '190x' }}" alt="{{ variant.title }}">
-                <div class="h3">{{ variant.title }}</div>
+          	<div class="grid__item small--one-half">
+              <img src="{{ variant.image.src | img_url: '1900x' }}" alt="{{ variant.title }}">
+              <div class="grid bundle-item" data-variant-id="{{ variant.id }}" data-qty="0" data-price="{{ variant.price }}" data-max="{{ variant.inventory_quantity }}" data-url="{{ product.url }}">
+                {% assign words = variant.title | split: '-' %}
+                {% assign newword = words[1] | split: '/' %}
+                <h4 class="variant_title1">{{ words[0] }}</h4>
+                <p class="variant_title2">{{ newword[0] }}</p>
+                <p class="variant_quantity">({{ variant.option2 }})</p>
                 {% if variant.available == false %}
                   <span class="h6 block">Out of stock</span>
                 {% else %}
@@ -28,6 +32,18 @@
                     </span>
                   </div>
                 {% endif %}
+                <a class="bundle_link">Nutrition Facts & ingredients</a>
+                <div class="modal">
+
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div style="width: 100%; display: flex; justify-content: center;">
+                      <img src="{{ variant.metafields.bundle_products.popup_photo | img_url: '720x' }}" alt="{{ variant.title }}" style="margin-bottom: 0px;">
+                    </div>
+                  </div>
+                
+                </div>
               </div>
             </div>
           {% endfor %}
@@ -35,45 +51,63 @@
       </div>
     <div class="grid__item medium-up--one-third">
       <div class="bundle-details">
-        <div class="h1 bundle-price">$0.00</div>
+        <div class="bundle-price">$0.00</div>
+        <div class="bundle-save">(Save up to 10%)</div>
         <div class="bundle-qty">
           Items:
           <span class="current-qty">0</span> of {{ bundle_max }}
         </div>
-        {% form 'product', product, data-productid: product.id, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
-        	<!-- Begin ReCharge code -->
-        	{% if product.available %}{% include 'subscription-product' %}{% endif %}
-        	<!-- End ReCharge code -->
-        
-        	<select name="id" data-productid="{{ product.id }}" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js">
-              {% for variant in product.variants %}
-              <option value="{{ variant.id }}"
-                      {%- if variant == current_variant %} selected="selected" {%- endif -%}
-                      >
-                {{ variant.title }} {%- if variant.available == false %} - {{ 'products.product.sold_out'| t }}{% endif %}
-              </option>
-              {% endfor %}
-        	</select>
-        
-        	<div class="product-form__controls-group product-form__controls-group--submit"> 
-              <div class="product-form__item product-form__item--submit">
-                <button
-                        id="bundle-add-to-cart"
-                        type="submit"
-                        name="add"
-                        aria-label="{{ 'products.product.add_to_cart' | t }}"
-                        class="btn product-form__cart-submit btn--primary-accent"
-                        data-add-to-cart
-                        disabled
-                >
-            	<span data-add-to-cart-text>
-              		{{ 'products.product.add_to_cart' | t }}
-            	</span>
-              	</button>
+        <div class="bundle-benefits">
+          <h4>The Benefits Include:</h4>
+          <ul>
+            <li>Create your own snack box subscription</li>
+            <li>You want to receive different snacks next time? No problem. Manage and update your next delivery!</li>
+            <li>Exclusive giveaways</li>
+            <li>Early access to new products</li>
+            <li>Skip, pause or cancel at anytime</li>
+          </ul>
+          {% unless collection_handles contains 'coming-soon' %}
+            {% render 'product-form', context: 'product', subscribe_link: false %}
+          {% endunless %}
+          {% unless collection_handles contains 'coming-soon' %}
+            {% render 'product-notify-me', product: product %}
+          {% endunless %}
+        </div>
+        <product-form class="product-form">
+          {%- form 'product', product, data-productid: product.id, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+              <input type="hidden" name="id" data-productid="{{ product.id }}" value="{{ product.selected_or_first_available_variant.id }}">
+              <div class="product-form__buttons bundle-add-to-cart">
+                  <button id="bundle-add-to-cart" type="submit" name="add" class="product-form__submit button button--full-width {% if
+                    block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}" disabled>
+                    {%- if product.selected_or_first_available_variant.available -%}
+                      {{ 'products.product.add_to_cart' | t }}
+                    {%- else -%}
+                      {{ 'products.product.sold_out' | t }}
+                    {%- endif -%}
+                  </button>
               </div>
-        	</div>
-        {% endform %}
+          {%- endform -%}
+          </product-form>
       </div>
     </div>
   </div>
 </div>
+
+
+<style>
+  .shopify-product-form div.select{
+    display: none;
+  }
+
+  .purchase-details__quantity-set{
+    display: none;
+  }
+
+  .product__price{
+    display: none !important;
+  }
+
+  .action_button.add_to_cart{
+    display: none;
+  }
+</style>
