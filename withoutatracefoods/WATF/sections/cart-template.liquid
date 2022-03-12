@@ -40,9 +40,11 @@
         {% assign bundles_displayed = '' | split:',' %}
         {% for item in cart.items %}
         {%- if item.properties['bundle_id'] -%}
+          {%- unless bundles_displayed contains item.properties['bundle_id'] -%}
             {%- assign bundles_displayed = item.properties['bundle_id'] | concat: bundles_displayed -%}
             {%- render 'cart-item-bundle', item: item, cart: cart, current_bundle_id:
-item.properties['bundle_id'] -%}
+item.properties['bundle_id'], data_url: item.properties['data_url'] -%}
+          {% endunless %}
       {%- else -%}
           <li>
             <div class="eight columns title_column alpha">

@@ -37,9 +37,11 @@
 
                   <!-- Modal content -->
                   <div class="modal-content">
-                    <span class="close">&times;</span>
+                    <div style="display: flex; flex-direction: row-reverse;">
+                      <span style="position: absolute; z-index: 11;" class="close">&times;</span>
+                    </div>
                     <div style="width: 100%; display: flex; justify-content: center;">
-                      <img src="{{ variant.metafields.bundle_products.popup_photo | img_url: '720x' }}" alt="{{ variant.title }}" style="margin-bottom: 0px;">
+                      <img src="{{ variant.metafields.bundle_products.popup_photo | img_url: '520x' }}" alt="{{ variant.title }}" style="margin-bottom: 0px; width: 100%;">
                     </div>
                   </div>
                 

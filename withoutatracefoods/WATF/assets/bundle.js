@@ -251,20 +251,18 @@ Bundle = {
             },
           });
         },
-        removeBundleItems: function (bundle_id) {
+        removeBundleItems: function (bundle_id, data_url) {
           // Removes all bundle items from cart when user clicks remove on cart page
           // Get current cart contents
           jQuery.getJSON("/cart.js", function (cart) {
             // Create new updates object to send to cart update AJAX call
             let data = { updates: {} };
-            let dataurl;
             cart.items.forEach((item, i) => {
               if (
                 item.properties.bundle_id &&
                 item.properties.bundle_id == bundle_id
               ) {
                 data.updates[item.key] = 0;
-                dataurl = item.properties.data_url;
               }
             });
             // API call to update the cart contents and set the bundle item quantities to 0
@@ -274,7 +272,7 @@ Bundle = {
               data: data,
               dataType: "json",
               success: function () {
-                window.location.href = dataurl;
+                window.location.href = data_url;
               },
             });
           });
@@ -294,16 +292,19 @@ Bundle = {
         });
         // Registers the page's Add to Cart button
         $("#bundle-add-to-cart").on("click", function () {
-              console.log(1);
+          console.log(1);
           event.preventDefault();
           Bundle.Cart.processAddToCart();
         });
         // Registers each cart bundle item's remove button
-        $(".cart__remove-bundle").on("click", function () {
+        $(".cart__remove-bundle .newremove").on("click", function () {
           var bundle_id = $(this)
             .closest(".cart__remove-bundle")
             .attr("data-bundle-id");
-          Bundle.Cart.removeBundleItems(bundle_id);
+          var data_url = $(this)
+            .closest(".cart__remove-bundle")
+            .attr("data-url");
+            Bundle.Cart.removeBundleItems(bundle_id, data_url);
         });
         $(".grid.bundle-item .bundle_link").on("click", function(){
           var modal = $(this).nextAll(".modal").first();
