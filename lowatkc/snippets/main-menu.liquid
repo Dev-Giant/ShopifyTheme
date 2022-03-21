@@ -1,0 +1,378 @@
+<nav class="navbar navbar-expand-lg">
+              <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#netsec_mainmenu">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span> 
+                <span class="icon-bar"></span> 
+                <span class="icon-bar"></span>
+              </button>
+	<div class="collapse navbar-collapse" id="netsec_mainmenu">
+		<ul class="nav navbar-nav navigation">
+      {% for link in linklists[section.settings.header_menu_1].links %}
+      {% assign child_list_handle = link.title | handleize %}
+      {% assign megamenu = false %}
+
+      {% for block in section.blocks %}
+      {% if block.type == 'megamenu' %}
+      {% if child_list_handle == block.settings.mega_menu %}
+      {% include 'mega-menu' %}
+      {% assign megamenu = true %}
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+      {% if megamenu == false %}
+      {% if linklists[child_list_handle].links != blank %}
+          
+       
+        
+      <li class="li-top-item left{% if link.active %} active{% endif %}" style="float: left">
+        <a class="a-top-link" href="{{link.url}}">
+          <span>{{link.title}}</span>
+          <i class="fa fa-angle-down" aria-hidden="true"></i>
+        </a>
+        <!-- Flyout Menu -->
+        <div class="flyout-menu-container sub-menu-container left">
+          <ul class="ul-second-items">
+            {% for childlink in linklists[child_list_handle].links %}
+            <!-- Nested Level Third -->
+            {% assign grand_child_list_handle = childlink.title | handleize %}
+            {% if linklists[grand_child_list_handle].links != blank %}
+            <li class="li-second-items">
+              <a href="{{childlink.url}}" class="a-second-link a-item">
+                <span class="a-second-title">{{ childlink.title | escape }}</span>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+              <div class="flyout-third-items left">
+                <ul class="ul-third-items">
+                  {% for grand_childlink in linklists[grand_child_list_handle].links %}
+                  <li class="li-third-items">
+                    <a href="{{grand_childlink.url}}" class="a-third-link">
+                      <span class="a-third-title">{{ grand_childlink.title | escape }}</span>
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </li>
+            {% else %}
+            <li class="li-second-items">
+              <a href="{{childlink.url}}" class="a-second-link a-item">
+                <span class="a-second-title">{{ childlink.title | escape }}</span>
+              </a>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </li>
+      {% else %}
+      <li class="nav-item {% if link.active %} active{% endif %}" >
+        <a class="nav-link" href="{{link.url}}">
+          {{link.title}}
+        </a>
+      </li>
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+    </ul>
+  	</div>
+  
+   <div class="mega-menu" id="mens-submenu">
+        <ul class="mega-menu-col">
+          <a href="{{ shop.url }}/collections/view-all-mens-shoes"> <h5> VIEW ALL MENS SHOES</h5></a>
+        </ul> 
+        
+      
+        <ul class="mega-menu-col">
+           <h5> by shoe</h5>
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/walking-boots" class="menu-link-bar">Walking boots</a>
+          </li> 
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/walking-shoes" class="menu-link-bar">Walking shoes</a>
+          </li>
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/hiking-boots" class="menu-link-bar">Hiking boots</a>
+          </li>
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/hiking-shoes" class="menu-link-bar">Hiking shoes</a>
+          </li>
+          
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/casual-shoes-boots" class="menu-link-bar">Casual Shoes & Boots</a>
+          </li>
+          
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/vegan-boots" class="menu-link-bar">Vegan Boots</a>
+          </li>
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/vegan-shoes" class="menu-link-bar">Vegan Shoes</a>
+          </li>
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/mountaineering" class="menu-link-bar">Mountaineering Boots</a>
+          </li>
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/waterproof-boots" class="menu-link-bar">waterproof Boots</a>
+          </li>
+        </ul> 
+     
+          <ul class="mega-menu-col">
+           <h5> by Use</h5>
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/mountaineering" class="menu-link-bar">Mountaneering</a>
+          </li> 
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/trekking" class="menu-link-bar">Trekking</a>
+          </li>
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/sport" class="menu-link-bar">Sport</a>
+          </li>
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/all-terrain" class="menu-link-bar">All Terrain</a>
+          </li>
+          
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/walking" class="menu-link-bar">Walking</a>
+          </li>
+            
+            <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/cold-weather-boots" class="menu-link-bar">COLD WEATHER BOOTS</a>
+          </li>
+       
+        </ul>  
+        
+        <ul class="mega-menu-col">
+           <h5> By fit</h5>
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/low-cut" class="menu-link-bar">Low cut</a>
+          </li> 
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/boot-mid" class="menu-link-bar">Boot [mid]</a>
+          </li>
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/wide-fit" class="menu-link-bar">Wide fit</a>
+          </li>
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/narrow-fit" class="menu-link-bar">narrow fit</a>
+          </li>
+        </ul> 
+            <div class="adding-bottom">
+           <div class="addingimg-group">
+          <img src="{{ 'addingimg.png' | asset_url }}">
+                <p>Mountaineering</p>
+           </div>
+           <div class="addingimg-group">
+              <img src="{{ 'addingimg2.png' | asset_url }}">
+                <p>Trekking</p>
+           </div>
+           <div class="addingimg-group">
+               <img src="{{ 'addingimg.png' | asset_url }}">
+                <p>All Terrain</p>
+           </div>
+           <div class="addingimg-group">
+               <img src="{{ 'addingimg5.png' | asset_url }}">
+                <p>Sports</p>
+           </div>
+           <div class="addingimg-group">
+               <img src="{{ 'addingimg3.png' | asset_url }}">
+                <p>Everyday</p>
+           </div>
+           <div class="addingimg-group">
+              <img src="{{ 'addingimg.png' | asset_url }}">
+                <p>Field Sports</p>
+           </div>
+       
+       </div>
+     
+      </div>
+  
+  
+  <div class="mega-menu" id="womens-submenu">
+        <ul class="mega-menu-col">
+          <a href="{{ shop.url }}/collections/view-all-mens-shoes"> <h5> View All womens shoes</h5></a>
+        </ul> 
+        
+      
+        <ul class="mega-menu-col">
+           <h5> by shoe</h5>
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/walking-boots" class="menu-link-bar">Walking boots</a>
+          </li> 
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/walking-shoes" class="menu-link-bar">Walking shoes</a>
+          </li>
+<!--           <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/hiking-boots" class="menu-link-bar">Hiking boots</a>
+          </li>
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/hiking-shoes" class="menu-link-bar">Hiking shoes</a>
+          </li> -->
+          
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/casual-shoes-boots" class="menu-link-bar">Casual Shoes & Boots</a>
+          </li>
+          
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/vegan-boots" class="menu-link-bar">Vegan Boots</a>
+          </li>
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/vegan-shoes" class="menu-link-bar">Vegan Shoes</a>
+          </li>
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/mountaineering" class="menu-link-bar">Mountaineering Boots</a>
+          </li>
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/waterproof-boots" class="menu-link-bar">waterproof Boots</a>
+          </li>
+        </ul> 
+     
+          <ul class="mega-menu-col">
+           <h5> Product category</h5>
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/mountaineering" class="menu-link-bar">Mountaneering</a>
+          </li> 
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/trekking" class="menu-link-bar">Trekking</a>
+          </li>
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/sport" class="menu-link-bar">All Terrain Sport</a>
+          </li>
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/all-terrain" class="menu-link-bar">All Terrain Classic</a>
+          </li>
+          
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/walking" class="menu-link-bar">Walking</a>
+          </li>
+            
+            <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/cold-weather-boots" class="menu-link-bar">COLD WEATHER BOOTS</a>
+          </li>
+       
+        </ul>  
+        
+        <ul class="mega-menu-col">
+           <h5> By fit</h5>
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/low-cut" class="menu-link-bar">Low cut</a>
+          </li> 
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/boot-mid" class="menu-link-bar">Boot [mid]</a>
+          </li>
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/wide-fit" class="menu-link-bar">Wide fit</a>
+          </li>
+          <li class="menu-bar">
+            <a href="{{ shop.url }}/collections/narrow-fit" class="menu-link-bar">narrow fit</a>
+          </li>
+        </ul> 
+            <div class="adding-bottom">
+           <div class="addingimg-group">
+          <img src="{{ 'addingimg.png' | asset_url }}">
+                <p>Mountaineering</p>
+           </div>
+           <div class="addingimg-group">
+              <img src="{{ 'addingimg2.png' | asset_url }}">
+                <p>Trekking</p>
+           </div>
+           <div class="addingimg-group">
+               <img src="{{ 'addingimg.png' | asset_url }}">
+                <p>All Terrain</p>
+           </div>
+           <div class="addingimg-group">
+               <img src="{{ 'addingimg5.png' | asset_url }}">
+                <p>Sports</p>
+           </div>
+           <div class="addingimg-group">
+               <img src="{{ 'addingimg3.png' | asset_url }}">
+                <p>Everyday</p>
+           </div>
+           <div class="addingimg-group">
+              <img src="{{ 'addingimg.png' | asset_url }}">
+                <p>Field Sports</p>
+           </div>
+       
+       </div>
+     
+      </div>
+  
+  
+  
+</nav>
+   <!--<div role="menu" id="oc-menu-{{section.id}}" class="oc-menu horizontal-menu oc-menu-bar visible-lg visible-md">
+  {% if c == true %}
+  <div class="container">
+    {% endif %}
+    <input type="hidden" id="menu-effect-{{section.id}}" class="menu-effect" value="none" />
+    
+    
+    
+    
+ <ul class="ul-top-items">
+      {% for link in linklists[section.settings.header_menu_1].links %}
+      {% assign child_list_handle = link.title | handleize %}
+      {% assign megamenu = false %}
+
+      {% for block in section.blocks %}
+      {% if block.type == 'megamenu' %}
+      {% if child_list_handle == block.settings.mega_menu %}
+      {% include 'mega-menu' %}
+      {% assign megamenu = true %}
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+      {% if megamenu == false %}
+      {% if linklists[child_list_handle].links != blank %}
+      <li class="li-top-item left{% if link.active %} active{% endif %}" style="float: left">
+        <a class="a-top-link" href="{{link.url}}">
+          <span>{{link.title}}</span>
+          <i class="fa fa-angle-down" aria-hidden="true"></i>
+        </a>
+        
+        <div class="flyout-menu-container sub-menu-container left">
+          <ul class="ul-second-items">
+            {% for childlink in linklists[child_list_handle].links %}
+           
+            {% assign grand_child_list_handle = childlink.title | handleize %}
+            {% if linklists[grand_child_list_handle].links != blank %}
+            <li class="li-second-items">
+              <a href="{{childlink.url}}" class="a-second-link a-item">
+                <span class="a-second-title">{{ childlink.title | escape }}</span>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+              <div class="flyout-third-items left">
+                <ul class="ul-third-items">
+                  {% for grand_childlink in linklists[grand_child_list_handle].links %}
+                  <li class="li-third-items">
+                    <a href="{{grand_childlink.url}}" class="a-third-link">
+                      <span class="a-third-title">{{ grand_childlink.title | escape }}</span>
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </li>
+            {% else %}
+            <li class="li-second-items">
+              <a href="{{childlink.url}}" class="a-second-link a-item">
+                <span class="a-second-title">{{ childlink.title | escape }}</span>
+              </a>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </li>
+      {% else %}
+      <li class="li-top-item left{% if link.active %} active{% endif %}" style="float: left">
+        <a class="a-top-link" href="{{link.url}}">
+          <span>{{link.title}}</span>
+        </a>
+      </li>
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+    </ul>
+    {% if c == true %}
+  </div>
+  {% endif %}
+</div>-->

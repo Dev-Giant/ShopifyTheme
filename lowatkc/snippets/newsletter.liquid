@@ -1,0 +1,25 @@
+<!--Newsletter Area Start-->
+<div class="newletter-subscribe-container" {% if section.settings.image != blank %}style="background-image: url('{{ section.settings.image | img_url: 'master' }}');" {% endif %}>
+  <div class="container-inner">
+    <div class="newletter-subscribe">
+      <div id="boxes-normal" class="newletter-container">
+        <div style="" id="dialog-normal" class="window">
+          <div class="box">
+            <div class="newletter-title">
+              <h3>{{ 'layout.footer.newsletter_title_1' | t }}</h3>
+              <label>{{ 'layout.footer.newsletter_description' | t }}</label>
+            </div>
+            <div class="box-content newleter-content">
+              <div id="frm_subscribe-normal">
+                {% include 'newsletter-form' %}
+              </div>
+              <!-- /#frm_subscribe -->
+            </div>
+            <!-- /.box-content -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.box -->

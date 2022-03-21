@@ -1,0 +1,17 @@
+<!--Service Area Start-->
+<div class="ma-corporate-about2">
+  {% if section.blocks.size > 0 %}
+  {% for block in section.blocks limit:5 %}
+  <div class="col">
+    <div class="block-wrapper wrapper{{forloop.index}}">
+      <i class="fa {{block.settings.feature_service_icon }}"></i>
+      <div class="text-des">
+        <p>{{ block.settings.feature_service_title }}</p>
+        <span>{{ block.settings.feature_service_description }}</span>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  {% endif %}
+</div>
+<!--End of Service Area-->

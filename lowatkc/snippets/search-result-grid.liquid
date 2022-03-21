@@ -1,0 +1,77 @@
+{% unless grid_item_width %}
+{% assign grid_item_width = 'large--one-third medium--one-half' %}
+{% endunless %}
+
+{% unless current_collection %}
+{% assign current_collection = collection %}
+{% endunless %}
+
+{% assign on_sale = false %}
+{% if item.compare_at_price > item.price %}
+{% assign on_sale = true %}
+{% endif %}
+
+{% assign sold_out = true %}
+{% if item.available %}
+{% assign sold_out = false %}
+{% endif %}
+
+{% assign image_size = settings.collection_prod_image_sizes %}
+{% if item.object_type == 'product' %}
+{% assign img_size = settings.img_size_grid %}
+{% include 'product-grid-item-collection.liquid', search:true, product:item %}
+{% else if item.object_type == 'blog' %}
+{% assign img_size = settings.img_size_grid %}
+<div class="product-layout product-grid col-lg-3 col-md-3 col-sm-3 col-xs-6 product-item">
+  <div class="product-thumb">
+    <div class="item item{{ forloop.index }}">
+      <div class="item-inner">
+        <div class="image images-container">
+          <div class="image rotate-image-container">
+            {% if item.image %}
+            <a href="{{ item.url }}" class="">
+              <img class="img-responsive img-default-image{% if settings.lazyloading_enable %} lazyload{% endif %}" {% if settings.lazyloading_enable %} data-{% endif %}src="{{ item.image.src | img_url: img_size }}" alt="{{ item.featured_image.alt | escape }}">
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        <!-- image -->
+        <div class="caption">
+          <h4 class="product-name">
+            <a href="{{ item.url | within: collection }}">{{ item.title }}</a>
+          </h4>
+        </div>
+        <!-- caption -->
+      </div>
+    </div>
+  </div>
+  <!-- product-thumb -->
+</div>
+{% else %}
+{% assign img_tag = '<' | append: 'img' %}
+{% if item.content contains img_tag %}
+{% assign src = item.content | split: 'src="' %}
+{% assign src = src[1] | split: '"' | first %}
+{% if src %}
+{% assign image_src = src | replace: '_small.', '.' | replace: '_compact.', '.' | replace: '_medium.', '.' | replace: '_large.', '.' | replace: '_grande.', '.' %}
+{% endif %}
+{% endif %}
+
+{% unless image_src == blank %}
+<div class="product-grid-image">
+  <div class="product-grid-image--centered">
+    {{ image_src | img_tag }}
+  </div>
+</div>
+{% endunless %}
+
+<p class="h6">{{ item.title }}</p>
+
+<div class="rte">
+  {% if item.excerpt.size > 0 %}
+  <p>{{ item.excerpt | strip_html | truncatewords: 30 }}</p>
+  {% else %}
+  <p>{{ item.content | strip_html | truncatewords: 30 }}</p>
+  {% endif %}
+</div>
+{% endif %}

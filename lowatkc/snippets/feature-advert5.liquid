@@ -1,0 +1,26 @@
+<div class="banner-static static-top-sneaker1">
+  <div class="row">
+    {% if section.blocks.size > 0 %}
+    <div class="col col1">
+      {% for block in section.blocks limit:5 %}
+      {% cycle '','','</div><div class="col col2">','</div><div class="col col3">','' %}
+      <div class="image">
+        <a href="{{ block.settings.link }}">
+          {% if block.settings.image != blank %}
+          <img {% if settings.lazyloading_enable %} class="lazyload" data-{% endif %}src="{{ block.settings.image | img_url: 'master' }}" alt=""/>
+          {% endif %}          
+          <span class="text" style="text-align:{{ block.settings.ad_align }}">
+            {% if block.settings.heading != blank %} 
+            <span class="text1" style="color:{{ block.settings.heading_color }}">{{ block.settings.heading }}</span>
+            {% endif %}
+            {% if block.settings.description != blank %} 
+            <span class="text2" style="color:{{ block.settings.description_color }}">{{ block.settings.description }}</span>
+            {% endif %}
+          </span>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</div>

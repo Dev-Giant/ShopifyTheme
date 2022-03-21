@@ -1,0 +1,87 @@
+{% include 'advanced-tag-loop' %}
+
+{% unless template == 'index' %} {% comment %} or template == 'cart' {% endcomment %}
+
+<!-- Breadcumb area start -->
+<div class="breadcrumb-box m-top">    
+       <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/" title="{{ 'general.breadcrumbs.home_link_title' | t }}">
+      {{ 'general.breadcrumbs.home' | t }}
+      </a>
+    </li>
+    {% if template contains 'product' %}
+
+    {% if collection %}
+    {% if collection.handle %}
+    {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+    <li class="breadcrumb-item">{{ collection.title | link_to: url }}</li>
+    {% endif %}
+    {% endif %}
+    <li class="breadcrumb-item"><a href=""><span>{{ product.title }}</span></a></li>
+
+    {% elsif template contains 'collection' and collection.handle %}
+    <li class="breadcrumb-item">
+      {% if current_tags %}
+
+      {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+      {{ collection.title | link_to: url }}
+
+
+      {% for tag in current_tags %}
+
+      {% assign is_advanced_tag = false %}
+      {% assign cat = tag | split: '_' | first %}
+      {% unless cat == tag %}
+      {% if cat_array contains cat %}
+      {% assign is_advanced_tag = true %}
+      {{ tag | remove_first: cat | remove_first: '_' }}
+      {% endif %}
+      {% endunless %}
+
+      {% if is_advanced_tag == false %}
+      {{ tag }}
+      {% endif %}
+
+      {% unless forloop.last %}
+      {% endunless %}
+
+      {% endfor %}
+
+      {% else %}
+
+      <a href=""><span>{{ collection.title }}</span></a>
+      {% endif %}
+    </li>
+    {% elsif template == 'blog' %}
+    <li class="breadcrumb-item">
+      {% if current_tags %}
+      {{ blog.title | link_to: blog.url }}
+      <span class="navigation">&gt;</span>
+      <span>{{ current_tags | join: " + " }}</span>
+      {% else %}
+      <a href=""><span>{{ blog.title }}</span></a>
+      {% endif %}
+    </li>
+    {% elsif template == 'article' %}
+    <li class="breadcrumb-item">
+      {{ blog.title | link_to: blog.url }}
+    </li>
+    <li class="breadcrumb-item">
+      <a href=""><span>{{ article.title }}</span></a>
+    </li>
+    {% elsif template contains 'page' %}
+    <li class="breadcrumb-item">
+      <a href=""><span>{{ page.title }}</span></a>
+    </li>
+    {% else %}
+    <li class="breadcrumb-item">
+      <a href=""><span>{{ page_title }}</span></a>
+    </li>
+    {% endif %}
+  </ol>
+</nav>
+       <p>Style: 540558-529-065</p>    
+     </div>
+         <!--End Breadcumb area -->
+{% endunless %}

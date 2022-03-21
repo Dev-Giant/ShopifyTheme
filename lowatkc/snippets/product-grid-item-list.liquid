@@ -1,0 +1,43 @@
+{% include 'product-grid-variables' %}
+
+{% comment %}Select the product image size from settings.{% endcomment %}
+{% assign img_size = settings.img_size_grid %}
+<div class="product-layout list-style">
+  <div class="product-thumb transition">
+    <div class="item">
+      <div class="item-inner">
+        <div class="image images-container">
+          {% include 'label' %}
+          <a href="{{ product.url }}" class="product-image">
+            {% include 'product-grid-image',image:product.featured_image %}
+            {% if settings.hide_hover != true %}
+            {% include 'product-grid-image',image:product.images.last,hover:true %}
+            {% endif %}
+          </a>
+        </div>
+        <!-- image -->
+        <div class="caption">
+          {% if settings.grid_vendor_enable %}
+          <p class="manufacture-product">
+            {{ product.vendor | link_to_vendor }}
+          </p>
+          {% endif %}
+          <h4 class="product-name">
+            <a href="{{ product.url | within: collection }}">
+              {% if settings.limit_title_words == true %}{{ product.title | truncate:settings.limit_title_words_count, "" }}{% else %}{{ product.title }}{% endif %}
+            </a>
+          </h4>
+          <div class="ratings">
+            <div class="rating-box">
+              {% include 'review' %}
+            </div>
+          </div>
+          {% include 'price'%}
+        </div>
+        <!-- caption -->
+      </div>
+    </div>
+  </div>
+  <!-- product-thumb -->
+</div>
+<!-- product-layout -->

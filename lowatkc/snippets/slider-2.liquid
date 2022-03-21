@@ -1,0 +1,38 @@
+
+<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+      <ol class="carousel-indicators">
+        {% for block in section.blocks %}
+        <li data-target="#myCarousel" data-slide-to="{{forloop.index0}}" class="{% if forloop.index == 1 %} active {% endif %}"></li>
+        {% endfor %}
+
+      </ol>   
+      <div class="carousel-inner"> 
+        {% for block in section.blocks %}
+                    {% if block.type == 'image' or block.type == 'video' %}
+                    {% if block.settings.image != blank %}
+        <div class="carousel-item {% if forloop.index == 1 %}active {% endif %}">
+           <img  {% if block.type == 'video' %}class="img-fluid img_static{% if settings.lazyloading_enable %} lazyload{% endif %}" {% endif %} src="{{ block.settings.image | img_url: '1920x900' }}" alt="" title="#banner7-caption{{ forloop.index }}" />
+             <div class="text-box"> 
+            <div class="text-sub">
+              {% if block.settings.subheading != blank %}  
+                            <h4>{{ block.settings.subheading }}</h4>
+                           
+                {% endif %}
+              {% if block.settings.heading != blank %}  
+              <h1>{{ block.settings.heading }}</h1>
+              {% endif %}
+              {% if block.settings.slide_link_text != blank %}
+              <div class="get-box">
+                <a href="{{ block.settings.slide_link }}" class="get"><span><i class="fas fa-chevron-right"></i></span>  {{ block.settings.slide_link_text }}</a>  
+              </div>
+              {% endif %}
+            </div>  
+          </div>                          
+        </div> 
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+          
+        <div class="img-sub"><img src="{{'made-europe-badge.png' | asset_url}}" class="img-fluid"></div>       
+      </div>      
+    </div>

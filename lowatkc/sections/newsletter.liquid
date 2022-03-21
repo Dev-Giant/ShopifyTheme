@@ -1,0 +1,51 @@
+<div class="main-row {% if section.settings.fullwidth == true %}full-width{% endif  %}">
+  <div class="container">
+    <div class="row">
+      <div class="main-col col-sm-12 col-md-12">
+        <div class="row sub-row">
+          <div class="sub-col col-sm-12 col-md-12">
+            {% include 'newsletter' %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Newsletter section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "mailing_list_form_action",
+      "label": "MailChimp form action URL",
+      "info": "[Find your MailChimp form action URL](https://docs.shopify.com/manual/configuration/store-customization/communicating-with-customers/accounts-and-newsletters/get-a-mailchimp-form-action-url/)."
+    },
+	{
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Sign up for our Newsletter!",
+      "info": "You can use the language editor for editing literals text as shown [here](https://help.shopify.com/manual/using-themes/change-wording). The literals are 'layout.footer.newsletter_title_1' and layout.footer.newsletter_description'."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background Image",
+      "info": "Testimonial area background image"
+    },
+	{
+	    "type": "checkbox",
+    	"id": "fullwidth",
+    	"label": "Set Div fullwidth?",
+    	"default": true
+    }
+  ],
+  "blocks": [
+  ],
+  "presets": [{
+    "name": "Newsletter section",
+    "category": "Feature Sections"
+  }]
+}
+{% endschema %}

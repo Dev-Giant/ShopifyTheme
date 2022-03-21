@@ -1,0 +1,361 @@
+   <div class="contact-page">
+        <div class=" container">
+            <div class="row">
+                <div class="col-lg-12">
+                     <div class="contact-text">
+                         <h1>We're here to help</h1>
+                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8">
+                    {% if section.settings.show_map %}
+        {{ section.settings.map_code }}
+        {% endif %}
+                </div>
+                <div class="col-lg-4 col-md-4">
+                  <div class="side-text">
+                      <p>Lowa UK</p>
+                      <p>THE OLD SPITFIRE HANGAR <br> STEEPLE ASHTON <br> WILTSHIRE <br> BA14 6EP</p>
+                      <p>01380 872818 <br> MON - FRI 8.30AM - 5.00PM</p>
+                      <button>FAQs</button>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container contact-titile-text">
+        <div class="row">
+            <div class="message-list col-lg-12">
+                <div class="message">
+                    <p>SEND US A MESSAGE</p>
+                    <p>We would love to hear from you whether good or bad. Please use the form below* and we will get it to the department you need. Although we ask you allow up to 48 hours for a response.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container contact-form">
+      <div class="row">
+             <div class="message-page col-lg-12">
+                 <div class="message-listmain">
+                  <div class="wrapper">
+                    <div class="contact-form">
+                      {% form 'contact' %}
+                      <div class="input-fields">
+                        
+                        {% if form.posted_successfully? %}
+                        <p class="note form-success">
+                          {{ 'contact.form.post_success' | t }}
+                        </p>
+                        {% endif %}
+
+                        {% include 'form-errors-custom' %}
+                         <div class="input-flex">
+                          <input id="contactFormName" name="contact[name]" type="text" class="input" placeholder="First Name">
+                          <input id="contactFormLastName" name="contact[lastname]" type="text" class="input" placeholder="Last Name">
+                         </div>
+                      <input id="contactFormEmail" name="contact[email]" type="text" class="input" placeholder="Email Address">
+                      <input id="contactFormPhone" name="contact[phone]" type="text" class="input" placeholder="Telephone (optional)">
+                      <input id="contactFormEquary" name="contact[equary]" type="text" class="input" placeholder="General Enquiry">
+                      <input id="contactFormMessage" name="contact[body]" type="text" class="input2" placeholder="Your message, question or comment...">
+                      <div class="message-btn">
+                        <div class="g-recaptcha" data-sitekey="WITH_MY_site_key_OFCOURSE"></div>
+                        <input class="btn btn-primary" id="submitMessage" name="submitMessage" type="submit" value="Send Message" />
+        
+                      </div>
+                        
+                       </div>
+                       {% endform %}
+                     </div>
+                    </div>
+                 </div>
+             </div>
+        </div>
+      
+      <!--------------------------->
+     </div>
+              <div class="container">
+                   <div class="row">
+                      <div class="message-list col-lg-12">
+                        <div class="nullam-text">
+                               <p>Nullam ut fermentum ipsum, quis vulputate enim. Sed eget turpis cursus, vestibulum tellus ut, posuere risus.</p>
+                        </div>
+                       </div>
+                     </div>
+                </div>
+               <div class="container">
+                   <div class="row">
+                        <div class="message-page col-lg-12">
+                             
+             <div class="group-accordian col-lg-12">
+              <div class="accordion" id="accordionExample">
+                <div class="accordions ">
+                  <div  id="headingOne">
+                    <h2 class="mb-0">
+                      <button class="nullam-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <span>FAQ question one</span>
+                 <i class="fas fa-angle-down rotate-icon"></i>
+                      </button>
+                    </h2>
+                  </div>
+              
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="nullam-body">
+                      <span>Nullam ut fermentum ipsum, quis vulputate enim. Sed eget turpis cursus, vestibulum <br> tellus ut, posuere risus.</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordions">
+                  <div  id="headingTwo">
+                    <h2 class="mb-0">
+                      <button class="nullam-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <span>FAQ question one</span>
+                 <i class="fas fa-angle-down rotate-icon"></i>
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="nullam-body">
+                      <span>Nullam ut fermentum ipsum, quis vulputate enim. Sed eget turpis cursus, vestibulum <br> tellus ut, posuere risus.</span>
+                    </div>
+                  </div>
+                </div>
+                
+                
+                <div class="accordions">
+                  <div  id="headingthree">
+                    <h2 class="mb-0">
+                      <button class="nullam-btn collapsed" type="button" data-toggle="collapse" data-target="#collapsethree" aria-expanded="false" aria-controls="collapsethree">
+                        <span>FAQ question one</span>
+                 <i class="fas fa-angle-down rotate-icon"></i>
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapsethree" class="collapse" aria-labelledby="headingthree" data-parent="#accordionExample">
+                    <div class="nullam-body">
+                      <span>Nullam ut fermentum ipsum, quis vulputate enim. Sed eget turpis cursus, vestibulum <br> tellus ut, posuere risus.</span>
+                    </div>
+                  </div>
+                </div>
+               
+              </div>
+             </div>
+    
+
+                        </div>
+                   </div>
+               </div>
+
+
+
+    <div class="review-sec">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 m-auto">
+            <div class="row review-in">
+              <div class="col-md-4">
+                <div class="review-sub">              
+                  <h4>Excellent</h4>
+                  <ul class="nav">
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star-half-alt"></i></li>
+                  </ul>
+                  <div class="rating">
+                    <span><div class="number">4.68</div><p>Average</p></span>
+                    <span><div class="number">994</div><p>Reviews</p></span>
+                  </div>
+                  <a href="javascript:;" class="Review-btn"><i class="fas fa-star"></i> <span style="text-transform: uppercase;">Review</span> <small>.io</small></a>
+                </div>
+              </div>
+
+              <div class="col-md-8">
+                <ul class="review-slide">
+                  <li>
+                    <span><h5>Anonymous</h5>
+                      <ul class="nav">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                      </ul>
+                    </span>
+                    <p>Great shoes. Really good walking shoes. Very prompt delivery</p>
+                    <h6>posted 10 hours ago</h6>
+                  </li>
+                  <li>
+                    <span><h5>Anonymous</h5>
+                      <ul class="nav">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                      </ul>
+                    </span>
+                    <p>The best footwear produced.</p>
+                    <h6>posted 20 hours ago</h6>
+                  </li>
+                  <li>
+                    <span><h5>Anonymous</h5>
+                      <ul class="nav">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                      </ul>
+                    </span>
+                    <p>The best footwear produced.</p>
+                    <h6>posted 20 hours ago</h6>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+
+{% comment %}
+<!--Contact Us Area Start-->
+<div class="container">
+  {% include 'breadcrumb' %} 
+  <div class="row">
+    <div id="content" class="col-sm-12">
+      {% comment %}<h1>{{ 'contact.form.page_heading' | t }}</h1>{% endcomment %}
+      <h3>{{ 'contact.form.location' | t }}</h3>
+      <!--Map area start -->
+      <div >
+        {% if section.settings.show_map %}
+        {{ section.settings.map_code }}
+        {% endif %}
+      </div>
+      {% if section.settings.show_content %}
+      <div >
+        {{ page.content }}
+      </div>
+      {% endif %}
+      <!--Map area end -->
+      <div class="form-horizontal">
+        {% form 'contact' %}
+        {% if form.posted_successfully? %}
+        <p class="note form-success">
+          {{ 'contact.form.post_success' | t }}
+        </p>
+        {% endif %}
+
+        {% include 'form-errors-custom' %}
+        <fieldset>
+          <legend>{{ 'contact.form.leave_msg' | t }}</legend>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-name">{{ 'contact.form.name' | t }}</label>
+            <div class="col-sm-10">
+              <input type="text" id="contactFormName" name="contact[name]" class="form-control" placeholder="{{ 'contact.form.name' | t }}" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-name">{{ 'contact.form.email' | t }}</label>
+            <div class="col-sm-10">
+              <input type="text" id="contactFormEmail" name="contact[email]" class="form-control" placeholder="{{ 'contact.form.email' | t }}" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-name">{{ 'contact.form.phone' | t }}</label>
+            <div class="col-sm-10">
+              <input type="text" id="contactFormPhone" name="contact[phone]" class="form-control" placeholder="{{ 'contact.form.phone' | t }}" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-name">{{ 'contact.form.message' | t }}</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" rows="10" id="contactFormMessage" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+            </div>
+          </div>
+          {% if section.settings.accept_check_enable %}
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-name">&nbsp;</label>
+            <div class="col-sm-10">
+              <p style="float: none; text-align: right; clear: both; margin: 10px 0;">
+                <input style="float:none; vertical-align: middle;" type="checkbox" id="contact_accept_agree" />
+                <label style="display:inline; float:none" for="agree">
+                  {{ section.settings.accept_text }}
+                </label>
+              </p>
+            </div>
+          </div>
+          {% endif %}
+        </fieldset>
+        <div class="buttons submit">
+          <div class="pull-right">
+            <input class="btn btn-primary" id="submitMessage" name="submitMessage" type="submit" value="{{ 'contact.form.send' | t }}" />
+          </div>
+        </div>
+
+        {% endform %}
+      </div>    
+    </div>
+  </div>
+</div>
+{% endcomment %}
+<!--End of Contact Us Area-->
+{% schema %}
+  {
+    "name": "Contact Us Page",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_map",
+        "label": "Show map",
+        "default": true
+      },
+      {
+        "type": "textarea",
+        "id": "map_code",
+        "label": "Map code snippet",
+        "info": "Go to google.com\/maps for generating code"
+      },
+      {
+        "type": "paragraph",
+        "content": "Below options are to add accept option to make it GDPR complaint"
+      },
+      {
+        "type": "checkbox",
+        "id": "accept_check_enable",
+        "label": "Enable Accept check",
+        "default": true
+      },
+      {
+        "type": "textarea",
+        "id": "accept_text",
+        "label": "Accept Text",
+        "default": "I agree with the terms and conditions."
+      }
+      ],
+    "blocks": [],
+    "presets": []
+  }
+{% endschema %}
+{% if section.settings.accept_check_enable %}
+<script>
+  $(document).ready(function() {
+    $('body').on('click', '[name="submitMessage"]', function() {
+      if ($('#contact_accept_agree').is(':checked')) {
+        $(this).submit();
+      }
+      else {
+        alert("{{ 'cart.general.terms_c_agree' | t }}");
+              return false;
+              }
+              });
+      });
+</script>
+{% endif %}

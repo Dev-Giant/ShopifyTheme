@@ -1,0 +1,62 @@
+{% include 'product-grid-variables' %}
+
+{% comment %}Select the product image size from settings.{% endcomment %}
+{% assign img_size = settings.img_size_grid %}
+<div class="product-layout product-grid">
+  <div class="product-thumb transition">
+    <div class="image">
+      {% include 'label' %}
+      {% if section.settings.product_grid_img_carousel == true %}
+      {% include 'product-grid-image-carousel'%}
+      {% else %}
+      <a href="{{ product.url }}" class="product-image">
+        {% include 'product-grid-image',image:product.featured_image %}
+        {% if settings.hide_hover != true %}
+        {% include 'product-grid-image',image:product.images.last,hover:true %}
+        {% endif %}
+        {% if settings.grid_color_swatches != 'false' and section.settings.product_grid_img_carousel == false %}
+        {% if product.available and product.variants.size > 1 %}
+        {% include 'swatch-grid-img' with 'Color'  %}
+        {% endif %}
+        {% endif %}
+      </a>
+      {% endif %}
+      <div class="action-links">
+        <button class="btn-cart {% if sold_out %} btn disabled {% endif %}" type="button" data-toggle="tooltip" data-loading-text="{{ 'products.product.loading' | t }}" title="{{ 'products.product.add_to_cart' | t }}" {% if sold_out == false %}onclick="{% if product.variants.first.available %}cart.add('{{  product.variants.first.id  }}'){% else %}window.top.location.href='{{product.url}}'{% endif %};"{% endif %}>
+          <i class="ion-bag"></i><span>{% if sold_out == false %}{{ 'products.product.add_to_cart' | t }}{% else %} {{ 'products.product.sold_out' | t }}{% endif %}</span>
+        </button>
+        {% include 'product-wishlist2' %}
+        <button class="btn-compare" type="button" data-toggle="tooltip" title="{{ 'products.product.view_details' | t }}" onclick="window.top.location.href='{{ product.url }}';">
+          <i class="ion-android-options"></i><span>{{ 'products.product.view_details' | t }}</span>
+        </button>
+        {% if settings.hide_quick_view == false %}
+        <button class="btn-quickview quickview" type="button" title="{{ 'products.product.quickview' | t }}" data-toggle="modal" data-target="#productModal" data-productinfo='{{ product | json | escape}}' data-original-title="{{ 'products.product.quickview' | t }}">
+          <i class="ion-android-open"></i><span>{{ 'products.product.quickview' | t }}</span>
+        </button>
+        {% endif %}
+      </div>
+    </div>
+    <!-- image -->
+    <div class="caption">
+      {% if settings.grid_vendor_enable %}
+      <p class="manufacture-product">
+        {{ product.vendor | link_to_vendor }}
+      </p>
+      {% endif %}
+      <div class="ratings">
+        <div class="rating-box">
+          {% include 'review' %}
+        </div>
+      </div>
+      <h4 class="product-name">
+        <a href="{{ product.url | within: collection }}">
+          {% if settings.limit_title_words == true %}{{ product.title | truncate:settings.limit_title_words_count, "" }}{% else %}{{ product.title }}{% endif %}
+        </a>
+      </h4>
+      {% include 'price'%}
+    </div>
+    <!-- caption -->
+  </div>
+  <!-- product-thumb -->
+</div>
+<!-- product-layout -->

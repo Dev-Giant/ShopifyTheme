@@ -1,0 +1,625 @@
+<!--Product Details Area Start-->
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% assign enable_zoom = true %}
+{% assign product_img_size = settings.img_size_product %}
+{% assign on_sale = false %}
+{% if product.compare_at_price > product.price %}
+{% assign on_sale = true %}
+{% endif %}
+{% include 'breadcrumb' %}
+  {% include 'product-schema-meta' %}
+  
+
+     <div class="product-detail-box product-details-main-box">    
+       <div class="container product-details-container">
+         <div class="row">
+           {% case section.settings.product_page_layout %}
+        {% when 'horizontal_thumbs' %}
+        {% include 'product-horizontal-slider-alt' %}
+        {% when 'vertical_thumbs' %}
+        {% include 'product-vertical-slider', thumb: 'left' %}
+        {% when 'vertical_thumbs_right' %}
+        {% include 'product-vertical-slider', thumb: 'right' %}
+        {% when 'sticky_layout' %}
+        {% include 'product-sticky' %}
+        {% when 'horizontal_slide_full' %}
+        {% include 'product-horizontal-slide-full' %}
+        {% when 'horizontal_slide_grid' %}
+        {% include 'product-horizontal-slide-grid' %}
+        {% else %}
+        {% include 'product-horizontal-slider-alt' %}
+        {% endcase %}
+         </div>
+
+         <div class="order-box">
+           <ul>
+             <li><img src="{{ 'boot-icon.svg' | asset_url }}" class="img-fluid"><b>Order by 4pm</b> for same day dispatch</li>
+             <li><img src="{{ 'truck-icon.svg' | asset_url }}" class="img-fluid"><b>FREE DELIVERY ON</b> ALL ORDERS OVER £40.</li>
+             <li><img src="{{ 'package-icon.svg' | asset_url }}" class="img-fluid"><b>TRY THEM ON!</b> IF THEY DON’T FIT RETURN YOUR ITEM WITHIN 30 DAYS FOR FREE</li>
+           </ul>
+         </div>
+       </div>
+       
+     <div class="specs-box">
+      <div class="container">        
+        <div class="row accordion" id="faq" role="tablist" aria-multiselectable="true">
+          <div class="col-md-9">
+            {% if product.description contains "Specification" %}
+            {% comment %} {{ product.description | split:"[video]" | first | strip_html }} {% endcomment %}
+          {{ product.description | split:"[summary]" | first | split:"[video]" | first | split:"[tab]" | first | split:"[deal]" | first | split:"[affiliate]" | first }}
+            {% else %}
+            <div class="card">
+                  <!-- Card header -->
+                  <div class="card-header" role="tab" id="heading1">
+                    <a data-toggle="collapse" data-parent="#faq" href="#collapse1" aria-expanded="false">
+                      <h5>Specification<i class="fas fa-angle-down rotate-icon"></i></h5>
+                    </a>
+                  </div>
+
+                  <!-- Card body -->
+                  <div id="collapse1" class="collapse show" role="tabpanel" aria-labelledby="heading1"
+                    data-parent="#faq">
+                    <div class="card-body">
+                       {% comment %} {{ product.description | split:"[video]" | first | strip_html }} {% endcomment %}
+          {{ product.description | split:"[summary]" | first | split:"[video]" | first | split:"[tab]" | first | split:"[deal]" | first | split:"[affiliate]" | first }}
+               
+                      <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">more</button>
+                    </div>
+                  </div>
+            </div>
+            
+            <div class="card">
+
+              <!-- Card header -->
+              <div class="card-header" role="tab" id="heading2">
+                <a class="collapsed" data-toggle="collapse" data-parent="#faq" href="#collapse2"
+                  aria-expanded="false" aria-controls="collapse2">
+                  <h5>Technology<i class="fas fa-angle-down rotate-icon"></i></h5>
+                </a>
+              </div>
+
+              <!-- Card body -->
+              <div id="collapse2" class="collapse" role="tabpanel" aria-labelledby="heading2"
+                data-parent="#faq">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="content-box">
+                        <img src="{{ 'goretex.png' | asset_url }}" class="img-fluid">
+                        <p>GORE-TEX® Lining: Highly breathable, durably waterproof lining material. Keeps feet pleasantly dry and offers optimised climate comfort for a broad range of outdoor activities.</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="content-box">
+                        <img src="{{ 'double-injection.png' | asset_url }}" class="img-fluid">
+                        <p>Comfort and cushioning is further improved for specific uses with a complex injection-moulding process using a layering process.</p>
+                      </div>
+                      <div class="content-box">
+                        <img src="{{ 'rubber-sole.png' | asset_url }}" class="img-fluid">
+                        <p>Conceived and developed by LOWA, this rubber outsole varies in its rubber blend has a tread design with varying lugs, both factors based on intended use. The advantage is a rubber outsole with good traction in the backcountry and off trail.</p>
+                      </div>
+                      <div class="content-box">
+                        <img src="{{ 'soft-stabilizer.png' | asset_url }}" class="img-fluid">
+                        <p>Nylon joint-stabilizing element offers optimal support for recreational activity.</p>
+                      </div>
+                      <div class="content-box">
+                        <img src="{{ 'stability-frame.png' | asset_url }}" class="img-fluid">
+                        <p>Stability Frame.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+
+              <!-- Card header -->
+              <div class="card-header" role="tab" id="heading3">
+                <a class="collapsed" data-toggle="collapse" data-parent="#faq" href="#collapse3"
+                  aria-expanded="false" aria-controls="collapse3">
+                  <h5>Delivery & Returns <i class="fas fa-angle-down rotate-icon"></i></h5>
+                </a>
+              </div>
+
+              <!-- Card body -->
+              <div id="collapse3" class="collapse" role="tabpanel" aria-labelledby="heading3"
+                data-parent="#faq">
+                <div class="card-body">
+                  <p>Nullam ut fermentum ipsum, quis vulputate enim. Sed eget turpis cursus, vestibulum tellus ut, posuere risus.</p>
+                </div>
+              </div>
+            </div>
+			{% endif %}
+            <div class="card">
+
+              <!-- Card header -->
+              <div class="card-header" role="tab" id="heading4">
+                <a class="collapsed" data-toggle="collapse" data-parent="#faq" href="#collapse4"
+                  aria-expanded="false" aria-controls="collapse4">
+                  <h5>Reviews <i class="fas fa-angle-down rotate-icon"></i></h5>
+                </a>
+              </div>
+
+              <!-- Card body -->
+              {% if settings.product_reviews_enable %}
+              <div id="collapse4" class="collapse" role="tabpanel" aria-labelledby="heading4"
+                data-parent="#faq">
+                <div class="card-body">
+                <div class="mobtab" role="presentation"><a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">{{ 'products.product.reviews' | t }}</a></div>
+                <div role="tabpanel" class="tab-pane" id="reviews">
+                  <p>
+                    {% include 'product-review' %}
+                  </p>
+                </div>
+                 </div>
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="head-specs">
+              <img src="{{ 'klarna-logo.png' | asset_url }}" class="img-fluid">
+              <p>Pay as little as £23/mo. at 18.90% with <b>Klarna.</b><br> <a href="javascript:;">Check eligibility</a></p> <p>Representative example: Representative 18.9% APR (variable) with an assumed credit limit of £1,200 and a purchase rate of 18.9% p.a.</p>
+            </div>
+            
+          </div>            
+        </div>
+      </div>
+    </div>
+    
+<div class="padding-box product product-in">
+      <div class="container">
+        <div class="heading"><h4>Similar</h4><h1>Products</h1></div>
+        <ul class="row product-slider">
+          <li>
+            <div class="product-box">              
+                <a href="/products/intelligent-sports-shoes">
+                  <div class="img-box"><img src="{{ 'mens-boot.png' | asset_url }}" class="img-fluid"> <i class="far fa-heart"></i></div>
+                  <h3>RENEGADE GTX® MID <br>£185.00</h3>
+                  <p>or £23p/m</p>
+                </a>                     
+            </div>
+          </li>
+          <li>
+            <div class="product-box">              
+                <a href="/products/copy-of-football-shoes-for-boys">
+                  <div class="img-box"><img src="{{ 'mens-boot.png' | asset_url }}" class="img-fluid"> <i class="far fa-heart"></i></div>
+                  <h3>RENEGADE GTX® MID <br>£185.00</h3>
+                  <p>or £23p/m</p>
+                </a>                     
+            </div>
+          </li>
+          <li>
+            <div class="product-box">              
+                <a href="/products/football-shoes-for-women">
+                  <div class="img-box"><img src="{{ 'mens-boot.png' | asset_url }}" class="img-fluid"> <i class="far fa-heart"></i></div>
+                  <h3>RENEGADE GTX® MID <br>£185.00</h3>
+                  <p>or £23p/m</p>
+                </a>                     
+            </div>
+          </li>
+          <li>
+            <div class="product-box">              
+                <a href="/products/joggers-for-women">
+                  <div class="img-box"><img src="{{ 'mens-boot.png' | asset_url }}" class="img-fluid"> <i class="far fa-heart"></i></div>
+                  <h3>RENEGADE GTX® MID <br>£185.00</h3>
+                  <p>or £23p/m</p>
+                </a>                     
+            </div>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+<div class="review-sec">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row review-in">
+              <div class="col-md-4">
+                <div class="review-sub">              
+                  <h4>Excellent</h4>
+                  <ul class="nav">
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star-half-alt"></i></li>
+                  </ul>
+                  <div class="rating">
+                    <span><div class="number">4.68</div><p>Average</p></span>
+                    <span><div class="number">994</div><p>Reviews</p></span>
+                  </div>
+                  <a href="javascript:;" class="Review-btn"><i class="fas fa-star"></i> <span style="text-transform: uppercase;">Review</span> <small>.io</small></a>
+                </div>
+              </div>
+
+              <div class="col-md-8">
+                <ul class="review-slide">
+                  <li>
+                    <span><h5>Anonymous</h5>
+                      <ul class="nav">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                      </ul>
+                    </span>
+                    <p>Great shoes. Really good walking shoes. Very prompt delivery</p>
+                    <h6>posted 10 hours ago</h6>
+                  </li>
+                  <li>
+                    <span><h5>Anonymous</h5>
+                      <ul class="nav">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                      </ul>
+                    </span>
+                    <p>The best footwear produced.</p>
+                    <h6>posted 20 hours ago</h6>
+                  </li>
+                  <li>
+                    <span><h5>Anonymous</h5>
+                      <ul class="nav">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                      </ul>
+                    </span>
+                    <p>The best footwear produced.</p>
+                    <h6>posted 20 hours ago</h6>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+     </div>
+
+
+
+{% if section.settings.product_sticky_cart %}
+{% include 'product-sticky-cart' %}
+{% endif %}
+
+{% assign product_page_layout =  section.settings.product_page_layout | strip %}
+{% if product_page_layout contains 'vertical_thumbs' %}
+{{ 'https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css' | stylesheet_tag }}
+{{ 'https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js' | script_tag }}
+{% endif %}
+{% if product_page_layout == 'sticky_layout' %}
+{{ 'jquery.sticky-kit.min.js' | asset_url | script_tag }}
+{% endif %}
+
+<script type="text/javascript"><!--
+  // related products	 
+  $(document).ready(function() {
+  $('.related-container').owlCarousel({
+    nav: true,
+    dots: false,
+    navSpeed: 1000,
+    margin: 0,
+    responsive:{
+      0:{
+        items: 1
+      },
+      480:{
+        items: 2
+      },
+      768:{
+        items: 3
+      },
+      992:{
+        items: 4
+      },
+      1200:{
+        items: 5
+      }
+
+    },
+    onInitialized: function() {
+      owlAction();
+    },
+    onTranslated: function() {
+      owlAction();
+    }	
+  });
+  function owlAction() {
+    $(".related-container .owl-item").removeClass('first');
+    $(".related-container .owl-item").removeClass('last');
+    $(".related-container .owl-item").removeClass('before-active');
+    $(".related-container .owl-item.active:first").addClass('first');
+    $(".related-container .owl-item.active:last").addClass('last');
+    $('.related-container .owl-item.active:first').prev().addClass('before-active');
+  }
+});	
+  //-->
+</script>
+<script>
+
+    $(document).ready(function() {
+
+    // vertical thumbs on product page
+    {% assign product_page_layout =  section.settings.product_page_layout | strip %}
+    {% if product_page_layout contains 'vertical_thumbs' %}
+    $('.bxslider').bxSlider({
+      mode: 'vertical',
+      slideMargin: 5,
+      infiniteLoop: false,
+      hideControlOnEnd: true,
+      adaptiveWidth: true,
+      minSlides: 6,
+      moveSlides: 1
+    }); 
+    {% endif %}
+    {% if product_page_layout == 'sticky_layout' %}
+    if ($(window).width() >= 768  ) {
+    $("#desc").stick_in_parent();
+    }
+    {% endif %}
+
+    // review link to reviews
+    var reviewsTimeout = setInterval(function() {
+      if ($('.product-info-main .spr-badge-caption').length > 0) {
+        $('.product-info-main .spr-badge-caption').on('click', function() {
+          $('html,body').animate({
+            scrollTop: $('.nav-tabs li:last').offset().top
+          },'400');
+          $('.nav-tabs a[href="#reviews"]').tab('show');
+        });
+        clearInterval(reviewsTimeout);
+      }
+    }, 1000);
+    
+  });
+  
+  // Pre-loading product images, to avoid a lag when a thumbnail is clicked, or
+  // when a variant is selected that has a variant image.
+  Shopify.Image.preload({{ product.images | json }}, '{{ product_img_size }}');
+
+                        var selectCallback = function(variant, selector) {
+
+    var $addToCart = $('#button-cart'),
+        $addToCartBuy = $('#button-cart-buy'),
+        $addToCartSticky = $('#button-cart-sticky'),
+        $productPrice = $('#productPrice'),
+        $comparePrice = $('#comparePrice'),
+        $variantQuantity = $('#variantQuantity'),
+        $quantityElements = $('.quantity-selector, label + .js-qty'),
+        $addToCartText = $('#button-cart'),
+        $featuredImage = $('#productPhotoImg');
+    if (variant) {
+      // Update variant image, if one is set
+      // Call timber.switchImage function in shop.js
+      if (variant.featured_image) {
+        var newImg = variant.featured_image,
+            el = $featuredImage[0];
+        $(function() {
+          Shopify.Image.switchImage(newImg, el, timber.switchImage);
+          {% if section.settings.product_sticky_layout == true %}
+          $('body,html').animate({scrollTop: 125}, 800);
+          return false;
+          {% endif %}
+        });
+      }
+
+      // Select a valid variant if available
+      if (variant.available) {
+        // We have a valid product variant, so enable the submit button
+        $addToCart.removeClass('disabled').prop('disabled', false);
+        $addToCartBuy.removeClass('disabled').prop('disabled', false);
+        $addToCartSticky.removeClass('disabled').prop('disabled', false);
+        {% if template == 'product.pre-order' %}
+        $addToCartText.html({{ 'products.product.pre_order' | t | json }});
+        $addToCartSticky.html({{ 'products.product.pre_order' | t | json }});
+        $addToCartBuy.html({{ 'products.product.pre_order' | t | json }});
+        {% else %}
+        $addToCartText.html({{ 'products.product.add_to_cart' | t | json }});
+        $addToCartSticky.html({{ 'products.product.add_to_cart' | t | json }});
+        $addToCartBuy.html({{ 'products.product.buy_now' | t | json }});
+        {% endif %}
+        $quantityElements.show();
+        var inventory_level = (inv_qty[ variant.id ]);
+        // Show how many items are left, if below 10
+        {% if section.settings.product_quantity_message %}
+        if (variant.inventory_management) {
+          if (inventory_level < 10 && inventory_level > 0) {
+            $variantQuantity.html({{ 'products.product.only_left' | t: count: '1' | json }}.replace('1', inventory_level)).addClass('is-visible');
+          } else if (inventory_level <= 0 && variant.incoming) {
+            $variantQuantity.html({{ 'products.product.will_not_ship_until' | t: date: '[date]' | json }}.replace('[date]', variant.next_incoming_date)).addClass('is-visible');
+          } else {
+            $variantQuantity.removeClass('is-visible');
+          }
+        }
+        else {
+          $variantQuantity.removeClass('is-visible');
+        }
+        {% endif %}
+        if (variant.inventory_management) {
+          if (inventory_level >= 10 ) {
+            $('.ex-text').html('{{ 'products.product.in_stock' | t }}').css("color", "#66aa00");
+                               } else if (inventory_level < 10 && inventory_level > 0) {
+              $('.ex-text').html(inventory_level +' {{ 'products.product.in_stock' | t }}').css("color", "orange");
+                                 } else {
+                                 $('.ex-text').html('{{ 'products.product.out_stock' | t }}').css("color", "red");
+                                                    }
+                                                    }
+                                                    } else {
+                                                    // Variant is sold out, disable the submit button
+                                                    $addToCart.addClass('disabled').prop('disabled', true);
+              $addToCartBuy.addClass('disabled').prop('disabled', true);
+              $addToCartSticky.addClass('disabled').prop('disabled', true);
+              $addToCartText.html({{ 'products.product.sold_out' | t | json }});
+              $addToCartBuy.html({{ 'products.product.sold_out' | t | json }});
+              $addToCartSticky.html({{ 'products.product.sold_out' | t | json }});
+              $variantQuantity.removeClass('is-visible');
+              if (variant.incoming) {
+                $variantQuantity.html({{ 'products.product.will_be_in_stock_after' | t: date: '[date]' | json }}.replace('[date]', variant.next_incoming_date)).addClass('is-visible');
+              }
+              else {
+                $variantQuantity.addClass('hide');
+              }
+              $quantityElements.hide();
+            }
+
+            // Regardless of stock, update the product price
+            Shopify.money_format = '{{shop.money_format }}'; 
+
+            //var customPrice = timber.formatMoney( Shopify.formatMoney(variant.price,Shopify.money_format) );
+            var a11yPrice = Shopify.formatMoney(variant.price, Shopify.money_format);
+            // var customPriceFormat = ' <span aria-hidden="true">' + customPrice + '</span>';
+            var customPriceFormat = ' <span class="visually-hidden">' + a11yPrice + '</span>';
+            $productPrice.html(customPriceFormat);
+
+            // Also update and show the product's compare price if necessary
+            {% if settings.product_show_compare_at_price %}
+            if ( variant.compare_at_price > variant.price ) {
+              var a11yComparePrice = Shopify.formatMoney(variant.compare_at_price, Shopify.money_format);
+              comparePriceFormat = ' <span class="visually-hidden">' + a11yComparePrice + '</span>';
+              $comparePrice.html(comparePriceFormat);
+              $comparePrice.show();
+            } else {
+              $comparePrice.hide();
+            }
+            {% endif %}
+
+
+          } else {
+            // The variant doesn't exist, disable submit button.
+            // This may be an error or notice that a specific variant is not available.
+            $addToCart.addClass('disabled').prop('disabled', true);
+            $addToCartBuy.addClass('disabled').prop('disabled', true);
+            $addToCartSticky.addClass('disabled').prop('disabled', true);
+            $addToCartText.html({{ 'products.product.unavailable' | t | json }});
+            $addToCartBuy.html({{ 'products.product.unavailable' | t | json }});
+            $addToCartSticky.html({{ 'products.product.unavailable' | t | json }});
+            $variantQuantity.removeClass('is-visible');
+            $quantityElements.hide();
+          }
+          if (variant && variant.featured_image) {
+            var originalImage = $(".cloud-zoom.main-image img");
+            var newImage = variant.featured_image;
+            var element = originalImage[0];
+            Shopify.Image.switchImage(newImage, element, function (newImageSizedSrc, newImage, element) {
+              $(element).parents('a').attr('href', newImageSizedSrc);
+              $(element).attr('src', newImageSizedSrc);
+              $('#light-box-position').val(newImage.position);
+              $('.cloud-zoom, .cloud-zoom-gallery').CloudZoom();
+
+            });
+          }
+          // BEGIN SWATCHES
+          if (variant) {
+            var form = $('#' + selector.domIdPrefix).closest('form');
+            for (var i=0,length=variant.options.length; i<length; i++) {
+              var radioButton = form.find('.swatch[data-option-index="' + i + '"] :radio[value="' + variant.options[i] +'"]');
+              if (radioButton.size()) {
+                radioButton.get(0).checked = true;
+              }
+            }
+          }
+          // END SWATCHES
+          {% if section.settings.product_show_sku %}
+          // SHOW/HIDE SKU
+          if (variant) {
+            $('.variant-sku').text(variant.sku);
+            if(variant.sku != '')
+              $('.skuvariant').show();
+            else 
+              $('.skuvariant').hide();
+          } else {
+            $('.variant-sku').empty();
+          }
+          {% endif %}
+          {% if section.settings.product_show_barcode %}
+          // SHOW/HIDE Barcode
+          if (variant) {
+            $('.variant-barcode').text(variant.barcode);
+            if(variant.barcode != '')
+              $('.barcodevariant').show();
+            else 
+              $('.barcodevariant').hide();
+          } else {
+            $('.variant-barcode').empty();
+          }
+          {% endif %}
+          // Sticky Add to cart
+          if (variant) {
+            var select1 = $('#form_buy').find('select[name="productSelect"]').val();
+            $('#form_buy_sticky').find('select[name="id"]').val($('#form_buy').find('select[name="id"]').val());
+
+            $('#form_buy_sticky').find('.special-price .price').html(customPriceFormat);
+            {% if settings.product_show_compare_at_price %}
+            if ( variant.compare_at_price > variant.price ) {
+              $('#form_buy_sticky').find('.old-price .price').html(comparePriceFormat);
+            }
+            {% endif %}
+
+            if (variant.featured_image) {
+              var originalImageSticky = $("#form_buy_sticky img");
+              var newImage = variant.featured_image;
+              var element = originalImageSticky[0];
+              Shopify.Image.switchImage(newImage, element, function (newImageSizedSrc, newImage, element) {
+                $(element).parents('a').attr('href', newImageSizedSrc);
+                $(element).attr('src', newImageSizedSrc);
+
+              });
+            }
+          }
+
+          {% if settings.show_multiple_currencies %}
+          var defaultCurrency = '{{ settings.default_currency | default: shop.currency }}';
+          var shopCurrency = '{{ shop.currency }}';
+          var cookieCurrency = Currency.cookie.read();
+          if (cookieCurrency == null) {
+            Currency.convertAll(shopCurrency, defaultCurrency);
+          } else {
+            Currency.convertAll(shopCurrency, cookieCurrency);
+          }    
+          {% endif %}
+
+        };
+
+        jQuery(function($) {
+          var product = {{ product | json }};
+          {% if section.settings.product_quantity_message %}
+          {% for variant in product.variants %}
+          product.variants[{{ forloop.index0}}].incoming = {{ variant.incoming | default: false }};
+          product.variants[{{ forloop.index0}}].next_incoming_date = {{ variant.next_incoming_date | date: format: 'month_day_year' | json }};
+          {% endfor %}
+          {% endif %}
+
+          new Shopify.OptionSelectors('productSelect', {
+            product: product,
+            onVariantSelected: selectCallback,
+            enableHistoryState: true
+          });
+
+          // Add label if only one product option and it isn't 'Title'. Could be 'Size'.
+          {% if product.options.size == 1 and product.options.first != 'Title' %}
+          $('.selector-wrapper:eq(0)').prepend('<label>{{ product.options.first | escape }}</label>');
+                                               {% endif %}
+                                               /* Hide selectors if we only have 1 variant and its title contains 'Default'. */
+                                               {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
+                                               $('.selector-wrapper').hide();
+          // Sticky Add to cart
+          $("#title").removeClass("hidden-sm hidden-xs").addClass( "col-7" );
+          {% else %}
+          $('#variantBreak').removeClass('hr--clear');
+          {% endif %}
+          //$('.selector-wrapper').hide();
+        }); 
+</script>
+{% if section.settings.show_variant_swatches != 'false' %}
+{% include 'linked-options' %}
+{% endif %}

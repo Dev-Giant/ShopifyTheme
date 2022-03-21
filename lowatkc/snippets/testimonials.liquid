@@ -1,0 +1,64 @@
+<div class="testimonial-container" {% if section.settings.image != blank %}style="background-image: url('{{ section.settings.image | img_url: 'master' }}');" {% endif %}>
+  <div class="container">
+    <div class="module-title">
+      <h2>{{ section.settings.heading }}</h2>
+    </div>
+    <div class="block-content">
+      <div id="slides" class="owl-carousel owl-theme">
+        {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+        <div class="row_items">
+          <div class="testimonial-content">
+            <div class="testimonial-images">
+              {% if block.settings.image != blank %}
+              <img {% if settings.lazyloading_enable %} class="lazyload" data-{% endif %}src="{{ block.settings.image | img_url: '100x100' }}" alt="{{ block.settings.author }}"/>
+              {% endif %}
+            </div>
+            <div class="testimonial-box">
+              <a href="#">{{ block.settings.description }}</a>
+            </div>
+            <i class="fa fa-quote-right"></i>
+            <h4 class="testimonial-author">{{ block.settings.author }}</h4>
+          </div>
+          <!--testimonial-content-->
+        </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+    <!--block-content-->
+  </div>
+</div>
+<!--testimonial-container-->
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#slides").owlCarousel({
+      autoPlay :  false ,
+      items : 1,	
+      loop: true,
+      margin: 30,
+      navSpeed : 1000,
+      dotsSpeed : 1000,
+      autoplaySpeed : 1000,
+      nav :  true  ,
+      dots : false ,
+      lazyLoad: true,
+      responsive:{
+        0:{
+          items: 1,
+          nav: true
+        },
+        480:{
+          items: 1,
+          nav: true
+        },
+        768:{
+          items: 1
+        },
+        980:{
+          items: 1
+        }
+      }
+    });
+  });
+</script>

@@ -1,0 +1,44 @@
+<div class="main-row {% if section.settings.fullwidth == true %}full-width{% endif  %}">
+  <div class="container">
+    <div class="row">
+      <div class="main-col col-sm-12 col-md-12">
+        <div class="row sub-row">
+          <div class="sub-col col-sm-12 col-md-12">
+            <div class="static-text-notification">
+              <div class="container">
+                <div class="container-inner">
+                  {% if section.settings.description != blank %}
+                  <p>{{ section.settings.description }}</p>
+                  {% endif %}
+                  <span class="close-notification"><i class="ion-android-close"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Message Box",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Slide Description"
+    },
+	{
+	    "type": "checkbox",
+    	"id": "fullwidth",
+    	"label": "Set Div fullwidth?",
+    	"default": false
+    }
+  ],
+  "presets": [{
+    "name": "Message Box",
+    "category": "Feature Sections"
+  }]
+}
+{% endschema %}

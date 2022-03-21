@@ -1,0 +1,246 @@
+<nav id="top" class="hd1">
+  <div class="container">
+    <div class="container-inner">
+      {% if section.settings.header_message_1 != blank %}
+      <ul class="box box-left">
+        <li>
+          <p>{{ section.settings.header_message_1 }}</p>
+        </li>
+      </ul>
+      {% endif %}
+      <ul class="box box-right">
+        {% if section.settings.header_message_2 != blank %}
+        <li><p>{{ section.settings.header_message_2 }}</p></li>
+        {% endif %}
+        {% if section.settings.header_message_3 != blank %}
+        <li><p>{{ section.settings.header_message_3 }}</p></li>
+        {% endif %}
+        {% include 'header-currency' %}
+        <li class="setting">
+          <div class="btn-group">
+            <button class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span>{{ 'homepage.navigation.my_account' | t }}</span> <i class="icon ion-chevron-down"></i></button>
+            <div class="dropdown-menu" id="top-links">
+              <ul class="list-unstyled">
+                {% if shop.customer_accounts_enabled %}
+                {% if customer %}
+                <li><a href="/account"><span>{{ 'homepage.navigation.my_account' | t }}</span></a></li>
+                <li><a href="/account/logout" id="customer_logout_link"><span>{{ 'layout.customer.log_out' | t }}</span></a></li>
+                {% else %}
+                <li><a href="/account/login" id="customer_login_link"><span>{{ 'layout.customer.sign_in' | t }}</span></a></li>
+                {% if shop.customer_accounts_optional %}
+                <li><a href="/account/register" id="customer_register_link"><span>{{ 'layout.customer.create_account' | t }}</span></a></li>
+                {% endif %}
+                {% endif %}
+                {% endif %}
+                {% if settings.hide_wishlist == false %}
+                <li><a href="/pages/wishlist"><span>{{ 'homepage.navigation.wish_list' | t }}</span></a></li>
+                {% endif %}
+                <li><a href="/cart"><span>{{ 'homepage.navigation.shopping_cart' | t }}</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<header class="hd1">
+  <div class="header-inner ">
+    <div class="container">
+      <div class="container-inner">
+        {% include 'logo' %}
+        <div class="top-search">
+          {% include 'header-search' %}
+        </div>
+        <div class="box-cart">
+          <ul class="user ul-account list-unstyled" >
+            {% if shop.customer_accounts_enabled %}
+            {% if customer %}
+            <li><a href="/account">{{ 'homepage.navigation.my_account' | t }}</a></li>
+            <li>or <a href="/account/logout" id="customer_logout_link">{{ 'layout.customer.log_out' | t }}</a></li>
+            {% else %}
+            {% if shop.customer_accounts_optional %}
+            <li><a href="/account/register" id="customer_register_link">{{ 'layout.customer.create_account' | t }}</a></li>
+            {% endif %}
+            <li>or <a href="/account/login" id="customer_login_link">{{ 'layout.customer.sign_in' | t }}</a></li>
+            {% endif %}
+            {% endif %}
+          </ul>
+          {% if settings.hide_wishlist == false %}
+          <div class="wishlist">
+            <a href="/pages/wishlist" id="wishlist-total" title="{{ 'homepage.navigation.wish_list' | t }}"><span>0</span></a>
+          </div>
+          {% endif %}
+          {% include 'header-cart'%}   
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <div class="top-menu fix">
+    <div class="container">
+      <div class="container-inner">
+        {% include 'social-button-header' %}
+      </div>
+    </div>
+    {% assign color_skin = settings.color_skin %}
+    {% assign hd_menu_color = settings.hd_menu_color %}
+    {% assign headings_color = settings.headings_color %}
+    <style>
+      #oc-menu-{{section.id}} .oc-menu-bar {
+        background: {{ headings_color }};
+        color: {{ hd_menu_color }};
+        padding: 15px 15px 15px 15px;
+        position: relative;
+      }
+      #oc-menu-{{section.id}}.oc-menu-bar {
+        background: {{ headings_color }};
+        color: {{ hd_menu_color }};
+      }
+      #oc-menu-{{section.id}} .ul-top-items .li-top-item {
+        background: {{ headings_color }};
+        color: {{ hd_menu_color }};
+      }
+      #oc-menu-{{section.id}} .ul-top-items .li-top-item .a-top-link {
+        padding: 18px 20px 18px 20px;
+        color: {{ hd_menu_color }};
+        font-size: 14px;
+        line-height: 24px;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+      #oc-menu-{{section.id}} .ul-top-items .li-top-item:hover, #oc-menu-{{section.id}} .ul-top-items .li-top-item.active {
+        background: {{ headings_color }};
+        color: {{ color_skin }};
+      }
+      #oc-menu-{{section.id}} .ul-top-items .li-top-item:hover .a-top-link, #oc-menu-{{section.id}} .ul-top-items .li-top-item.active .a-top-link{
+        color: {{ color_skin }};
+        font-weight: 500;
+      }
+      #oc-menu-{{section.id}} .mega-menu-container {
+        width: 900px;
+        background: #FFFFFF;
+        padding: 30px 30px 30px 30px;
+      }
+      #oc-menu-{{section.id}} .mega-menu-container .a-mega-second-link,#oc-menu-{{section.id}} .mega-menu-container .widget-html-title {
+        color: {{ headings_color }};
+      }
+      #oc-menu-{{section.id}} .mega-menu-container .a-mega-third-link {
+        color: {{ settings.hd_menu_inner_color }};
+      }
+      #oc-menu-{{section.id}} .ul-second-items .li-second-items {
+        background: #FFFFFF;
+        color: {{ headings_color }};
+      }
+      #oc-menu-{{section.id}} .ul-second-items .li-second-items:hover, #oc-menu-{{section.id}} .ul-second-items .li-second-items.active {
+        background: #FFFFFF;
+        color: {{ color_skin }};
+      }
+      #oc-menu-{{section.id}} .ul-second-items .li-second-items .a-second-link {
+        color: {{ headings_color }};
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+      #oc-menu-{{section.id}} .ul-second-items .li-second-items:hover .a-second-link, #oc-menu-{{section.id}} .ul-second-items .li-second-items.active .a-second-link {
+        color: {{ color_skin }};
+        font-weight: 500;
+      }
+      #oc-menu-{{section.id}} .ul-third-items .li-third-items {
+        background: #FFFFFF;
+      }
+      #oc-menu-{{section.id}} .ul-third-items .li-third-items:hover, #oc-menu-{{section.id}} .ul-third-items .li-third-items.active {
+        background: #FFFFFF;
+      }
+      #oc-menu-{{section.id}} .ul-third-items .li-third-items .a-third-link {
+        color: {{ settings.hd_menu_inner_color }};
+        font-size: 14px;
+        text-transform: none;
+        font-weight: 400;
+      }
+      #oc-menu-{{section.id}} .ul-third-items .li-third-items:hover .a-third-link, #oc-menu-{{section.id}} .ul-third-items .li-third-items.active .a-third-link {
+        color: #2E3138;
+        font-weight: 400;
+      }
+    </style>
+    {% include 'main-menu', c:true %}
+    <style>
+      #oc-menu-m{{section.id}} .oc-menu-bar {
+        background: {{ headings_color }};
+        color: {{ hd_menu_color }};
+        padding: 20px 15px 20px 15px;
+        position: relative;
+      }
+      #oc-menu-m{{section.id}}.oc-menu-bar {
+        background: {{ headings_color }};
+        color: {{ hd_menu_color }};
+      }
+      #oc-menu-m{{section.id}} .ul-top-items .li-top-item {
+        background: {{ headings_color }};
+        color: {{ hd_menu_color }};
+      }
+      #oc-menu-m{{section.id}} .ul-top-items .li-top-item .a-top-link {
+        padding: 10px 20px 10px 20px;
+        color: {{ hd_menu_color }};
+        font-size: 14px;
+        line-height: 24px;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+      #oc-menu-m{{section.id}} .ul-top-items .li-top-item:hover, #oc-menu-m{{section.id}} .ul-top-items .li-top-item.active {
+        background: {{ headings_color }};
+        color: {{ color_skin }};
+      }
+      #oc-menu-m{{section.id}} .ul-top-items .li-top-item:hover .a-top-link, #oc-menu-m{{section.id}} .ul-top-items .li-top-item.active .a-top-link{
+        color: {{ color_skin }};
+        font-weight: 500;
+      }
+      #oc-menu-m{{section.id}} .mega-menu-container {
+        width: 100%;
+        background: #FFFFFF;
+        padding: 30px 30px 30px 30px;
+      }
+      #oc-menu-m{{section.id}} .mega-menu-container .a-mega-second-link,#oc-menu-m{{section.id}} .mega-menu-container .widget-html-title {
+        color: {{ headings_color }};
+      }
+      #oc-menu-m{{section.id}} .mega-menu-container .a-mega-third-link {
+        color: {{ settings.hd_menu_inner_color }};
+      }
+      #oc-menu-m{{section.id}} .ul-second-items .li-second-items {
+        background: #FFFFFF;
+        color: {{ headings_color }};
+      }
+      #oc-menu-m{{section.id}} .ul-second-items .li-second-items:hover, #oc-menu-m{{section.id}} .ul-second-items .li-second-items.active {
+        background: #FFFFFF;
+        color: {{ color_skin }};
+      }
+      #oc-menu-m{{section.id}} .ul-second-items .li-second-items .a-second-link {
+        color: {{ headings_color }};
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+      #oc-menu-m{{section.id}} .ul-second-items .li-second-items:hover .a-second-link, #oc-menu-m{{section.id}} .ul-second-items .li-second-items.active .a-second-link {
+        color: {{ color_skin }};
+        font-weight: 500;
+      }
+      #oc-menu-m{{section.id}} .ul-third-items .li-third-items {
+        background: #FFFFFF;
+      }
+      #oc-menu-m{{section.id}} .ul-third-items .li-third-items:hover, #oc-menu-m{{section.id}} .ul-third-items .li-third-items.active {
+        background: #FFFFFF;
+      }
+      #oc-menu-m{{section.id}} .ul-third-items .li-third-items .a-third-link {
+        color: {{ settings.hd_menu_inner_color }};
+        font-size: 14px;
+        text-transform: none;
+        font-weight: 400;
+      }
+      #oc-menu-m{{section.id}} .ul-third-items .li-third-items:hover .a-third-link, #oc-menu-m{{section.id}} .ul-third-items .li-third-items.active .a-third-link {
+        color: #2E3138;
+        font-weight: 400;
+      }
+    </style>
+    {% include 'header-mob-nav' %}
+  </div>
+</header>

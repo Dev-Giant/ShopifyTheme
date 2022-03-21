@@ -1,0 +1,42 @@
+{% include 'product-grid-variables' %}
+
+{% comment %}Select the product image size from settings.{% endcomment %}
+{% assign img_size = settings.img_size_grid %}
+<div class="product-layout list-style1">
+  <div class="product-thumb transition">
+    <div class="item">
+      <div class="item-inner">
+        <div class="image images-container">
+          <a href="{{ product.url }}" class="product-image">
+            {% include 'product-grid-image',image:product.featured_image %}
+          </a>
+        </div>
+        <!-- image -->
+        <div class="caption">
+          <div class="box-rating">
+            {% if settings.grid_vendor_enable %}
+            <p class="manufacture-product">
+              <span>{{ 'products.product.brand' | t }}:</span>{{ product.vendor | link_to_vendor }}
+            </p>
+            {% endif %}
+            <div class="ratings">
+              <div class="rating-box">
+                {% include 'review' %}
+              </div>
+            </div>
+          </div>
+          <h4 class="product-name">
+            <a href="{{ product.url | within: collection }}">
+              {% if settings.limit_title_words == true %}{{ product.title | truncate:settings.limit_title_words_count, "" }}{% else %}{{ product.title }}{% endif %}
+            </a>
+          </h4>
+          <p class="model">{{ product.type }}</p>
+          {% include 'price'%}
+        </div>
+        <!-- caption -->
+      </div>
+    </div>
+  </div>
+  <!-- product-thumb -->
+</div>
+<!-- product-layout -->

@@ -1,0 +1,162 @@
+<div class="main-row {% if section.settings.fullwidth == true %}full-width{% endif  %} " data-section-id="{{ section.id }}">
+  <div class="container">
+    <div class="row">
+      <div class="main-col col-sm-12 col-md-12">
+        <div class="row sub-row">
+          <div class="sub-col col-sm-12 col-md-12">
+            {% include section.settings.layout %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% if template == 'index' %}
+<script type = "text/javascript" >
+    $(document).ready(function() {
+
+        $("#instafeed").instastory({
+            get: "{{ section.settings.insta_get }}",
+            limit: "{{ section.settings.insta_images_fetch }}",
+            imageSize: {{ section.settings.insta_size }},
+            template: '<a href="\{\{link\}\}" target="_blank" class="fancybox" alt="\{\{caption\}\}">' +
+                '<img {% if settings.lazyloading_enable %}data-{% endif %}src="\{\{image\}\}" class="img-responsive{% if settings.lazyloading_enable %} lazyload{% endif %}">' + '</a>',
+            after: function() {
+                $("#instagram_block_home .content_block").owlCarousel({
+                    autoPlay: false,
+                    items: 6,
+                    loop: true,
+                    navSpeed: 1000,
+                    dotsSpeed: 1000,
+                    autoplaySpeed: 1000,
+                    nav: true,
+                    dots: false,
+                    navText: ['<i class="ion-chevron-left"></i>', '<i class="ion-chevron-right"></i>'],
+                    responsive: {
+                        0: {
+                            items: 1,
+                            nav: true
+                        },
+                        480: {
+                            items: 1,
+                            nav: true
+                        },
+                        640: {
+                            items: 2,
+                            nav: true
+                        },
+                        991: {
+                            items: 3
+                        },
+                        1200: {
+                            items: {{ section.settings.no_of_products }}
+                        }
+                    }
+                });
+      			mass.resizeInsta();
+            }
+        });
+    }); 
+  {% endif %} 
+</script>
+<script type="text/javascript">
+  $('.content_block').magnificPopup({
+    type: 'image',
+    delegate: 'm',
+    gallery: {
+      enabled : true
+    }
+  });
+</script>
+{% schema %}
+{
+  "name": "Instafeed section",
+  "class": "insta-section index-section--flush",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Select layout design",
+      "options": [
+        {
+        "value": "instafeed",
+        "label": "Design 1"
+        }
+      ],
+      "default": "instafeed"
+    },
+    {
+      "type": "checkbox",
+      "id": "homepage_instagram_feed",
+      "label": "Show Instagram feed",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "insta_title",
+      "label": "Title",
+      "default": "#MIRORA ON INSTAGRAM"
+    },
+    {
+      "type": "text",
+      "id": "insta_get",
+      "label": "Feed to generate for",
+      "default": "@masstechnologist",
+      "info": "Prepend # or @ like you would on instagram."
+    },
+    {
+      "type": "select",
+      "id": "insta_size",
+      "label": "Image Size to fetch?",
+      "info": "Smaller size will help in loading fast",
+      "options": [
+        {
+          "value": "150",
+          "label": "150"
+        },
+		{
+          "value": "240",
+          "label": "240"
+        },
+		{
+          "value": "320",
+          "label": "320"
+        },
+		{
+          "value": "480",
+          "label": "480"
+        },
+		{
+          "value": "640",
+          "label": "640"
+        }
+      ],
+      "default": "640"
+    },
+    {
+      "type": "text",
+      "id": "insta_images_fetch",
+      "label": "No of images to fetch",
+      "default": "10"
+    },
+    {
+      "type": "text",
+      "id": "no_of_products",
+      "label": "No of products in a row",
+      "default": "5"
+    },
+    {
+      "type": "checkbox",
+      "id": "fullwidth",
+      "label": "Set Div fullwidth?",
+      "default": true
+    }
+  ],
+  "blocks": [
+  ],
+  "presets": [{
+    "name": "Instagram Feed",
+    "category": "Feature Sections"
+  }]
+}
+{% endschema %}

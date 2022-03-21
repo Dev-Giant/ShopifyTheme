@@ -1,0 +1,31 @@
+<div id="section-cta">
+  <div class="container">
+    {{ section.settings.text }}  
+    
+  </div>
+</div>
+{% schema %}
+{
+  "name": "HomePage Custom HTML",
+  "settings": [
+    {
+      "id": "text",
+        "type": "html",
+        "label": "Add custom html below",
+        "default": "<p>Add your text here</p>"
+    } 
+  ],
+  "presets": [
+    {
+      "name": "HomePage Custom HTML",
+      "category": "Custom HTML"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

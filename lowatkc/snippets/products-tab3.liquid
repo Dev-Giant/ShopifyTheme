@@ -1,0 +1,109 @@
+{% capture tabs %}{{ section.settings.products_tab_collection1 }},{{ section.settings.products_tab_collection2 }}{% endcapture %}
+{% assign tabs_collection = tabs | split: "," %}
+{% for coll in tabs_collection %}
+<div class="sub-col col-sm-12 col-md-6">
+  <div class="tt_tabsproduct_module multi-rows tabs-category-slider module-nav2 tab3" id="product_module_{{ coll }}_{{section.id}}">
+    {% assign title = collections[coll].title %}
+    <div class="module-title">
+      <h2>{{ title }}</h2>
+      <ul class="tab-heading tabs-categorys">
+        <li>
+          <a data-toggle="pill" href="#tab-{{ section.id }}{{ forloop.index0 }}0"><span>{{ title }}</span></a>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+    <div class="box-style">
+      <div class="owl-container">
+        <div class="tt-product">
+          <div class="tab-content">
+            {% assign coll_products = collections[coll].products %}
+            <div class="tab-container-{{ section.id }}{{ forloop.index0 }} owl-carousel owl-theme tab-pane fade" id="tab-{{ section.id }}{{ forloop.index0 }}0" >
+              {% if section.settings.listing_rows == 1 %}
+              {% for product in coll_products limit:section.settings.products_tab_count %}
+              <div class="row_items">
+                {% include 'product-grid-item-small' %}
+              </div>
+              {% endfor %}
+              {% else %}
+              <div class="row_items">
+                {% for product in coll_products limit:section.settings.products_tab_count %}
+                {% include 'product-grid-item-small' %}
+                {% assign ind = forloop.index | times: 1 | modulo:section.settings.listing_rows %}
+                {% if  ind == 0 %}
+              </div><div class="row_items">
+              {% endif %}
+              {% endfor %}
+              </div>
+              {% endif %}
+              <!-- productTabContent -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <script >
+    $(document).ready(function() {
+      $('a[href="#tab-{{ section.id }}{{ forloop.index0 }}0"]').trigger( "click" );
+        $(".tab-container-{{ section.id }}{{ forloop.index0 }}").owlCarousel({
+        items: 2,
+        loop:  false ,
+        margin:  0 ,
+        nav:  true ,
+        dots:  false ,
+        autoplay:   false ,
+        autoplayTimeout:  1000 ,
+        autoplayHoverPause: true,
+        autoplaySpeed:  1000 ,
+        navSpeed:  1000 ,
+        dotsSpeed:  1000 ,
+        lazyLoad: true,
+        responsive:{
+        0:{
+        items: 1,
+        nav: true
+        },
+        480:{
+        items: 2,
+        nav: true
+        },
+        768:{
+        items: 2
+        },
+        992:{
+        items: 2
+        },
+        1200:{
+        items: 2
+        },
+        1600:{
+        items: 2
+        }
+        },
+        onInitialized: function() {
+        var count = $(".tab-container-{{ section.id }}{{ forloop.index0 }} .owl-item.active").length;
+                      if(count == 1) {
+          $(".tab-container-{{ section.id }}{{ forloop.index0 }} .owl-item").removeClass('first');
+            $(".tab-container-{{ section.id }}{{ forloop.index0 }} .owl-item.active").addClass('first');
+            } else {
+            $(".tab-container-{{ section.id }}{{ forloop.index0 }} .owl-item").removeClass('first');
+            $(".tab-container-{{ section.id }}{{ forloop.index0 }} .owl-item.active:first").addClass('first');
+            }
+            },
+            onTranslated: function() {
+            var count = $(".tab-container-{{ section.id }}{{ forloop.index0 }} .owl-item.active").length;
+                          if(count == 1) {
+              $(".tab-container-{{ section.id }}{{ forloop.index0 }} .owl-item").removeClass('first');
+                $(".tab-container-{{ section.id }}{{ forloop.index0 }} .owl-item.active").addClass('first');
+                } else {
+                $(".tab-container-{{ section.id }}{{ forloop.index0 }} .owl-item").removeClass('first');
+                $(".tab-container-{{ section.id }}{{ forloop.index0 }} .owl-item.active:first").addClass('first');
+                }
+                }
+                });
+            });
+  </script>
+</div>
+{% endfor %}

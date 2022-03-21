@@ -1,0 +1,239 @@
+{% include 'product-grid-variables', ratio:'1:1' %}
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">        
+        <div class="carousel-item active">
+          <img src="{{ 'category-banner.png' | asset_url }}" class="img-fluid">  
+          <div class="text-box"> 
+            <div class="text-sub">
+              <h2><span>wish list</span></h2>              
+            </div>  
+          </div>                          
+        </div>               
+      </div>      
+    </div>
+
+   <!--========================= Main Container Strt ==================-->
+    
+
+  <div class="wish-list container">
+    <div class="row">
+      {% paginate collections.all.products by 9999 %}
+       {% for product in collections.all.products %}
+          {% assign sold_out = true %}
+          {% if product.available  %}
+          {% assign sold_out = false %}
+          {% endif %}
+       <div class="col-lg-6 wishlist-container"  data-line="{{ forloop.index }}" data-product-id="{{ product.id }}" data-product-handle="{{ product.handle }}">
+           <div class="wish-card">
+                <div class="uper-card">
+                  <div class="wishlist-img">
+                    <a href="{{ product.url }}">
+                  {% include 'product-grid-image',image:product.featured_image, customclass:'img-thumbnail'  %}
+                </a>
+                    
+                      <a onClick="window.location.reload()" type="button" data-toggle="tooltip" title="Remove" data-product-handle="{{ product.handle }}" data-line="{{ forloop.index }}" class="wishlist-close wishlist-btn">
+                     	<img src="http://cdn.shopify.com/s/files/1/0548/7244/1000/t/2/assets/cross.svg" alt="close"/>
+                     </a>
+                   
+                   </div>
+                   <div class="wishlist-text">
+                    <p class="dark-text">{{ product.title }}{% if product.compare_at_price > product.price %}
+                {{ product.price | money }}
+                {{ product.compare_at_price_max | money }}
+                {% else %}
+                {{ product.price | money }}
+                {% endif %}</p>
+                    <p class="small">SIZE: 8</p>
+                      <a href="javascript: void(0)" class="is-add-cart btn btn-primary {% if sold_out %} btn disabled {% endif %}" data-product-id="{{ product.variants.first.id }}" data-product-handle="{{ product.handle }}">Buy Now</a>
+                    
+<div class="addthis_toolbox addthis_default_style share-btn" data-url="{{ product.url }}"> Share this product <a class="addthis_counter addthis_pill_style"><i class="fas fa-share-alt"></i></a></div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515eeaf54693130e"></script>
+<!-- AddThis Button END -->
+
+                   
+                    </div>
+                </div>
+                <div class="in-card">
+                   <div class="wishlist-peragraph">
+                    <p>Cut: Mid-cut <br> Suitable For: Walking, Hiking, Trekking, Paths & Trails <br> Features: Waterproof, Resoleable, Vegan Friendly <br></p>
+                    <p> LOWA’s best selling style brings acclaimed trekking comfort fit to a multifunction <br> construction using injected PU technology, MONOWRAP® frame construction for <br> stability and underfoot comfort. Full length stabiliser and Vibram® Evo sole for <br> sure-footed trail.</p>
+                    <p class="flex">
+                      <img src="{{ 'double-injection.png' | asset_url }}" alt="">
+                      <img src="{{ 'rubber-sole.png' | asset_url }}" alt="">
+                      <img src="{{ 'stability-frame.png' | asset_url }}" alt="">
+                    </p> 
+                  </div>
+                </div>
+           </div>
+       </div>
+      
+      {% endfor %}
+       {% endpaginate %}
+             <p class="text-center wishlist-empty" style="display:none;">{{ 'wishlist.general.empty_wishlist' | t }} <a href="/collections/all">{{ 'wishlist.general.start_shopping_wishlist' | t }}</a> </p>
+<!-- Loader -->
+      <div class="wishlist-loader">
+        <p class="wishlist-loader--text text-center">{{ 'wishlist.general.loading_wishlist' | t }}</p>
+      </div>
+  </div>
+</div>
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+    <div class="review-sec">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row review-in">
+              <div class="col-md-4">
+                <div class="review-sub">              
+                  <h4>Excellent</h4>
+                  <ul class="nav">
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star-half-alt"></i></li>
+                  </ul>
+                  <div class="rating">
+                    <span><div class="number">4.68</div><p>Average</p></span>
+                    <span><div class="number">994</div><p>Reviews</p></span>
+                  </div>
+                  <a href="javascript:;" class="Review-btn"><i class="fas fa-star"></i> <span style="text-transform: uppercase;">Review</span> <small>.io</small></a>
+                </div>
+              </div>
+
+              <div class="col-md-8">
+                <ul class="review-slide">
+                  <li>
+                    <span><h5>Anonymous</h5>
+                      <ul class="nav">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                      </ul>
+                    </span>
+                    <p>Great shoes. Really good walking shoes. Very prompt delivery</p>
+                    <h6>posted 10 hours ago</h6>
+                  </li>
+                  <li>
+                    <span><h5>Anonymous</h5>
+                      <ul class="nav">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                      </ul>
+                    </span>
+                    <p>The best footwear produced.</p>
+                    <h6>posted 20 hours ago</h6>
+                  </li>
+                  <li>
+                    <span><h5>Anonymous</h5>
+                      <ul class="nav">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                      </ul>
+                    </span>
+                    <p>The best footwear produced.</p>
+                    <h6>posted 20 hours ago</h6>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+
+
+{% comment %}
+{% include 'product-grid-variables', ratio:'1:1' %}
+<!-- wishlist-area start -->
+<div class="container">
+  {% include 'breadcrumb' %}
+  <div class="row">
+    <div id="content" class="col-sm-12">
+      <h1>{{ page_title }}</h1>
+
+      <div class="table-responsive">
+        <table class="table table-bordered wishlist-product"  style="display: none;">
+          <thead class="wishlist-head">
+            <tr>
+              <td class="text-center">{{ 'cart.general.remove' | t }}</td>
+              <td class="text-center">{{ 'cart.general.heading_image' | t }}</td>
+              <td class="text-center">{{ 'cart.general.heading_product_name' | t }}</td>
+              <td class="text-center">{{ 'cart.general.heading_unit_price' | t }}</td>
+              <td class="text-center">{{ 'wishlist.general.add_cart' | t }}</td>
+            </tr>
+          </thead>
+          {% paginate collections.all.products by 9999 %}
+          {% for product in collections.all.products %}
+          {% assign sold_out = true %}
+          {% if product.available  %}
+          {% assign sold_out = false %}
+          {% endif %}
+          <tbody class="wishlist-container" data-line="{{ forloop.index }}" data-product-id="{{ product.id }}" data-product-handle="{{ product.handle }}">
+            <tr>
+              <td class="text-center btn-remove-product">
+                <a type="button" data-toggle="tooltip" title="Remove" class="btn btn-danger wishlist-btn" data-product-handle="{{ product.handle }}" data-line="{{ forloop.index }}">
+                  <i class="fa fa-times-circle"></i>
+                </a>
+              </td>
+              <td class="text-center">
+                <a href="{{ product.url }}">
+                  {% include 'product-grid-image',image:product.featured_image, customclass:'img-thumbnail'  %}
+                </a>
+              </td>
+              <td class="text-center">
+                <h5><a href='{{ product.url }}'>{{ product.title }}</a></h5>
+              </td>
+              <td class="text-center price-box box-special">
+                {% if product.compare_at_price > product.price %}
+                <p class="special-price"><span class="price">{{ product.price | money }}</span></p>
+                <p class="old-price"><span class="price">{{ product.compare_at_price_max | money }}</span></p>
+                {% else %}
+                <p class="regular-price"><span class="price">{{ product.price | money }}</span></p>
+                {% endif %}
+              </td>
+              <td class="text-center">
+                <a href="javascript: void(0)" class="is-add-cart btn btn-primary {% if sold_out %} btn disabled {% endif %}" data-product-id="{{ product.variants.first.id }}" data-product-handle="{{ product.handle }}">{{ 'wishlist.general.add_cart' | t }}</a>
+              </td>
+            </tr>
+          </tbody>
+          {% endfor %}
+          {% endpaginate %}
+          <p class="text-center wishlist-empty" style="display:none;">{{ 'wishlist.general.empty_wishlist' | t }} <a href="/collections/all">{{ 'wishlist.general.start_shopping_wishlist' | t }}</a> </p>
+
+        </table>
+      </div>
+
+      <!-- Loader -->
+      <div class="wishlist-loader">
+        <p class="wishlist-loader--text text-center">{{ 'wishlist.general.loading_wishlist' | t }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endcomment %}

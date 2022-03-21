@@ -1,0 +1,91 @@
+<div class="static-slider-cust-slider banner-static">
+  <div class="container">
+    <div class="static-slider owl-carousel owl-theme">
+      {% if section.blocks.size > 0 %}
+      {% for block in section.blocks limit:5 %}
+      <div class="col">
+        <div class="image">
+          <a href="{{ block.settings.link }}">
+            {% if block.settings.image != blank %}
+            <img {% if settings.lazyloading_enable %} class="lazyload" data-{% endif %}src="{{ block.settings.image | img_url: 'master' }}" alt=""/>
+            {% endif %}          
+            <span class="text" style="text-align:{{ block.settings.ad_align }}">
+              {% if block.settings.heading != blank %} 
+              <span class="text1" style="color:{{ block.settings.heading_color }}">{{ block.settings.heading }}</span>
+              {% endif %}
+              {% if block.settings.sub_heading != blank %} 
+              <span class="text2" style="color:{{ block.settings.sub_heading_color }}">{{ block.settings.sub_heading }}</span>
+              {% endif %}
+              {% if block.settings.link_text != blank %} 
+              <span class="link">{{ block.settings.link_text }}</span>
+              {% endif %}
+            </span>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+<script >
+  $(document).ready(function() {
+    $(".static-slider-cust-slider .static-slider").owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: true,
+      dots: false,
+      autoplay: true,
+      autoplayTimeout: 2000,
+      autoplayHoverPause: true,
+      autoplaySpeed: 2000,
+      navSpeed: 1000,
+      dotsSpeed: 1000,
+      lazyLoad: true,
+      responsive:{
+        0:{
+          items: 1,
+          nav: false
+        },
+        480:{
+          items: 2,
+          nav: false
+        },
+        768:{
+          items: 2
+        },
+        992:{
+          items: 3
+        },
+        1200:{
+          items: 3
+        }
+
+      },
+      onInitialized: function() {
+        var count = $(".static-slider-cust-slider .static-slider .owl-item.active").length;
+        if(count == 1) {
+          $(".static-slider-cust-slider .static-slider .owl-item").removeClass('first');
+          $(".static-slider-cust-slider .static-slider .active").addClass('first');
+        } else {
+          $(".static-slider-cust-slider .static-slider .owl-item").removeClass('first');
+          $(".static-slider-cust-slider .static-slider .owl-item.active:first").addClass('first');
+        }
+
+      },
+      onTranslated: function() {
+        var count = $(".static-slider-cust-slider .static-slider .owl-item.active").length;
+        if(count == 1) {
+          $(".static-slider-cust-slider .static-slider .owl-item").removeClass('first');
+          $(".static-slider-cust-slider .static-slider .active").addClass('first');
+        } else {
+          $(".static-slider-cust-slider .static-slider .owl-item").removeClass('first');
+          $(".static-slider-cust-slider .static-slider .owl-item.active:first").addClass('first');
+        }
+      }
+
+    });
+
+  });
+
+</script>

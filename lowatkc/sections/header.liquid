@@ -1,0 +1,537 @@
+<!--Start of Header Area-->
+{% include section.settings.header_layout %}
+<!--End of Header Area-->
+<script type="text/javascript">
+  $(document).ready(function() { 
+    // Move menu below slider
+    {% if section.settings.use_bottom_menu %}
+    $('header').addClass('bottom-menu');
+    {% endif %}
+    // top message bar
+    {% if section.settings.use_top_bar %}
+    if($.cookie('alertbtn_cookie') != 'closed') {
+      $('#shopify-section-header').parent().before('<div class="hdr static-text-notification"><div class="container"><div class="container-inner"><p>{{ section.settings.top_bar_message }}</p><span class="close-notification"><i class="ion-android-close"></i></span></div></div></div>');
+                                                   }
+                                                   {% endif %}
+                                                   $('.close-notification').click(function () {
+        $(".hdr.static-text-notification").hide();
+        $.cookie('alertbtn_cookie', 'closed', {
+          expires: 1,
+          path: '/'
+        });
+      });
+      /*--------------------------
+    Newsletter Popup Js 
+---------------------------- */ 
+      $("#newsletter-popup-conatiner").mouseup(function(e){
+        var popContainer = $("#newsletter-popup-conatiner");
+        var newsLatterPop = $("#newsletter-pop-up"); 
+        if(e.target.id != newsLatterPop.attr('id') && !newsLatterPop.has(e.target).length)
+        {
+          popContainer.fadeOut();
+        }
+      });
+      $('.hide-popup').on("click", function(){
+        var popContainer = $("#newsletter-popup-conatiner");
+        $('#newsletter-popup-conatiner')
+        {
+          popContainer.fadeOut();
+        }
+      });
+
+      $('#dont_show').on("click", function(){
+        $.cookie('popup_cookie', 'pclosed', {
+          expires: 3,
+          path: '/'
+        });
+        $('.hide-popup').trigger('click');
+      });
+      {% if settings.show_pupup and template == 'index'%}
+      if($.cookie('popup_cookie') != 'pclosed') {
+        $('#newsletter-popup-conatiner').show();
+      }
+      {% endif %}
+
+    });
+</script>
+{% schema %}
+{
+   "name":"Header",
+   "max_blocks":7,
+   "settings":[
+      {
+         "type":"select",
+         "id":"header_layout",
+         "label":"Select header layout",
+         "options":[
+            {
+               "value":"header-1",
+               "label":"Design 1"
+            },
+            {
+               "value":"header-2",
+               "label":"Design 2"
+            },
+            {
+               "value":"header-3",
+               "label":"Design 3"
+            }
+         ]
+      },
+      {
+         "type":"header",
+         "content":"Top Bar"
+      },
+      {
+         "type":"checkbox",
+         "id":"use_top_bar",
+         "label":"Use Top Bar"
+      },
+      {
+         "type":"text",
+         "id":"top_bar_message",
+         "label":"Top Bar Message"
+      },
+      {
+         "type":"text",
+         "id":"header_message_1",
+         "label":"Header Message 1",
+         "info":"Used in Design 1, Design 2",
+         "default":"Free shipping on all domestic orders with coupon code <span>“Watches2018”</span>"
+      },
+      {
+         "type":"text",
+         "id":"header_message_2",
+         "label":"Header Message 2",
+         "info":"Used in Design 1, Design 2",
+         "default":"Free delivery when you spend over $120."
+      },
+      {
+         "type":"text",
+         "id":"header_message_3",
+         "label":"Header Message 3",
+         "info":"Used in Design 1, Design 2",
+         "default":"Free delivery when you spend over $120."
+      },
+      {
+         "type":"header",
+         "content":"Logo"
+      },
+      {
+         "type":"checkbox",
+         "id":"logo_use_image",
+         "label":"Use a custom logo"
+      },
+      {
+         "type":"image_picker",
+         "id":"logo",
+         "label":"logo",
+         "info":"400px wide .png recommended"
+      },
+	  {
+         "type":"text",
+         "id":"logo_padding",
+         "label":"Paddings",
+         "default": "25px 0px 25px 0px",
+         "info":"Top Right Bottom Left respectively"
+      },
+      {
+         "type":"header",
+         "content":"Menus"
+      },
+      {
+         "type":"text",
+         "id":"header_message_4",
+         "label":"Header Message 4",
+         "info":"Used in Design2",
+         "default":"<label>Customer Support</label><p>(012) 800 456 789</p>"
+      },
+      {
+         "type":"link_list",
+         "id":"header_menu_1",
+         "label":"Header Navigational Menu To Use"
+      },
+      {
+         "type":"checkbox",
+         "id":"use_bottom_menu",
+         "label":"Show Header under slider?",
+		 "default":false,
+         "info": "If set to true then the header will move under the slider"
+      }
+   ],
+   "blocks":[
+      {
+         "type":"megamenu",
+         "name":"Mega Menu",
+         "settings":[
+            {
+               "type":"link_list",
+               "id":"mega_menu",
+               "label":"Menu To Use",
+               "info":"The menu should have atleast one item and main menu should have an item with the same name"
+            },
+            {
+              "type": "range",
+              "id": "menu_items_count",
+              "label": "No of menu items",
+			  "info": "Used when selected menu/collection as type",
+              "min": 1,
+              "max": 10,
+              "step": 1,
+              "default": 6
+            },
+            {
+               "type":"header",
+               "content":"Column 1"
+            },
+            {
+               "type":"select",
+               "id":"mega_menu_col_1",
+               "label":"Select Type",
+               "options":[
+                  {
+                     "value":"menu",
+                     "label":"Menu"
+                  },
+                  {
+                     "value":"collection",
+                     "label":"Collection items"
+                  },
+                  {
+                     "value":"product",
+                     "label":"Product"
+                  },
+                  {
+                     "value":"image",
+                     "label":"Image"
+                  },
+                  {
+                     "value":"none",
+                     "label":"None"
+                  }
+               ],
+               "default":"none"
+            },
+            {
+               "type":"paragraph",
+               "content":"In case of menu"
+            },
+            {
+               "type":"text",
+               "id":"mega_menu_title_col_1",
+               "label":"Title",
+               "info":"Used in case of menu of image type selected"
+            },
+            {
+              "type": "url",
+              "id": "mega_menu_link_col_1",
+              "label": "Link URL"
+            },
+            {
+               "type":"link_list",
+               "id":"mega_menu_ll_col_1",
+               "label":"Menu"
+            },
+            {
+               "type":"paragraph",
+               "content":"In case of Collection items"
+            },
+            {
+               "type":"collection",
+               "id":"mega_menu_collection_col_1",
+               "label":"collection"
+            },
+            {
+               "type":"paragraph",
+               "content":"In case of Product"
+            },
+            {
+               "type":"product",
+               "id":"mega_menu_product_col_1",
+               "label":"Product"
+            },
+            {
+               "type":"paragraph",
+               "content":"In case of Image"
+            },
+            {
+               "type":"image_picker",
+               "id":"mega_menu_image_col_1",
+               "label":"Upload a Image"
+            },
+            {
+               "type":"text",
+               "id":"mega_menu_image_link_col_1",
+               "label":"Image Link"
+            },
+            {
+               "type":"header",
+               "content":"Column 2"
+            },
+            {
+               "type":"select",
+               "id":"mega_menu_col_2",
+               "label":"Select Type",
+               "options":[
+                  {
+                     "value":"menu",
+                     "label":"Menu"
+                  },
+                  {
+                     "value":"collection",
+                     "label":"Collection items"
+                  },
+                  {
+                     "value":"product",
+                     "label":"Product"
+                  },
+                  {
+                     "value":"image",
+                     "label":"Image"
+                  },
+                  {
+                     "value":"none",
+                     "label":"None"
+                  }
+               ],
+               "default":"none"
+            },
+            {
+               "type":"paragraph",
+               "content":"In case of menu"
+            },
+            {
+               "type":"text",
+               "id":"mega_menu_title_col_2",
+               "label":"Title"
+            },
+            {
+              "type": "url",
+              "id": "mega_menu_link_col_2",
+              "label": "Link URL"
+            },
+            {
+               "type":"link_list",
+               "id":"mega_menu_ll_col_2",
+               "label":"Menu"
+            },
+            {
+               "type":"paragraph",
+               "content":"In case of Collection items"
+            },
+            {
+               "type":"collection",
+               "id":"mega_menu_collection_col_2",
+               "label":"collection"
+            },
+            {
+               "type":"paragraph",
+               "content":"In case of Product"
+            },
+            {
+               "type":"product",
+               "id":"mega_menu_product_col_2",
+               "label":"Product"
+            },
+            {
+               "type":"paragraph",
+               "content":"In case of Image"
+            },
+            {
+               "type":"image_picker",
+               "id":"mega_menu_image_col_2",
+               "label":"Upload a Image"
+            },
+            {
+               "type":"text",
+               "id":"mega_menu_image_link_col_2",
+               "label":"Image Link"
+            },
+            {
+               "type":"header",
+               "content":"Column 3"
+            },
+            {
+               "type":"select",
+               "id":"mega_menu_col_3",
+               "label":"Select Type",
+               "options":[
+                  {
+                     "value":"menu",
+                     "label":"Menu"
+                  },
+                  {
+                     "value":"collection",
+                     "label":"Collection items"
+                  },
+                  {
+                     "value":"product",
+                     "label":"Product"
+                  },
+                  {
+                     "value":"image",
+                     "label":"Image"
+                  },
+                  {
+                     "value":"none",
+                     "label":"None"
+                  }
+               ],
+               "default":"none"
+            },
+            {
+               "type":"paragraph",
+               "content":"In case of menu"
+            },
+            {
+               "type":"text",
+               "id":"mega_menu_title_col_3",
+               "label":"Title"
+            },
+            {
+              "type": "url",
+              "id": "mega_menu_link_col_3",
+              "label": "Link URL"
+            },
+            {
+               "type":"link_list",
+               "id":"mega_menu_ll_col_3",
+               "label":"Menu"
+            },
+            {
+               "type":"paragraph",
+               "content":"In case of Collection items"
+            },
+            {
+               "type":"collection",
+               "id":"mega_menu_collection_col_3",
+               "label":"collection"
+            },
+            {
+               "type":"paragraph",
+               "content":"In case of Product"
+            },
+            {
+               "type":"product",
+               "id":"mega_menu_product_col_3",
+               "label":"Product"
+            },
+            {
+               "type":"paragraph",
+               "content":"In case of Image"
+            },
+            {
+               "type":"image_picker",
+               "id":"mega_menu_image_col_3",
+               "label":"Upload a Image"
+            },
+            {
+               "type":"text",
+               "id":"mega_menu_image_link_col_3",
+               "label":"Image Link"
+            },
+            {
+               "type":"header",
+               "content":"Column 4"
+            },
+            {
+               "type":"select",
+               "id":"mega_menu_col_4",
+               "label":"Select Type",
+               "options":[
+                  {
+                     "value":"menu",
+                     "label":"Menu"
+                  },
+                  {
+                     "value":"collection",
+                     "label":"Collection items"
+                  },
+                  {
+                     "value":"product",
+                     "label":"Product"
+                  },
+                  {
+                     "value":"image",
+                     "label":"Image"
+                  },
+                  {
+                     "value":"none",
+                     "label":"None"
+                  }
+               ],
+               "default":"none"
+            },
+            {
+               "type":"paragraph",
+               "content":"In case of menu"
+            },
+            {
+               "type":"text",
+               "id":"mega_menu_title_col_4",
+               "label":"Title"
+            },
+            {
+              "type": "url",
+              "id": "mega_menu_link_col_4",
+              "label": "Link URL"
+            },
+            {
+               "type":"link_list",
+               "id":"mega_menu_ll_col_4",
+               "label":"Menu"
+            },
+            {
+               "type":"paragraph",
+               "content":"In case of Collection items"
+            },
+            {
+               "type":"collection",
+               "id":"mega_menu_collection_col_4",
+               "label":"collection"
+            },
+            {
+               "type":"paragraph",
+               "content":"In case of Product"
+            },
+            {
+               "type":"product",
+               "id":"mega_menu_product_col_4",
+               "label":"Product"
+            },
+            {
+               "type":"paragraph",
+               "content":"In case of Image"
+            },
+            {
+               "type":"image_picker",
+               "id":"mega_menu_image_col_4",
+               "label":"Upload a Image"
+            },
+            {
+               "type":"url",
+               "id":"mega_menu_image_link_col_4",
+               "label":"Image Link"
+            },
+            {
+               "type":"header",
+               "content":"Bottom Image"
+            },
+            {
+               "type":"image_picker",
+               "id":"bottom_image",
+               "label":"Menu Bottom Image"
+            },
+            {
+               "type":"url",
+               "id":"bottom_image_link",
+               "label":"Bottom Image Link"
+            }
+         ]
+      }
+   ],
+   "presets":[
+
+   ]
+}
+{% endschema %}

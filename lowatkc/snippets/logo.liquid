@@ -1,0 +1,22 @@
+    {% if section.settings.logo %}
+    <a class="navbar-brand" href="/" itemprop="url">
+      <img {% if settings.lazyloading_enable %} data-{% endif %}src="{{ section.settings.logo | img_url: 'master' }}"
+           alt="{{ section.settings.logo.alt | default: shop.name }}"
+           itemprop="logo" class="img-fluid {% if settings.lazyloading_enable %} lazyload{% endif %}"  />
+    </a>
+    {% else %}
+    <a href="/" itemprop="url" class="navbar-brand img-responsive">{{ shop.name }}</a>
+    {% endif %} 
+<!--<div class="logo-container">
+  <div id="logo" {% if section.settings.logo_padding != '25px 0px 25px 0px' %}style="padding:{{section.settings.logo_padding}}"{% endif %}>
+    {% if section.settings.logo %}
+    <a href="/" itemprop="url">
+      <img {% if settings.lazyloading_enable %} data-{% endif %}src="{{ section.settings.logo | img_url: 'master' }}"
+           alt="{{ section.settings.logo.alt | default: shop.name }}"
+           itemprop="logo" class="img-responsive logo{% if settings.lazyloading_enable %} lazyload{% endif %}"  />
+    </a>
+    {% else %}
+    <a href="/" itemprop="url" class="navbar-brand img-responsive">{{ shop.name }}</a>
+    {% endif %}  
+  </div>
+</div>-->

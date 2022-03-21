@@ -1,0 +1,67 @@
+<div class="container">
+  {% include 'breadcrumb' %} 
+  {% if section.settings.page_top != blank %}
+  <div class="has-thumb">
+    <script type="text/javascript">
+      $('#header-top').css("background-image", "url({{ section.settings.page_top | img_url: 'master' }})");
+    </script>
+  </div>
+  {% endif %}
+  <div class="row">
+    <div id="content" class="col-sm-12">
+      {% include 'gallery-page-section' %}
+      {{ page.content }}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+"name": "Gallery",
+"class": "index-section",
+  "settings": [	
+    {
+      "type":"image_picker",
+      "id":"page_top",
+      "label":"Top image"
+    },
+	{
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "FEATURED PRODUCTS"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "Browse the collection of our best selling and trending products"
+    },
+    {
+      "type": "checkbox",
+      "id": "fullwidth",
+      "label": "Set Div fullwidth?",
+      "default": true
+    }
+  ],
+  "blocks": [
+	{
+      "type": "image",
+      "name": "Image",
+      "settings": [
+		{
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Image"
+        },
+		{
+          "type": "text",
+          "id": "caption",
+          "label": "Caption"
+        }
+      ]
+    }
+  ],
+  "presets": []
+}
+{% endschema %}

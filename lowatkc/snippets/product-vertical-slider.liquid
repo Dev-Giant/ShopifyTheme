@@ -1,0 +1,299 @@
+<input type="hidden" id="check-use-zoom" value="1" />
+<input type="hidden" id="light-box-position" value="1" />
+<input type="hidden" id="product-identify" value="{{ product.id }}" />  
+<div class="col-md-7">
+  <button class="wishicon btn-wishlist button wishlist-btn" data-product-handle="{{ product.handle }}" type="button" data-toggle="tooltip" title="{{ 'products.product.add_to_wishlist' | t }}" data-original-title="{{ 'products.product.add_to_wishlist' | t }}"  >
+            <i class="far fa-heart"></i>
+          </button>
+             <div class="img-slide-box">
+                
+               <div class='product-slide'>
+                
+                 {% for image in product.images %}
+   <div> 
+     <img {% if settings.lazyloading_enable %} class="lazyload img-fluid" data-{% endif %}src="{{ image.src | img_url: product_img_size }}" title="{{ featured_img_alt }}" alt="{{ featured_img_alt }}" />
+   </div>
+    
+    
+    {% endfor %}
+                
+              </div>
+
+              <div class='slider-nav'>
+                {% for image in product.images %}
+   <div> 
+     <img {% if settings.lazyloading_enable %} class="lazyload img-fluid" data-{% endif %}src="{{ image.src | img_url: product_img_size }}" title="{{ featured_img_alt }}" alt="{{ featured_img_alt }}" />
+   </div>
+    
+    
+    {% endfor %}
+               
+              </div>
+             </div>
+           </div>
+
+           <div class="col-md-5">
+              <div class="product-detail-content">
+              <div class="head-box">
+                <h1>{{ product.title }}</h1>
+                {% if section.settings.show_summary %}
+
+  <p class="intro">
+    {% if product.description contains '[summary]' %}
+    {{ product.description | split:'[summary]' | last | split :'[/summary]' | first }}
+    {% else %}
+    {% assign product_summary_words = section.settings.product_summary_words | times: 1 %} 
+    {% if section.settings.show_summary_stripped %}
+    {{ product.content | split:"[summary]" | first | split:"[video]" | first | split:"[tab]" | first | split:"[deal]" | first | split:"[affiliate]" | first | strip_html | truncatewords: product_summary_words }}
+    {% else %}
+    {{ product.content | split:"[summary]" | first | split:"[video]" | first | split:"[tab]" | first | split:"[deal]" | first | split:"[affiliate]" | first | truncatewords: product_summary_words }}
+    {% endif %}
+    {% endif %}
+  </p>
+
+{% endif %}
+              </div>
+
+              <div class="price-box">
+                {% include 'price',page:true %}
+                <img src="{{ 'klarna-logo.png' | asset_url }}" class="img-fluid">
+              </div>
+                {% comment %}
+<div class='slider-nav color-box-thumb'>
+                {% for image in product.images %}
+   <div> 
+     <img {% if settings.lazyloading_enable %} class="lazyload img-fluid" data-{% endif %}src="{{ image.src | img_url: product_img_size }}" title="{{ featured_img_alt }}" alt="{{ featured_img_alt }}" />
+   </div>
+    
+    
+    {% endfor %}
+               
+              </div>
+                {% endcomment %}
+                {% comment %}
+              <ul class="color-box-thumb">
+                <li><a href="javascript:;"><img src="{{ 'shoe-color1.png' | asset_url }}" class="img-fluid"></a></li>
+                <li><a href="javascript:;"><img src="{{ 'shoe-color2.png' | asset_url }}" class="img-fluid"></a></li>
+                <li><a href="javascript:;"><img src="{{ 'shoe-color3.png' | asset_url }}" class="img-fluid"></a></li>
+              </ul>
+{% endcomment %}
+              <div class="form">
+                {% form 'product', product, id: "form_buy", name: "form_buy" %}
+     {% comment %}          
+  {% if product.variants.size > 1 %}
+    {% if product.options[0] %}
+      {% assign used = '' %}
+     
+      <select id="select-one" onchange="letsDoThis()">
+        {% for variant in product.variants %}
+          {% unless used contains variant.option1 %}
+            <option value="{{ variant.option1 }}">{{ variant.option1 }}</option>
+            {% capture used %}
+              {{ used }}
+              {{ variant.option1 }}
+            {% endcapture %}
+          {% endunless %}
+        {% endfor %}
+      </select>
+    {% endif %}
+    {% if product.options[1] %}
+      {% assign used = '' %}
+      
+      <select id="select-two" onchange="letsDoThis()">
+        {% for variant in product.variants %}
+          {% unless used contains variant.option2 %}
+            <option value="{{ variant.option2 }}">{{ variant.option2 }}</option>
+            {% capture used %}
+              {{ used }}
+              {{ variant.option2 }}
+            {% endcapture %}
+          {% endunless %}
+        {% endfor %}
+      </select>
+    {% endif %}
+    {% if product.options[2] %}
+      {% assign used = '' %}
+     
+      <select id="select-three" onchange="letsDoThis()">
+        {% for variant in product.variants %}
+          {% unless used contains variant.option3 %}
+            <option value="{{ variant.option3 }}">{{ variant.option3 }}</option>
+            {% capture used %}
+              {{ used }}
+              {{ variant.option3 }}
+            {% endcapture %}
+          {% endunless %}
+        {% endfor %}
+      </select>
+    {% endif %}
+  {% endif %}
+
+<script>
+  function letsDoThis() {
+    {% if product.options[0] %}
+      var opt1 = document.getElementById("select-one").value;{% endif %}{% if product.options[1] %}
+      var opt2 = document.getElementById("select-two").value;{% endif %}{% if product.options[2] %}
+      var opt3 = document.getElementById("select-three").value;{% endif %}var id = "";{% for v in product.variants %}
+      if (
+        opt1 == "{{ v.option1 }}"{% if product.options[1] %} && opt2 == "{{ v.option2 }}"{% endif %}{% if product.options[2] %} && opt3 == "{{ v.option3 }}"{% endif %}
+      ) {
+        var id = {{ v.id }};
+        var price = "{{ v.price | money }}";
+      }
+    {% endfor %}
+    if (id != "") {
+      document.getElementById("productSelect").value = id;
+     // document.getElementById("price").innerHTML = price;
+    } else {
+      document.getElementById("productSelect").value = "";
+      //document.getElementById("price").innerHTML = "Unavailable";
+    }
+  }
+</script>
+                {% endcomment %}
+  <div class="form-group"  {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}style="display:none"{% endif %}>
+    <select name="id" id="productSelect" class="form-control" style="display:none;">
+      {% for variant in product.variants %}
+      {% if variant.available %}
+      <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+      {% else %}
+      <option disabled="disabled">
+        {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+      </option>
+      {% endif %}
+      {% endfor %}
+    </select>
+    {% if section.settings.show_variant_swatches != 'false' %}
+    {% if product.available and product.variants.size > 1 %}
+    {% for option in product.options %}
+    {% include 'swatch' with option %}
+    {% endfor %}
+    {% endif %}
+    {% else %}
+    <style type="text/css">
+      .selector-wrapper {
+        display: block;
+      }
+      #productSelect {
+        display: block;
+      }
+    </style>
+    {% endif %}
+  </div>
+  <div class="form-group">
+    {% if section.settings.product_quantity_enable %}
+    <label class="control-label" for="Quantity">{{ 'products.product.quantity' | t }}:</label>
+    <input type="text" name="quantity" value="1" size="2" id="Quantity" onkeyup="updatecartsticky(1)" class="form-control" />
+    {% endif %}
+    {% if section.settings.product_quantity_message %}
+    <span id="variantQuantity" class="variant-quantity hidden"></span>
+    {% endif %}
+
+    {% if product.description contains "[affiliate]" %}
+      {% capture affiliate %} {{ product.description | split:'[affiliate]' | last | split :'[/affiliate]' | first }} {% endcapture %}
+      <button class="button button-cart btn" type="button" onclick="window.open('{{ affiliate | split :'|' | last }}', '_blank')" id="button-cart-affiliate" data-loading-text="{{ 'products.product.loading' | t }}">
+        {{ affiliate | split :'|' | first }}
+      </button>
+      {% include 'product-wishlist2' %}
+    {% else %}
+    {% if template != 'product.pre-order' %}
+      <button class="button button-cart btn" type="button" id="button-cart" data-loading-text="{{ 'products.product.loading' | t }}">
+        {{ 'products.product.add_to_cart' | t }}
+      </button>
+      {% include 'product-wishlist2' %}
+      {% if section.settings.show_buy_now %}
+      	{{ form | payment_button }}
+      {% endif %}
+    {% elsif template == 'product.pre-order' %}
+      <button class="button button-cart btn" type="button" id="button-cart-buy" data-loading-text="{{ 'products.product.loading' | t }}">
+        {{ 'products.product.pre_order' | t }}
+      </button> 
+      {% include 'product-wishlist2' %}
+    {% endif %}      
+    {% endif %}
+    
+  </div>
+  {% endform %}
+  <!-- end-button -->
+                {% if section.settings.product_sharing_links %}
+<div class="addthis_toolbox addthis_default_style share-btn" data-url="{{ product.url }}"> Share this product <a class="addthis_counter addthis_pill_style"><i class="fas fa-share-alt"></i></a></div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515eeaf54693130e"></script>
+<!-- AddThis Button END -->
+{% endif %}
+                  
+                 <a href="javascript:;" class="size-btn"><img src="{{ 'size-icon.svg' | asset_url }}" class="img-fluid"><b>Sizing help</b> - view our guide to help with sizing.</a>
+                
+              </div>
+<ul class="list-unstyled">
+  {% if section.settings.product_vendor_enable %}
+  <li>{{ 'products.product.brand' | t }}: {{ product.vendor | link_to_vendor }}
+  </li>
+  {% endif %}
+  <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
+  <li>{{ 'products.product.availability' | t }}: 
+    <script>       
+      var inv_qty = {};
+      {% for var in product.variants %}
+      inv_qty[{{- var.id -}}] = {{ var.inventory_quantity | default: 0 }};
+      {% endfor %}
+    </script>
+    {% if product.variants.first.inventory_management == "shopify" %}
+    {% if product.variants.first.inventory_quantity >= 10 %}
+    <span class="ex-text">{{ 'products.product.in_stock' | t }}</span>
+    {% elsif product.variants.first.inventory_quantity > 0 and product.variants.first.inventory_quantity < 10  %}
+    <span style="color:orange" class="ex-text">{{ product.variants.first.inventory_quantity }} {{ 'products.product.in_stock' | t }}</span>
+    {% else %}
+    <span class="ex-text">{{ 'products.product.out_stock' | t }}</span>
+    {% endif %}
+    {% else %} 
+    <span style="" class="ex-text">
+      {% if product.available %} {{ 'products.product.in_stock' | t }}{% else %} {{ 'products.product.out_stock' | t }}{% endif %}
+    </span>
+    {% endif %}
+  </li>
+  {% if section.settings.product_show_sku %}
+  {% assign current_variant = product.selected_or_first_available_variant %}
+  <li class="skuvariant">{{ 'products.product.sku' | t }}: 
+    <span class="variant-sku">{{ current_variant.sku }}</span>
+  </li>
+  {% endif %}
+  {% if section.settings.product_show_barcode %}
+  {% assign current_variant = product.selected_or_first_available_variant %}
+  <li class="barcodevariant">{{ 'products.product.barcode' | t }}: 
+    <span class="variant-barcode">{{ current_variant.barcode }}</span>
+  </li>
+  {% endif %}
+</ul>
+              
+             <p> {{ product.content | split:"[summary]" | first | split:"[video]" | first | split:"[tab]" | first | split:"[deal]" | first | split:"[affiliate]" | first | strip_html | truncatewords: 30 }}
+    </p>
+{% if product.description contains "[deal]" %}
+<div class="item-inner">
+  <div class="caption">
+    <div id="Countdown{{product.id}}" class="box-timer"></div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(function () {
+    $('#Countdown{{product.id}}').countdown({
+      until: new Date('{{ product.description | split:'[deal]' | last | split :'[/deal]' | first }}'),
+      labels: ['Years', 'Months ', 'Weeks', 'Days', 'Hrs', 'Mins', 'Secs'],
+      labels1: ['Year', 'Month ', 'Week', 'Day', 'Hr', 'Min', 'Sec'],
+      });
+  });
+</script>
+{% endif %}
+
+
+{% if section.settings.trust_badge_image %}
+<div>
+  <a href="#">
+    <img {% if settings.lazyloading_enable %}data-{% endif %}src="{{ section.settings.trust_badge_image | img_url: 'master' }}" class="{% if settings.lazyloading_enable %}lazyload{% endif %} img-responsive">
+  </a>
+</div>
+{% else %}
+{% endif %}   </div>
+            
+           </div>
+        
+

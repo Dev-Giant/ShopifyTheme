@@ -1,0 +1,47 @@
+  <!-- Fixed navbar -->
+     
+    <div class="header"> 
+      <div class="top-head">
+        <div class="container-fluid">
+          <div class="row">            
+             {% include 'logo' %}
+            {% include 'main-menu', c:false %}
+            
+            <div class="profile-box">
+              <ul class="nav">
+                 <li><a href="/pages/wishlist"><i class="far fa-heart"></i></a></li>
+                 <li><a href="/cart"><img src="{{ 'bag_3.png' | asset_url }}" class="img-fluid"><span id="cart-total">{{ cart.item_count }}</span></a></li>
+                 <li class="search-icon-box">
+                   
+                     <li><a href="#" class="search-icon"><i class="fas fa-search"></i></a></li>
+                          
+                  </form>
+                </li>  
+                   <!--<a href="/search"><i class="fas fa-search"></i></a></li>-->
+                <li><a href="/account/login"><i class="far fa-user"></i></a></li>
+              </ul>
+            </div>
+            
+          </div>      
+        </div> 
+      </div>    
+      <div class="bottom-head">
+        <ul>
+          <li><img src="{{ 'delivery.svg' | asset_url }}" class="img-fluid">Free Delivery</li>
+          <li><img src="{{ 'boot.svg' | asset_url }}" class="img-fluid">Free 30 days returns</li>
+          <li><img src="{{ 'klarna.svg' | asset_url }}" class="img-fluid">Finance available</li>
+          <li><img src="{{ 'star.svg' | asset_url }}" class="img-fluid">Customers rate us</li> 
+        </ul>
+      </div> 
+      <form class="search" action="/search">
+      <div class="search-box">
+                          <input type="text" placeholder="Search" name="q" value="{{ search.terms | escape }}"  />
+                          <input type="submit" value="Search" />
+                         </div> 
+</form>  
+    </div>
+
+   
+
+
+    <!---======================== header end ===============-->

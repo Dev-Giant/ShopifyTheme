@@ -1,0 +1,35 @@
+<div class="banner-static static-top-sneaker2">
+    {% if section.blocks.size > 0 %}
+    {% for block in section.blocks limit:3 %}
+    <div class="col col{{forloop.index}}">
+      {% if block.settings.image != blank %}
+      <div class="image">
+        {% if block.settings.link != blank %}          
+        <a href="{{ block.settings.link }}" {{ block.shopify_attributes }}>
+          {% endif %}
+          {% if block.settings.image != blank %}
+          <img {% if settings.lazyloading_enable %} class="lazyload" data-{% endif %}src="{{ block.settings.image | img_url: 'master' }}" alt=""/>
+          {% endif %}
+          <span class="text" style="text-align:{{ block.settings.ad_align }}">
+            {% if block.settings.heading != blank %} 
+            <span class="text1" style="color:{{ block.settings.heading_color }}">{{ block.settings.heading }}</span>
+            {% endif %}
+            {% if block.settings.sub_heading != blank %} 
+            <span class="text2" style="color:{{ block.settings.sub_heading_color }}">{{ block.settings.sub_heading }}</span>
+            {% endif %}
+            {% if block.settings.description != blank %} 
+            <span class="text3" style="color:{{ block.settings.description_color }}">{{ block.settings.description }}</span>
+            {% endif %}
+            {% if block.settings.link_text != blank %} 
+            <span class="link">{{ block.settings.link_text }}</span>
+            {% endif %}
+          </span>
+          {% if block.settings.link != blank %}          
+        </a>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>

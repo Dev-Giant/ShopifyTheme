@@ -1,0 +1,180 @@
+<div class="main-row {% if section.settings.fullwidth == true %}full-width{% endif  %}" data-section-id="{{ section.id }}">
+  <div class="container">
+    <div class="row">
+      <div class="main-col col-sm-12 col-md-12">
+        <div class="row sub-row">
+          <div class="sub-col col-sm-12 col-md-12">
+            {% include section.settings.feature_advert_design %}
+          </div>
+        </div>
+      </div>
+    </div>    
+  </div>
+</div>    
+{% schema %}
+{
+  "name": "Ad banner section",
+  "class": "index-section index-section--flush",
+  "max_blocks": 6,
+  "settings": [
+    {
+    "type": "select",
+    "id": "feature_advert_design",
+    "label": "Select Design",
+    "options": [
+	  {
+        "value": "feature-advert1",
+        "label": "Design 1 (Single image)"
+      },
+	  {
+        "value": "feature-advert1alt",
+        "label": "Design 1 alt (Single image)"
+      },
+	  {
+        "value": "feature-advert2",
+        "label": "Design 2 (Two images)"
+      },
+      {
+      "value": "feature-advert3",
+      "label": "Design 3 (Three images)"
+      },
+      {
+      "value": "feature-advert3alt",
+      "label": "Design 3 alt (Three images)"
+      },
+      {
+      "value": "feature-advert5",
+      "label": "Design 5 (Five images)"
+      },
+      {
+      "value": "feature-advert5-slider",
+      "label": "Design 6 (Slider)"
+      }
+    ],
+    "default": "feature-advert2"
+    },
+	{
+	    "type": "checkbox",
+    	"id": "fullwidth",
+    	"label": "Set Div fullwidth?",
+    	"default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "ad image"
+        },
+		{
+          "type": "text",
+          "id": "heading",
+          "label": "Main Heading"
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "Heading Color",
+          "default": "#fff"
+        },
+		{
+          "type": "text",
+          "id": "sub_heading",
+          "label": "Sub Heading"
+        },
+        {
+          "type": "color",
+          "id": "sub_heading_color",
+          "label": "Sub Heading Color",
+          "default": "#a8741a"
+        },
+		{
+          "type": "textarea",
+          "id": "description",
+          "label": "Slide Description"
+        },
+        {
+          "type": "color",
+          "id": "description_color",
+          "label": "Description Color",
+          "default": "#fff"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link URL"
+		},
+        {
+          "type": "color",
+          "id": "link_color",
+          "label": "Link Color",
+          "default": "#fff"
+        },
+		{
+        "type": "select",
+        "id": "ad_text_position",
+        "label": "Ad text position",
+		"info": "Used in Design 1, Design 1 Alt",
+        "options": [
+              {
+              "value": "left",
+              "label": "left"
+              },
+              {
+              "value": "center",
+              "label": "center"
+              },
+              {
+              "value": "right",
+              "label": "right"
+              }
+            ],
+        "default": "left"	
+        },
+		{
+        "type": "select",
+        "id": "ad_align",
+        "label": "Align",
+        "options": [
+              {
+              "value": "left",
+              "label": "left"
+              },
+              {
+              "value": "center",
+              "label": "center"
+              },
+              {
+              "value": "right",
+              "label": "right"
+              }
+            ],
+        "default": "left"	
+        }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Ad banner section",
+    "category": "Image",
+    "blocks": [
+      {
+        "type": "image"
+      },
+      {
+        "type": "image"
+      }
+    ]
+  }]
+}
+{% endschema %}

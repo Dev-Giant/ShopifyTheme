@@ -1,0 +1,81 @@
+<div id="blog_home" class="menu-recent {{ section.id }}">
+  <div class="col">
+    <div class="blog-title footer-title">
+      <h2>{{ section.settings.blog_heading }}</h2>
+    </div>
+    <div class="owl-container footer-content">
+      <div class="articles-container owl-carousel owl-theme">
+        <div class="row_items">
+          {% for article in blogs[section.settings.footer_blog].articles  %}
+          <div class="articles-inner">
+            <div class="articles-image">
+              <a class="" href="{{ article.url }}">
+                <img src="{{ article.image.src | img_url: '300x300' }}" alt="">
+              </a>
+            </div>
+            <div class="aritcles-content">
+              <div class="content-inner">
+                <a class="articles-name" href="{{ article.url }}">{{ article.title }}</a> 
+                <div class="articles-date">
+                  <span>{{ 'blogs.article.by' | t }}: {{ article.author }}</span>
+                  <time datetime="{{ article.published_at | date }}">
+                    {{ article.published_at | date: ' %d, %b %Y' }}
+                  </time>
+                </div>
+                <div class="articles-intro">
+                  <p>
+                    {% if article.excerpt.size > 0 %}
+                    {{ article.excerpt | truncatewords: 12}}
+                    {% else %}
+                    {{ article.content | strip_html | truncatewords: 12 }}
+                    {% endif %}
+                  </p>
+                </div>
+                <a class="read-more" href="{{ article.url }}">{{ 'blogs.article.readmore' | t }}</a>
+              </div>
+            </div>
+          </div>
+          {% if forloop.last == false %}
+          {% cycle '','</div><div class="row_items">' %}
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script >
+  $(document).ready(function() {
+    $(".{{ section.id }} .articles-container").owlCarousel({
+      autoPlay :  false ,
+      items : 1,
+      margin: 0,
+      loop: true,			
+      navSpeed : 1000,
+      dotsSpeed : 1000,
+      autoplaySpeed : 1000,
+      nav :  false ,
+      dots :  false ,
+      navText : ['<i class="ion-chevron-left"></i>','<i class="ion-chevron-right"></i>'],
+      responsive:{
+        0:{
+          items: 1,
+          nav: false
+        },
+        480:{
+          items: 1,
+          nav: false
+        },
+        768:{
+          items: 1
+        },
+        992:{
+          items: 1
+        },
+        1200:{
+          items: 1
+        }
+      }
+    });
+  });
+</script>

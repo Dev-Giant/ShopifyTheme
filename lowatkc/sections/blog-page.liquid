@@ -1,0 +1,412 @@
+{% paginate blog.articles by section.settings.no_articles %}
+
+{% assign blog_image_size = '412x240' %}
+{% if section.settings.blog_layout == 'full' or section.settings.blog_layout contains 'grid' %}
+{% assign blog_image_size = 'master' %}
+{% endif %}
+
+{% assign even = 'even' %}
+{% if section.settings.blog_layout == 'cross' %}
+{% assign even = 'even cross' %}
+{% endif %}
+
+{% include 'breadcrumb' %}
+
+ <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">        
+        <div class="carousel-item active">
+          <img src="{{ 'category-banner.png' | asset_url }}" class="img-fluid">  
+          <div class="text-box"> 
+            <div class="text-sub">
+              <h2>Latest News & Info</h2>              
+            </div>  
+          </div>                          
+        </div>               
+      </div>      
+    </div>
+
+ <div class="news-main news-main-in">
+      <div class="container">
+        <div class="form-box">
+             {% for block in section.blocks %}
+          {% if block.type == 'search' %}
+          <!--Blog search start-->
+         
+         <form action="/search" method="get" role="search" name ="blog-search" id="blog-search">
+                <input type="hidden" name="type" value="article">
+               
+                <div class="input-group">
+                
+                   <input type="text" name="q" id="text-search" value="{{ search.terms | escape }}" placeholder="{{ 'layout.search_bar.placeholder_blog' | t }}" class="form-control input-lg" aria-label="{{ 'layout.search_bar.placeholder_blog' | t }}" />
+               
+                  <span class="input-group-btn">
+                  <button type="submit" form="blog-search" class="btn btn-default btn-lg"></button>
+                </span>
+                </div>
+                
+               
+              </form>
+           
+        
+           {% endif %}
+            {% endfor %}
+          <form>
+            
+            <select>
+              <option>Select Category</option>
+            </select>
+          </form>
+        </div>
+        <ul class="row blog-box">  
+           {% for article in blog.articles %}
+           <li class="col-md-3">
+            <div class="news-box">
+              {% if article.image %}
+              <div class="img-box">
+                <img {% if settings.lazyloading_enable %} class="lazyload img-fluid" data-{% endif %}src="{{ article | img_url: blog_image_size }}" alt="{{ article.title }}">
+                                    
+              </div>
+              {% else %}
+              <div class="img-box">
+                <img src="{{ 'news-img.png' | asset_url }}" class="img-fluid">                      
+              </div>
+              {% endif %}
+             
+              <div class="cont-box">
+                <h3>{{ article.title }}</h3>
+                <a href="{{ article.url }}">Read More</a>
+              </div>                                       
+            </div>
+          </li>
+ 		{% endfor %}
+         
+         
+                     
+        </ul>
+        {% if paginate.pages > 1 %}
+          {% include 'pagination' %}
+          {% endif %}
+        <!--<nav aria-label="Page navigation">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="javascript:;" aria-label="Previous">
+                <span aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+                <span class="sr-only">Previous</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="javascript:;">1</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:;">4</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:;">5</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:;">6</a></li>
+            <li class="page-item">
+              <a class="page-link" href="javascript:;" aria-label="Next">
+                <span aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </li>
+          </ul>
+        </nav>-->
+      </div>
+    </div>
+
+<div class="padding-box product product-in lattest-new-product">
+      <div class="container">
+        <div class="heading"><h4>Similar</h4><h1>Products</h1></div>
+        <ul class="row product-slider">
+          <li>
+            <div class="product-box">              
+                <a href="/products/intelligent-sports-shoes">
+                  <div class="img-box"><img src="{{ 'mens-boot.png' | asset_url }}" class="img-fluid"> <i class="far fa-heart"></i></div>
+                  <h3>RENEGADE GTX® MID <br>£185.00</h3>
+                  <p>or £23p/m</p>
+                </a>                     
+            </div>
+          </li>
+          <li>
+            <div class="product-box">              
+                <a href="/products/copy-of-football-shoes-for-boys">
+                  <div class="img-box"><img src="{{ 'mens-boot.png' | asset_url }}" class="img-fluid"> <i class="far fa-heart"></i></div>
+                  <h3>RENEGADE GTX® MID <br>£185.00</h3>
+                  <p>or £23p/m</p>
+                </a>                     
+            </div>
+          </li>
+          <li>
+            <div class="product-box">              
+                <a href="/products/football-shoes-for-women">
+                  <div class="img-box"><img src="{{ 'mens-boot.png' | asset_url }}" class="img-fluid"> <i class="far fa-heart"></i></div>
+                  <h3>RENEGADE GTX® MID <br>£185.00</h3>
+                  <p>or £23p/m</p>
+                </a>                     
+            </div>
+          </li>
+          <li>
+            <div class="product-box">              
+                <a href="/products/joggers-for-women">
+                  <div class="img-box"><img src="{{ 'mens-boot.png' | asset_url }}" class="img-fluid"> <i class="far fa-heart"></i></div>
+                  <h3>RENEGADE GTX® MID <br>£185.00</h3>
+                  <p>or £23p/m</p>
+                </a>                     
+            </div>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+
+<div class="review-sec">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row review-in">
+              <div class="col-md-4">
+                <div class="review-sub">              
+                  <h4>Excellent</h4>
+                  <ul class="nav">
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star-half-alt"></i></li>
+                  </ul>
+                  <div class="rating">
+                    <span><div class="number">4.68</div><p>Average</p></span>
+                    <span><div class="number">994</div><p>Reviews</p></span>
+                  </div>
+                  <a href="javascript:;" class="Review-btn"><i class="fas fa-star"></i> <span style="text-transform: uppercase;">Review</span> <small>.io</small></a>
+                </div>
+              </div>
+
+              <div class="col-md-8">
+                <ul class="review-slide">
+                  <li>
+                    <span><h5>Anonymous</h5>
+                      <ul class="nav">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                      </ul>
+                    </span>
+                    <p>Great shoes. Really good walking shoes. Very prompt delivery</p>
+                    <h6>posted 10 hours ago</h6>
+                  </li>
+                  <li>
+                    <span><h5>Anonymous</h5>
+                      <ul class="nav">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                      </ul>
+                    </span>
+                    <p>The best footwear produced.</p>
+                    <h6>posted 20 hours ago</h6>
+                  </li>
+                  <li>
+                    <span><h5>Anonymous</h5>
+                      <ul class="nav">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                      </ul>
+                    </span>
+                    <p>The best footwear produced.</p>
+                    <h6>posted 20 hours ago</h6>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+
+
+{% endpaginate %}
+
+{% schema %}
+{
+   "name": "Blog Page",
+   "settings": [
+      {
+         "type":"select",
+         "id":"blog_layout",
+         "label":"Layout",
+         "options":[
+            {
+               "value":"default",
+               "label":"default"
+            },
+			{
+               "value":"full",
+               "label":"Full Image / Grid 1"
+            },
+            {
+               "value":"grid2",
+               "label":"Grid 2"
+            },
+            {
+               "value":"grid3",
+               "label":"Grid 3"
+            },
+			{
+               "value":"cross",
+               "label":"Cross Image"
+            }
+         ],
+         "default":"default"
+      },
+	  {
+        "type": "text",
+        "id": "no_articles",
+        "label": "No of articles to show (per page)",
+        "default": "5"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_summary",
+        "label": "Show Summary in list view",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_summary_stripped",
+        "label": "Strip Summary",
+        "default": true,
+        "info": "Strips html tags to show text without format"
+      },
+      {
+        "type": "text",
+        "id": "blog_summary_words",
+        "label": "Words count on summary area",
+        "default": "30"
+      },
+      {
+        "type": "select",
+        "id": "text_align",
+        "label": "Text Alignment",
+        "options": [
+          {
+          "value": "left",
+          "label": "left"
+          },
+          {
+          "value": "center",
+          "label": "center"
+          },
+          {
+          "value": "right",
+          "label": "right"
+          },
+          {
+          "value": "justify",
+          "label": "justify"
+          }
+         ],
+        "default": "left"
+      },
+	  {
+         "type":"select",
+         "id":"show_sidebar",
+         "label":"Sidebar position",
+         "options":[
+            {
+               "value":"no",
+               "label":"No Sidebar"
+            },
+            {
+               "value":"left",
+               "label":"Left Sidebar"
+            },
+            {
+               "value":"right",
+               "label":"Right Sidebar"
+            }
+         ],
+         "default":"no"
+      }
+    ],
+   "blocks": [
+      {
+        "type": "search",
+        "name": "Sidebar Search",
+        "settings": [
+          {
+             "type":"checkbox",
+             "id":"show_sidebar_search_box",
+             "label":"Show Sidebar Search Box",
+             "default":true
+          }
+        ]
+      },
+      {
+        "type": "links",
+        "name": "Sidebar links menu",
+        "settings": [
+          {
+             "type": "link_list",
+             "id": "sidebar_menu",
+             "label": "Sidebar links menu"
+          }
+        ]
+      },
+      {
+        "type": "recent-articles",
+        "name": "Sidebar Recent Articles",
+        "settings": [
+          {
+             "type":"checkbox",
+             "id":"show_article_heading",
+             "label":"Show Heading",
+             "default":true
+          },
+		  {
+             "type":"checkbox",
+             "id":"article_publish_info",
+             "label":"Show Publish Info",
+             "default":false
+          }
+        ]
+      },
+      {
+        "type": "tags",
+        "name": "Sidebar Tags",
+        "settings": [
+          {
+             "type":"checkbox",
+             "id":"show_sidebar_tags_title",
+             "label":"Show Title",
+             "default":true
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "name": "Sidebar Image",
+        "settings": [
+          {
+             "type":"image_picker",
+             "id":"side_image",
+             "label":"Side image"
+          },
+          {
+             "type":"url",
+             "id":"side_link",
+             "label":"Side image link"
+          }
+        ]
+      }
+	],
+   "presets": []
+}
+{% endschema %}

@@ -1,0 +1,149 @@
+<footer class="" {% if section.settings.bkg_image != blank %}style="background-image: url('{{ section.settings.bkg_image | img_url: 'master' }}')"{% endif %}>
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+        <div class="col1a col-footer">
+          <div class="footer-info">
+            {% if section.settings.image %}
+            <a href="/" itemprop="url" class="logo-footer">
+              <img {% if settings.lazyloading_enable %} class="lazyload" data-{% endif %}src="{{ section.settings.image | img_url: 'master' }}"
+                   alt="{{ section.settings.image.alt | default: shop.name }}"
+                   itemprop="logo">
+            </a>
+            {% endif %}
+            {% if section.settings.footer_phone != blank %}
+            <p class="hotline">{{ section.settings.footer_phone }}</p>
+            {% endif %}
+            {% if section.settings.footer_about_us %}
+            <p class="des">
+              {{ section.settings.footer_about_us }}
+            </p>
+            {% endif %}
+            <a href="/contact" class="view-map"><i class="ion-ios-pin"></i>{{ 'layout.footer.view_on_map' | t }}</a>
+          </div>
+          {% include 'social-button' %}
+          {% if section.settings.image == blank %}
+          <div class="footer-title"><h5>{{ 'layout.footer.about' | t }}</h5></div>
+          {% endif %}
+        </div>
+        <div class="col col2 col-footer">
+          <div class="footer-title">
+            <h5>{{ linklists[section.settings.footer_menu_1].title }}</h5>
+          </div>
+          <div class="footer-content">
+            <ul class="list-unstyled text-content">
+              {% for link in linklists[section.settings.footer_menu_1].links %}
+              <li><a href="{{link.url}}">{{link.title}}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="col col3 col-footer">
+          <div class="footer-title">
+            <h5>{{ linklists[section.settings.footer_menu_2].title }}</h5>
+          </div>
+          <div class="footer-content">
+            <ul class="list-unstyled text-content">
+              {% for link in linklists[section.settings.footer_menu_2].links %}
+              <li><a href="{{link.url}}">{{link.title}}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="col col3 col-footer">
+          <div class="footer-title">
+            <h5>{{ linklists[section.settings.footer_menu_3].title }}</h5>
+          </div>
+          <div class="footer-content">
+            <ul class="list-unstyled text-content">
+              {% for link in linklists[section.settings.footer_menu_3].links %}
+              <li><a href="{{link.url}}">{{link.title}}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="col col5a col-footer">
+          <div class="footer-title">
+            <h5>{{ 'layout.footer.getintouch' | t }}</h5>
+          </div>
+          <div class="footer-content">
+            <div class="footer-contact">
+              {% if section.settings.footer_address != blank %}
+              <p>{{ 'layout.footer.address' | t }} :{{ section.settings.footer_address }}</p>
+              {% endif %}
+              {% if section.settings.footer_phone != blank %}
+              <p>{{ 'layout.footer.phone' | t }} :{{ section.settings.footer_phone }}</p>
+              {% endif %}
+              {% if section.settings.footer_email != blank %}
+              <p>{{ 'layout.footer.email' | t }} :{{ section.settings.footer_email }}</p>
+              {% endif %}
+            </div>
+            {% if section.settings.footer_open_time != blank %}
+            {{ section.settings.footer_open_time }}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="container-inner">
+        <div class="footer-copyright">
+          <p><span>{{ section.settings.footer_content_text }}</span></p>
+        </div>
+        {% if section.settings.payment_image %}
+        <div class="payment">
+          <a href="#">
+            <img {% if settings.lazyloading_enable %} class="lazyload" data-{% endif %}src="{{ section.settings.payment_image | img_url: 'master' }}" alt="payment">
+          </a>
+        </div>
+        {% else %}
+        <div class="paypal-footer footer-payment">
+          {% unless shop.enabled_payment_types == empty %}
+          <ul class="list-unstyled list-inline ct-socials text-center-sm ct-payment">
+            {% assign enabled_payment_types = 'visa,mastercard,amex,paypal' | remove: ' ' | split: ',' %}
+            {% for type in enabled_payment_types %}
+            <li>
+              <a class="f-payment  fa fa-cc-{{ type }} fa-2x" aria-hidden="true"></a>
+            </li>
+            {% endfor %}
+          </ul>
+          {% endunless %}
+        </div>  
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div id="back-top"><i class="fa fa-angle-up"></i></div>
+</footer>
+<script >
+  $(document).ready(function(){
+    // hide #back-top first
+    $("#back-top").hide();
+    // fade in #back-top
+    $(function () {
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > $('body').height()/3) {
+          $('#back-top').fadeIn();
+        } else {
+          $('#back-top').fadeOut();
+        }
+      });
+      // scroll body to 0px on click
+      $('#back-top').click(function () {
+        $('body,html').animate({scrollTop: 0}, 800);
+        return false;
+      });
+    });
+    // footer toggle
+    if (jQuery(window).width() < 992) {   
+      jQuery('.footer-top .col-footer .footer-title').click(function(){     
+        jQuery(this).parent('.col.col-footer').toggleClass('active').siblings().removeClass('active'); 
+        jQuery(this).next('.col.col-footer .footer-content').toggle(300);
+        jQuery(this).parent('.col.col-footer.active').siblings().children('.col.col-footer .footer-content').slideUp(300); 
+      }); 
+
+    }
+  });
+</script>

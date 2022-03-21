@@ -1,0 +1,214 @@
+{% include 'product-page-section' %}
+{% schema %}
+{
+   "name": "Product Page",
+      "settings": [
+        {
+          "type": "select",
+          "id": "product_page_layout",
+          "label": "Page layout",
+          "options": [
+            {
+              "value": "horizontal_thumbs",
+              "label": "Horizontal Thumbs layout"
+            },
+            {
+              "value": "vertical_thumbs",
+              "label": "Vertical Thumbs layout"
+            },
+            {
+              "value": "vertical_thumbs_right",
+              "label": "Vertical Thumbs Right layout"
+            },
+            {
+              "value": "sticky_layout",
+              "label": "Sticky Layout"
+            },
+			{
+              "value": "horizontal_slide_full",
+              "label": "Horizontal Slide Full layout"
+            },
+			{
+              "value": "horizontal_slide_grid",
+              "label": "Horizontal Slide Grid layout"
+            }
+          ],
+          "default": "horizontal_thumbs"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_zoom",
+          "label": "Enable Image Zoom",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_summary",
+          "label": "Show Product Summary",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_summary_stripped",
+          "label": "Strip Product Summary",
+          "default": true,
+		  "info": "Strips html tags to show text without format"
+        },
+        {
+          "type": "text",
+          "id": "product_summary_words",
+          "label": "Words count on summary area",
+          "default": "30"
+        },
+        {
+          "type": "checkbox",
+          "id": "product_vendor_enable",
+          "label": "Show product vendor",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "product_show_sku",
+          "label": "Show SKU",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "product_show_barcode",
+          "label": "Show Barcode",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "show_variant_swatches",
+          "label": "Variant Swatch",
+          "options": [
+            {
+              "value": "false",
+              "label": "Disable"
+            },
+            {
+              "value": "color",
+              "label": "Color Swatch"
+            },
+            {
+              "value": "thumb",
+              "label": "Product Thumb Swatch"
+            }
+          ],
+          "default": "color"
+        },
+        {
+          "type": "checkbox",
+          "id": "product_quantity_enable",
+          "label": "Show quantity selector",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "product_quantity_message",
+          "label": "Show remaining quantity message",
+          "info": "Shown when less than 10 items are in stock",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_buy_now",
+          "label": "Show Buy Now button?",
+          "info": "This button will redirect direct to checkout page.",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "trust_badge_image",
+          "label": "Image",
+          "info": "Upload Trust Badge image to show on product page. Remove to hide"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_third_tab",
+          "label": "Show Extra Tab",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "third_tab_title",
+          "label": "Extra Tab Title",
+          "info": "Tab 1",
+          "default": "Custom Tab"
+        },
+        {
+          "type": "textarea",
+          "id": "third_tab_text",
+          "label": "Extra Tab Text",
+          "info": "Use basic HTML to format text",
+          "default": "You can add, text, html, images and videos as well to the tab from product settings area"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_tags_tab",
+          "label": "Show Tags Tab",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "custom_tab_title",
+          "label": "Custom Tab Title(if added any)",
+          "default": "Additional Info"
+        },
+        {
+          "type": "checkbox",
+          "id": "related_products_enable",
+          "label": "Show related products",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "recent_products_enable",
+          "label": "Show recent viewed products",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "product_grid_img_carousel",
+          "label": "Slide All images in product grid?",
+          "default": false,
+          "info": "Used for Product grid carousel enable\/disable"
+        },
+        {
+          "type": "checkbox",
+          "id": "product_sharing_links",
+          "label": "Show Sharing Links?",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "product_sticky_cart",
+          "label": "Show Bottom Sticky Add to Cart Bar?",
+          "default": true
+        }
+      ],
+   "blocks": [],
+   "presets": []
+}
+{% endschema %}
+{% if settings.grid_auto_resize != 'false' -%}
+<script type="text/javascript">
+  // Equal height grid divs 
+  $(document).ready(function() {
+    mass.resizeThumbs();
+  });
+  $(window).resize(function() {
+    setTimeout(function () {
+      mass.resizeThumbs();
+    }, 300);
+  });
+</script>
+{% endif %}
+{% if section.settings.show_zoom == false %}
+<style>
+  #cloud-zoom-big,.cloud-zoom-lens {
+    display: none !important;
+  } 
+</style>
+{% endif %}

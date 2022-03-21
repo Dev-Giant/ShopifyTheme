@@ -1,0 +1,1178 @@
+{
+  "current": {
+    "type_base_family": "Google_Rubik_300,400,500,700,900_sans",
+    "type_header_family": "Google_PT+Sans_400,400i,700_sans",
+    "type_accent_family": "Google_Roboto_100,100i,300,300i,400,400i,500,500i,700,700i,900,900i_sans",
+    "favicon_enable": true,
+    "lazyloading_enable": true,
+    "img_size_product": "900x900",
+    "img_width_grid": "700",
+    "grid_aspect_ratio": "1:1",
+    "grid_auto_resize": "false",
+    "grid_layout": 2,
+    "grid_color_swatches": "thumb",
+    "limit_title_words": false,
+    "limit_title_words_count": "50",
+    "product_new_time": "7",
+    "product_grid_img_carousel": false,
+    "hide_hover": true,
+    "product_show_compare_at_price": true,
+    "product_reviews_enable": true,
+    "grid_vendor_enable": false,
+    "hide_deal": false,
+    "hide_wishlist": false,
+    "hide_quick_view": false,
+    "search_autofil_enable": true,
+    "color_skin": "#eb3e32",
+    "color_skin_2": "#ffffff",
+    "color_body": "#737373",
+    "color_body_2": "#bbbbbb",
+    "bg_color": "#fff",
+    "headings_color": "#2f333a",
+    "hd_menu_color": "#fff",
+    "hd_menu_inner_color": "#959595",
+    "footer_bg": "#26292e",
+    "footer_title": "#fff",
+    "footer_text": "#999",
+    "top_bar_color": "#fff",
+    "show_pupup": false,
+    "popup_title": "newsletter",
+    "show_pupup_image": false,
+    "popup_heading": "SUBSCRIBE TO OUR NEWSLETTER",
+    "popup_description": "Enter your email address to receive all news, updates on new arrivals, special offers and other discount information.",
+    "popup_btn_text": "Subscribe",
+    "popup_no_link_text": "Don’ts show",
+    "share_image": "",
+    "social_sidebar_enable": true,
+    "social_twitter_link": "",
+    "social_facebook_link": "https:\/\/www.facebook.com\/lowaUK\/",
+    "social_pinterest_link": "",
+    "social_google_plus_link": "",
+    "social_instagram_link": "https:\/\/www.instagram.com\/lowauk\/",
+    "social_tumblr_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "social_fancy_link": "",
+    "show_dollar_symbol": false,
+    "superscript_decimals": true,
+    "show_multiple_currencies": true,
+    "currency_format": "money_format",
+    "supported_currencies": "USD EUR GBP PKR CAD JPY",
+    "default_currency": "USD",
+    "logo_use_image": true,
+    "show_gdpr_msg": true,
+    "constent_text": "This website uses cookies to ensure you get the best experience on our website.",
+    "cookie_constent_background": "#ee3333",
+    "cookie_constent_text": "#fff",
+    "cookie_constent_button_background": "",
+    "cookie_constent_border_color": "#fff",
+    "cookie_constent_button_text": "",
+    "cookie_constent_url": "",
+    "checkout_header_image": "",
+    "checkout_use_storefront_logo": false,
+    "checkout_logo_image": "shopify:\/\/shop_images\/logo2.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "Helvetica Neue",
+    "checkout_body_font": "Helvetica Neue",
+    "checkout_accent_color": "#1990c6",
+    "checkout_button_color": "#1990c6",
+    "checkout_error_color": "#ff6d6d",
+    "img_size_grid": "600x600",
+    "product_page_layout": "horizontal_thumbs",
+    "show_summary": true,
+    "product_summary_words": "30",
+    "show_trust_badge": true,
+    "trust_badge_image": "shopify:\/\/shop_images\/payment.png",
+    "show_third_tab": true,
+    "third_tab_title": "Additional Information",
+    "third_tab_text": "<p>You can use this tab for adding shipping details, return policies and information or measurements etc. <\/p>\n<p>\nLorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi<\/p>",
+    "show_tags_tab": true,
+    "custom_tab_title": "Custom Tab",
+    "product_quantity_enable": true,
+    "product_quantity_message": true,
+    "product_vendor_enable": true,
+    "related_products_enable": true,
+    "show_variant_swatches": true,
+    "show_map": true,
+    "map_code": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d2950.6822073234102!2d-83.71685604946924!3d42.30664594636449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883cac2c20114b69%3A0x96fe590afa21efb6!2s2300+Traverwood+Dr%2C+Ann+Arbor%2C+MI+48105!5e0!3m2!1sen!2s!4v1461260551915\" width=\"100%\" height=\"400\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"><\/iframe>",
+    "cart_notes_enable": true,
+    "cart_promo_enable": true,
+    "ajax_cart_method": "page",
+    "shipping_calculator": "Enabled",
+    "shipping_calculator_heading": "Get shipping estimates",
+    "shipping_calculator_default_country": "United States",
+    "shipping_calculator_submit_button_label": "Calculate shipping",
+    "shipping_calculator_submit_button_label_disabled": "Calculating...",
+    "no_articles": "3",
+    "product_count_per_page": "9",
+    "show_collection_sidebar": "left",
+    "show_sidebar_categories": true,
+    "category_count": "5",
+    "collection_sidebar_filters": "groups",
+    "show_collection_side_image": true,
+    "collection_side_link": "#",
+    "collection_view_default": "list",
+    "show_collection_top_image": false,
+    "color_top_bg": "#292929",
+    "color_menu_links": "#ffffff",
+    "color_bg": "#14151b",
+    "color_top_header": "#4ed99c",
+    "color_top_header_label": "#b2ffdd",
+    "color_bottom_header_border": "#ffffff",
+    "color_center_header": "#ffffff",
+    "color_footer_newsletter_bar": "#303031",
+    "color_footer": "#292929",
+    "color_footer_heading": "#ffffff",
+    "color_footer_links": "#919191",
+    "color_social_links": "#363636",
+    "color_footer_text": "#818181",
+    "color_footer_border": "#363636",
+    "show_collection_side_listing": false,
+    "collection_side_listing_title": "Random Products",
+    "collection_side_listing": "frontpage",
+    "product_sticky_layout": false,
+    "product_vertical_thumbs": false,
+    "product_vertical_related": false,
+    "product_show_saved_amount": "true",
+    "product_enable_zoom": true,
+    "social_sharing_products": true,
+    "social_sharing_blog": true,
+    "social_sharing_count": true,
+    "social_sharing_style": "is-default",
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_pinterest": true,
+    "share_fancy": true,
+    "share_google": true,
+    "type_base_size": "13px",
+    "show_banner": true,
+    "sidebar_image_link": "collections\/all",
+    "collection_prod_image_sizes": "large",
+    "product_reviews_star_color": "#e5c649",
+    "footer_legallinks_enable": true,
+    "footer_legallinks_linklist": "",
+    "type_navigation_size": "15px",
+    "type_navigation_transform": true,
+    "type_button_size": "16px",
+    "type_button_transform": false,
+    "logo_max_width": "305",
+    "type_header_transform": true,
+    "color_primary": "#49aa9d",
+    "color_secondary": "#dcdcdc",
+    "color_accent": "#49aa9d",
+    "color_borders": "#ececec",
+    "color_header_background": "#ffffff",
+    "color_header_text": "#585858",
+    "color_header_cart_search": "#f2f2f2",
+    "color_nav_bg": "#49aa9d",
+    "color_nav_text": "#ffffff",
+    "color_body_text": "#585858",
+    "color_heading_text": "#333333",
+    "color_footer_bg": "#f2f2f2",
+    "color_footer_social_link": "#bbbbbb",
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "1522697402496": {
+            "type": "megamenu",
+            "settings": {
+              "mega_menu": "main-menu",
+              "menu_items_count": 7,
+              "mega_menu_col_1": "menu",
+              "mega_menu_title_col_1": "Men",
+              "mega_menu_link_col_1": "",
+              "mega_menu_ll_col_1": "main-menu",
+              "mega_menu_collection_col_1": "",
+              "mega_menu_product_col_1": "",
+              "mega_menu_image_link_col_1": "",
+              "mega_menu_col_2": "menu",
+              "mega_menu_title_col_2": "WOMEN",
+              "mega_menu_link_col_2": "",
+              "mega_menu_ll_col_2": "main-menu",
+              "mega_menu_collection_col_2": "",
+              "mega_menu_product_col_2": "",
+              "mega_menu_image_link_col_2": "",
+              "mega_menu_col_3": "menu",
+              "mega_menu_title_col_3": "Accessories",
+              "mega_menu_link_col_3": "",
+              "mega_menu_ll_col_3": "main-menu",
+              "mega_menu_collection_col_3": "",
+              "mega_menu_product_col_3": "",
+              "mega_menu_image_link_col_3": "",
+              "mega_menu_col_4": "menu",
+              "mega_menu_title_col_4": "Watches",
+              "mega_menu_link_col_4": "",
+              "mega_menu_ll_col_4": "main-menu",
+              "mega_menu_collection_col_4": "",
+              "mega_menu_product_col_4": "",
+              "mega_menu_image_link_col_4": "",
+              "bottom_image": "shopify:\/\/shop_images\/img-bottom-menu.jpg",
+              "bottom_image_link": "shopify:\/\/collections\/all"
+            }
+          }
+        },
+        "block_order": [
+          "1522697402496"
+        ],
+        "settings": {
+          "header_layout": "header-3",
+          "use_top_bar": true,
+          "top_bar_message": "<p>Today Offer: $20 OFF orders $300 or more with code <span>“Sneaker002”<\/span> + Free shipping on orders over $60! <a href=\"index.php?route=information\/information&information_id=7\"><u>Offer Details<\/u><\/a><\/p>",
+          "header_message_1": "<span>hot<\/span>New arrivals \/ <a href=\"#\">Junya watanabe Man<\/a>, <a href=\"#\">Undercover<\/a>, <a href=\"\">Nonnative<\/a>, <a href=\"#\">Visvim.<\/a>",
+          "header_message_2": "<a href=\"#\" title=\"Store Location\"><i class=\"icon ion-ios-location-outline\"><\/i> <span>Store Location<\/span><\/a>",
+          "header_message_3": "<a href=\"#\" title=\"Track Your Order\"><i class=\"icon ion-clipboard\"><\/i> <span>Track Your Order<\/span><\/a>",
+          "logo_use_image": true,
+          "logo": "shopify:\/\/shop_images\/logo2.png",
+          "logo_padding": "25px 0px 25px 0px",
+          "header_message_4": "<label>Customer Support<\/label><p>(012) 800 456 789<\/p>",
+          "header_menu_1": "main-menu",
+          "use_bottom_menu": false
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "footer_layout": "footer-3",
+          "image": "shopify:\/\/shop_images\/logo2.png",
+          "footer_content_enable": true,
+          "footer_about_us": "themes.",
+          "footer_address": "LOWA UK, The Old Spitfire Hangar, Steeple Ashton, Wiltshire, BA14 6EP",
+          "footer_phone": "01380 872818",
+          "footer_email": "enquiries@lowa.co.uk",
+          "footer_open_time": "<div class=\"row\">\n            <div class=\"sub-foot\">\n              <div class=\"head-box\"><h4>Shop<\/h4><\/div>\n              <ul>\n                <li><p>Ranges<\/p><\/li>\n                <li><a href=\"https:\/\/lowatkc.myshopify.com\/collections\/men\">Men's Boots<\/a><\/li>\n                <li><a href=\"https:\/\/lowatkc.myshopify.com\/collections\/women\">Women's Boots<\/a><\/li>\n                <li><a href=\"https:\/\/lowatkc.myshopify.com\/collections\/kids\">Kid's Boots<\/a><\/li>\n              <\/ul>\n              <ul>\n                <li><p>By Use<\/p><\/li>\n                <li><a href=\"https:\/\/lowatkc.myshopify.com\/collections\/walking-shoes\">Walking Boots<\/a><\/li>\n                <li><a href=\"https:\/\/lowatkc.myshopify.com\/collections\/hiking-boots\">Hiking Boots <\/a><\/li>\n                <li><a href=\"https:\/\/lowatkc.myshopify.com\/collections\/vegan-boots\">Vegan Boots<\/a><\/li>\n              <\/ul>\n            <\/div>\n            <div class=\"sub-foot\">\n              <div class=\"head-box\"><h4>About The Tech<\/h4><\/div>\n              <ul>\n                <li><a href=\"#\">Overview<\/a><\/li>\n                <li><a href=\"#\">How are the boots made?<\/a><\/li>\n                <li><a href=\"#\">What materials are used?<\/a><\/li>\n                \n              <\/ul>              \n            <\/div>\n            <div class=\"sub-foot\">\n              <div class=\"head-box\"><h4>#love Lowa<\/h4><\/div>\n              <ul>\n                <li><a href=\"https:\/\/lowatkc.myshopify.com\/pages\/the-lowa-story\">About<\/a><\/li>\n                <li><a href=\"https:\/\/lowatkc.myshopify.com\/blogs\/news\">Latest News<\/a><\/li>\n                <li><a href=\"https:\/\/lowatkc.myshopify.com\/pages\/reviews\">Reviews<\/a><\/li>\n              <\/ul>              \n            <\/div>\n            <div class=\"sub-foot\">\n              <div class=\"head-box\"><h4>boot Advice<\/h4><\/div>\n              <ul>\n                <li><a href=\"https:\/\/lowatkc.myshopify.com\/pages\/boot-camp-1\">Boot Care<\/a><\/li>\n                <li><a href=\"https:\/\/lowatkc.myshopify.com\/pages\/lowa-size-guide\">Size Guide<\/a><\/li>\n                <li><a href=\"https:\/\/lowatkc.myshopify.com\/pages\/warranty\">Warranty<\/a><\/li>\n              <\/ul>              \n            <\/div>\n            <div class=\"sub-foot\">\n              <div class=\"head-box\"><h4>Help<\/h4><\/div>\n              <ul>\n                <li><a href=\"https:\/\/lowatkc.myshopify.com\/pages\/contact-us\">Contact Us<\/a><\/li>\n                <li><a href=\"https:\/\/lowatkc.myshopify.com\/pages\/delivery\">Delivery<\/a><\/li>\n                <li><a href=\"\/pages\/returns\">Returns<\/a><\/li>\n                <li><a href=\"https:\/\/lowatkc.myshopify.com\/pages\/faqs\">FAQ<\/a><\/li>\n              <\/ul>              \n            <\/div>                       \n          <\/div>",
+          "footer_menu_1": "main-menu",
+          "footer_menu_2": "main-menu",
+          "footer_menu_3": "main-menu",
+          "blog_heading": "Latest News & Info",
+          "footer_blog": "news",
+          "footer_social_enable": true,
+          "footer_content_text": "<p>©2020 LOWA UK. All rights reserved. <br><a href=\"javascript:;\">Privacy<\/a> | <a href=\"javascript:;\">Cookies<\/a> | <a href=\"javascript:;\">Terms<\/a><\/p>"
+        }
+      },
+      "1480267833382": {
+        "type": "slideshow",
+        "blocks": {
+          "1480267833382-1": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/banner.png",
+              "animation_style": "slider-1",
+              "heading": "renegade",
+              "heading_size": "18px",
+              "heading_color": "#ffffff",
+              "subheading": "#forthenextstep",
+              "subheading_size": "120px",
+              "subheading_color": "#ffffff",
+              "description": "We've handpicked our best gifts for all kinds of athletes.",
+              "description_size": "16px",
+              "description_color": "#ffffff",
+              "slide_link_text": "Discover Collection",
+              "slide_link": "shopify:\/\/collections",
+              "link_bg": "#eb3e32",
+              "link_color": "#ffffff",
+              "image_clickable": false,
+              "top": "50%",
+              "right": "0%",
+              "left": "0%",
+              "width": "100%",
+              "float": "center"
+            }
+          },
+          "1480267833382-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/banner.png",
+              "animation_style": "slider-1",
+              "heading": "renegade",
+              "heading_size": "18px",
+              "heading_color": "#ffffff",
+              "subheading": "#forthenextstep",
+              "subheading_size": "120px",
+              "subheading_color": "#ffffff",
+              "description": "outerwear. footwear. portable storage and indispensable in life",
+              "description_size": "16px",
+              "description_color": "#ffffff",
+              "slide_link_text": "Discover Collection",
+              "slide_link": "shopify:\/\/collections",
+              "link_bg": "#eb3e32",
+              "link_color": "#ffffff",
+              "image_clickable": false,
+              "top": "50%",
+              "right": "0%",
+              "left": "0%",
+              "width": "100%",
+              "float": "center"
+            }
+          },
+          "87af6889-7b89-48d6-b496-ed5f17d8c7a3": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/banner.png",
+              "animation_style": "slider-3",
+              "heading": "renegade",
+              "heading_size": "18px",
+              "heading_color": "#ffffff",
+              "subheading": "#forthenextstep",
+              "subheading_size": "90px",
+              "subheading_color": "#ffffff",
+              "description": "",
+              "description_size": "16px",
+              "description_color": "#ffffff",
+              "slide_link_text": "Discover Collection",
+              "slide_link": "shopify:\/\/collections",
+              "link_bg": "#000000",
+              "link_color": "#ffffff",
+              "image_clickable": false,
+              "top": "50%",
+              "right": "0%",
+              "left": "0%",
+              "width": "100%",
+              "float": "left"
+            }
+          }
+        },
+        "block_order": [
+          "1480267833382-1",
+          "1480267833382-0",
+          "87af6889-7b89-48d6-b496-ed5f17d8c7a3"
+        ],
+        "settings": {
+          "autoplay": true,
+          "autoplay_speed": "10000",
+          "layout_slider": "slider-2",
+          "fullwidth": true,
+          "full_size_on_mobile": false
+        }
+      },
+      "brands": {
+        "type": "brands",
+        "blocks": {
+          "1499679798583": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1499679798583"
+        ],
+        "settings": {
+          "layout": "brands",
+          "heading": "Logo Brands & Clients",
+          "fullwidth": true
+        }
+      },
+      "1501181471034": {
+        "type": "collection-tab",
+        "disabled": true,
+        "settings": {
+          "products_tab_layout": "products-tab1",
+          "listing_rows": 2,
+          "no_of_products": 4,
+          "heading": "Product Tabs",
+          "description": "",
+          "fullwidth": false,
+          "products_tab_collection1": "bestsellers",
+          "products_tab_collection2": "new-arrivals",
+          "products_tab_collection3": "trending",
+          "products_tab_collection4": "",
+          "products_tab_collection5": "",
+          "products_tab_count": 12,
+          "product_grid_img_carousel": false,
+          "show_coll_image": true,
+          "link": ""
+        }
+      },
+      "1503231244573": {
+        "type": "ad-banner",
+        "disabled": true,
+        "blocks": {
+          "1506803279562": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/img1-top-sneaker1.jpg",
+              "heading": "",
+              "heading_color": "#ffffff",
+              "sub_heading": "",
+              "sub_heading_color": "#a8741a",
+              "description": "",
+              "description_color": "#ffffff",
+              "link_text": "View More",
+              "link": "shopify:\/\/collections\/all",
+              "link_color": "#ffffff",
+              "ad_text_position": "left",
+              "ad_align": "left"
+            }
+          },
+          "1506803308948": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/img4-top-sneaker1.jpg",
+              "heading": "",
+              "heading_color": "#ffffff",
+              "sub_heading": "",
+              "sub_heading_color": "#a8741a",
+              "description": "",
+              "description_color": "#ffffff",
+              "link_text": "View More",
+              "link": "shopify:\/\/collections\/all",
+              "link_color": "#ffffff",
+              "ad_text_position": "left",
+              "ad_align": "left"
+            }
+          },
+          "1519512637618": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/img3-top-sneaker1.jpg",
+              "heading": "",
+              "heading_color": "#ffffff",
+              "sub_heading": "",
+              "sub_heading_color": "#a8741a",
+              "description": "",
+              "description_color": "#ffffff",
+              "link_text": "View More",
+              "link": "shopify:\/\/collections\/all",
+              "link_color": "#ffffff",
+              "ad_text_position": "left",
+              "ad_align": "left"
+            }
+          },
+          "1529951161386": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/img4-top-sneaker1.jpg",
+              "heading": "",
+              "heading_color": "#ffffff",
+              "sub_heading": "",
+              "sub_heading_color": "#a8741a",
+              "description": "",
+              "description_color": "#ffffff",
+              "link_text": "",
+              "link": "",
+              "link_color": "#ffffff",
+              "ad_text_position": "left",
+              "ad_align": "left"
+            }
+          },
+          "1529951179365": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/img5-top-sneaker1.jpg",
+              "heading": "",
+              "heading_color": "#ffffff",
+              "sub_heading": "",
+              "sub_heading_color": "#a8741a",
+              "description": "",
+              "description_color": "#ffffff",
+              "link_text": "",
+              "link": "",
+              "link_color": "#ffffff",
+              "ad_text_position": "left",
+              "ad_align": "left"
+            }
+          }
+        },
+        "block_order": [
+          "1506803279562",
+          "1506803308948",
+          "1519512637618",
+          "1529951161386",
+          "1529951179365"
+        ],
+        "settings": {
+          "feature_advert_design": "feature-advert5",
+          "fullwidth": false
+        }
+      },
+      "1504781997946": {
+        "type": "service-box",
+        "disabled": true,
+        "blocks": {
+          "1504781997946-0": {
+            "type": "box",
+            "settings": {
+              "feature_service_icon": "fa-ship",
+              "feature_service_title": "Free delivery",
+              "feature_service_description": "Free shipping on all order"
+            }
+          },
+          "1504781997946-1": {
+            "type": "box",
+            "settings": {
+              "feature_service_icon": "fa-headphones",
+              "feature_service_title": "Online Support",
+              "feature_service_description": "Available 24 hours a day"
+            }
+          },
+          "1504782065705": {
+            "type": "box",
+            "settings": {
+              "feature_service_icon": "fa-money",
+              "feature_service_title": "Money Back Return",
+              "feature_service_description": "Guarantee under 7 days"
+            }
+          },
+          "1529973202873": {
+            "type": "box",
+            "settings": {
+              "feature_service_icon": "fa fa-user",
+              "feature_service_title": "Member Discount",
+              "feature_service_description": "Onevery order over $120.00"
+            }
+          },
+          "1529973271215": {
+            "type": "box",
+            "settings": {
+              "feature_service_icon": "fa-credit-card",
+              "feature_service_title": "SECURE PAYMENT",
+              "feature_service_description": "All cards are accepted"
+            }
+          }
+        },
+        "block_order": [
+          "1504781997946-0",
+          "1504781997946-1",
+          "1504782065705",
+          "1529973202873",
+          "1529973271215"
+        ],
+        "settings": {
+          "layout": "feature-service2",
+          "fullwidth": false
+        }
+      },
+      "1504983008053": {
+        "type": "collection",
+        "disabled": true,
+        "settings": {
+          "collection_layout": "feature-carousal2",
+          "heading": "Mostviewed Products",
+          "description": "",
+          "collection": "trending",
+          "listing_rows": 1,
+          "no_of_products": 4,
+          "products_tab_count": 8,
+          "fullwidth": false,
+          "product_grid_img_carousel": false
+        }
+      },
+      "1507135844484": {
+        "type": "testimonial",
+        "disabled": true,
+        "blocks": {
+          "1507135844484-0": {
+            "type": "testimonial",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/testimor1-64x64.png",
+              "description": "This is Photoshops version  of Lorem Ipsum. Proin gravida nibh vel velit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. In molestie augue magna. Pellentesque felis lorem, pulvinar sed eros n..",
+              "author": "Rebecka Filson"
+            }
+          },
+          "1507135844484-1": {
+            "type": "testimonial",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/testimor1-64x64.png",
+              "description": "Mauris blandit, metus a venenatis lacinia, felis enim tincidunt est, condimentum vulputate orci augue eu metus. Fusce dictum, nisi et semper ultricies, felis tortor blandit odio, egestas consequat pur..",
+              "author": "Nathanael Jaworski"
+            }
+          }
+        },
+        "block_order": [
+          "1507135844484-0",
+          "1507135844484-1"
+        ],
+        "settings": {
+          "layout": "testimonials",
+          "heading": "Latest Testimonials",
+          "fullwidth": true
+        }
+      },
+      "1509199306907": {
+        "type": "ad-banner",
+        "disabled": true,
+        "blocks": {
+          "1509199306907-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/img-middle-sneaker3.jpg",
+              "heading": "new arrivals 2018",
+              "heading_color": "#2f333a",
+              "sub_heading": "<span>The LeBron<\/span>                                <span>Soldier XI SFG<\/span>                                <span><em>Basketball<\/em> Shoe<\/span>",
+              "sub_heading_color": "#2f333a",
+              "description": "Look real. define yourself. add intensity Be quick to receive\nthe best deals of the store.",
+              "description_color": "#2f333a",
+              "link_text": "",
+              "link": "shopify:\/\/collections\/all",
+              "link_color": "#ffffff",
+              "ad_text_position": "left",
+              "ad_align": "left"
+            }
+          }
+        },
+        "block_order": [
+          "1509199306907-0"
+        ],
+        "settings": {
+          "feature_advert_design": "feature-advert1alt",
+          "fullwidth": false
+        }
+      },
+      "1509373704466": {
+        "type": "brands",
+        "disabled": true,
+        "blocks": {
+          "1509373704466-0": {
+            "type": "image",
+            "settings": {
+              "link": "shopify:\/\/collections\/all"
+            }
+          },
+          "1509373704466-1": {
+            "type": "image",
+            "settings": {
+              "link": "shopify:\/\/collections\/all"
+            }
+          },
+          "1509373753755": {
+            "type": "image",
+            "settings": {
+              "link": "shopify:\/\/collections\/all"
+            }
+          },
+          "1509373760841": {
+            "type": "image",
+            "settings": {
+              "link": "shopify:\/\/collections\/all"
+            }
+          },
+          "1509373767400": {
+            "type": "image",
+            "settings": {
+              "link": "shopify:\/\/collections\/all"
+            }
+          },
+          "1509373774774": {
+            "type": "image",
+            "settings": {
+              "link": "shopify:\/\/collections"
+            }
+          }
+        },
+        "block_order": [
+          "1509373704466-0",
+          "1509373704466-1",
+          "1509373753755",
+          "1509373760841",
+          "1509373767400",
+          "1509373774774"
+        ],
+        "settings": {
+          "layout": "brands",
+          "heading": "Logo Brands & Clients",
+          "fullwidth": false
+        }
+      },
+      "1527121164309": {
+        "type": "newsletter",
+        "disabled": true,
+        "settings": {
+          "mailing_list_form_action": "",
+          "heading": "Subscribe",
+          "image": "shopify:\/\/shop_images\/bkg_newletter.jpg",
+          "fullwidth": false
+        }
+      },
+      "1527122301416": {
+        "type": "instagram-feed",
+        "disabled": true,
+        "settings": {
+          "layout": "instafeed",
+          "homepage_instagram_feed": true,
+          "insta_title": "#Shoes On Insta",
+          "insta_get": "@masstech2019",
+          "insta_size": "640",
+          "insta_images_fetch": "10",
+          "no_of_products": "5",
+          "fullwidth": false
+        }
+      },
+      "1528546023823": {
+        "type": "message-box",
+        "disabled": true,
+        "settings": {
+          "description": "<p>Today Offer: $20 OFF orders $300 or more with code <span>“Sneaker002”<\/span> + Free shipping on orders over $60! <a href=\"index.php?route=information\/information&information_id=7\"><u>Offer Details<\/u><\/a><\/p>",
+          "fullwidth": false
+        }
+      },
+      "1528559564920": {
+        "type": "videobox",
+        "disabled": true,
+        "settings": {
+          "video_type": "youtube",
+          "video_src": "iI2D4LbV6Os",
+          "video_autoplay": true,
+          "fullwidth": true
+        }
+      },
+      "collection-page": {
+        "type": "collection-page",
+        "blocks": {
+          "d531eebe-77be-4049-aebb-3d567b2889e4": {
+            "type": "links",
+            "settings": {
+              "collection_sidebar_menu": "categories"
+            }
+          },
+          "1581873194791": {
+            "type": "filters",
+            "settings": {
+              "collection_sidebar_filters": "groups"
+            }
+          },
+          "1581873197532": {
+            "type": "image",
+            "settings": {
+              "collection_side_link": "shopify:\/\/collections"
+            }
+          }
+        },
+        "block_order": [
+          "d531eebe-77be-4049-aebb-3d567b2889e4",
+          "1581873194791",
+          "1581873197532"
+        ],
+        "settings": {
+          "product_count_per_page": "12",
+          "collection_view_default": "4",
+          "show_summary": true,
+          "show_summary_stripped": true,
+          "product_summary_words": "30",
+          "show_collection_sidebar": "left",
+          "show_color_box": true,
+          "color_box_variant": "Colour"
+        }
+      },
+      "blog-page": {
+        "type": "blog-page",
+        "blocks": {
+          "1581927170136": {
+            "type": "search",
+            "settings": {
+              "show_sidebar_search_box": true
+            }
+          },
+          "1581927183928": {
+            "type": "tags",
+            "settings": {
+              "show_sidebar_tags_title": true
+            }
+          },
+          "1581927187342": {
+            "type": "recent-articles",
+            "settings": {
+              "show_article_heading": true,
+              "article_publish_info": false
+            }
+          }
+        },
+        "block_order": [
+          "1581927170136",
+          "1581927183928",
+          "1581927187342"
+        ],
+        "settings": {
+          "blog_layout": "grid2",
+          "no_articles": "5",
+          "show_summary": true,
+          "show_summary_stripped": true,
+          "blog_summary_words": "30",
+          "text_align": "left",
+          "show_sidebar": "no"
+        }
+      },
+      "contact-page": {
+        "type": "contact-page",
+        "settings": {
+          "show_map": true,
+          "map_code": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d2950.6822073234102!2d-83.71685604946924!3d42.30664594636449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883cac2c20114b69%3A0x96fe590afa21efb6!2s2300+Traverwood+Dr%2C+Ann+Arbor%2C+MI+48105!5e0!3m2!1sen!2s!4v1461260551915\" width=\"100%\" height=\"400\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"><\/iframe>",
+          "accept_check_enable": false,
+          "accept_text": "I agree with the terms and conditions."
+        }
+      },
+      "1530150956492": {
+        "type": "collection-tab",
+        "disabled": true,
+        "settings": {
+          "products_tab_layout": "products-tab2",
+          "listing_rows": 1,
+          "no_of_products": 5,
+          "heading": "Products For Men 2018",
+          "description": "",
+          "fullwidth": false,
+          "products_tab_collection1": "new-arrivals",
+          "products_tab_collection2": "bestsellers",
+          "products_tab_collection3": "trending",
+          "products_tab_collection4": "",
+          "products_tab_collection5": "",
+          "products_tab_count": 8,
+          "product_grid_img_carousel": false,
+          "show_coll_image": false,
+          "link": "shopify:\/\/collections"
+        }
+      },
+      "cart-page": {
+        "type": "cart-page",
+        "settings": {
+          "cart_notes_enable": true,
+          "cart_promo_enable": true,
+          "ajax_cart_method": "page",
+          "shipping_calculator": "Enabled",
+          "shipping_calculator_heading": "Get shipping estimates",
+          "shipping_calculator_default_country": "United States",
+          "shipping_calculator_submit_button_label": "Calculate shipping",
+          "shipping_calculator_submit_button_label_disabled": "Calculating...",
+          "cart_terms_c_enable": true,
+          "cart_terms_c_page": ""
+        }
+      },
+      "product-page": {
+        "type": "product-page",
+        "settings": {
+          "product_page_layout": "vertical_thumbs",
+          "show_zoom": true,
+          "show_summary": true,
+          "show_summary_stripped": true,
+          "product_summary_words": "5",
+          "product_vendor_enable": true,
+          "product_show_sku": true,
+          "product_show_barcode": false,
+          "show_variant_swatches": "thumb",
+          "product_quantity_enable": true,
+          "product_quantity_message": true,
+          "show_buy_now": true,
+          "show_third_tab": true,
+          "third_tab_title": "Custom Tab",
+          "third_tab_text": "You can add, text, html, images and videos as well to the tab from product settings area",
+          "show_tags_tab": true,
+          "custom_tab_title": "Additional Info",
+          "related_products_enable": true,
+          "recent_products_enable": false,
+          "product_grid_img_carousel": true,
+          "product_sharing_links": true,
+          "product_sticky_cart": false
+        }
+      },
+      "list-collection-page": {
+        "type": "list-collection-page",
+        "settings": {
+          "display_type": "all",
+          "sort": "alphabetical"
+        }
+      },
+      "article-page": {
+        "type": "article-page",
+        "blocks": {
+          "1581933824912": {
+            "type": "search",
+            "settings": {
+              "show_sidebar_search_box": true
+            }
+          },
+          "1581933832100": {
+            "type": "tags",
+            "settings": {
+              "show_sidebar_tags_title": true
+            }
+          },
+          "1581933828100": {
+            "type": "recent-articles",
+            "settings": {
+              "show_article_heading": true,
+              "article_publish_info": false
+            }
+          },
+          "1581933836402": {
+            "type": "image",
+            "settings": {
+              "side_link": "shopify:\/\/blogs\/beauty"
+            }
+          }
+        },
+        "block_order": [
+          "1581933824912",
+          "1581933832100",
+          "1581933828100",
+          "1581933836402"
+        ],
+        "settings": {
+          "show_sidebar": "no"
+        }
+      },
+      "gallery-page": {
+        "type": "gallery-page",
+        "blocks": {
+          "1585864232942": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/img3-static-slider.jpg",
+              "caption": "Image 1"
+            }
+          },
+          "1585864341797": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/img-sidebar_8b08ba17-4659-4559-8988-6aef7bbb8a65.jpg",
+              "caption": "Image 8"
+            }
+          },
+          "1585864266351": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/img1-static-slider.jpg",
+              "caption": "Image 3"
+            }
+          },
+          "1585864278296": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/img2-static-slider.jpg",
+              "caption": "Image 4"
+            }
+          },
+          "1585864311659": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/watch.jpg",
+              "caption": "Image 6"
+            }
+          },
+          "1585864252578": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slider2-mirora1-1920x634.jpg",
+              "caption": "Image 2"
+            }
+          },
+          "1585864291702": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/banner1.jpg",
+              "caption": "Image 5"
+            }
+          },
+          "1585864324794": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slidershow2-1-1920x960.jpg",
+              "caption": "Image 7"
+            }
+          }
+        },
+        "block_order": [
+          "1585864232942",
+          "1585864341797",
+          "1585864266351",
+          "1585864278296",
+          "1585864311659",
+          "1585864252578",
+          "1585864291702",
+          "1585864324794"
+        ],
+        "settings": {
+          "page_top": "",
+          "heading": "FEATURED PRODUCTS",
+          "description": "Browse the collection of our best selling and trending products",
+          "fullwidth": true
+        }
+      },
+      "about-page": {
+        "type": "about-page",
+        "blocks": {
+          "1585865430679": {
+            "type": "single_member",
+            "settings": {
+              "heading": "President",
+              "image_1": "shopify:\/\/shop_images\/member1.jpg",
+              "heading_1": "President",
+              "description_1": "",
+              "link_1": ""
+            }
+          },
+          "1585865539523": {
+            "type": "two_member",
+            "settings": {
+              "heading": "Directors",
+              "image_1": "shopify:\/\/shop_images\/member1.jpg",
+              "heading_1": "Director Marketing",
+              "description_1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+              "link_1": "",
+              "image_2": "shopify:\/\/shop_images\/member1.jpg",
+              "heading_2": "Director Sales",
+              "description_2": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+              "link_2": ""
+            }
+          },
+          "1585865622867": {
+            "type": "three_member",
+            "settings": {
+              "heading": "Gurus",
+              "image_1": "shopify:\/\/shop_images\/member1.jpg",
+              "heading_1": "Guru 1",
+              "description_1": "",
+              "link_1": "",
+              "image_2": "shopify:\/\/shop_images\/member1.jpg",
+              "heading_2": "Guru 2",
+              "description_2": "",
+              "link_2": "",
+              "image_3": "shopify:\/\/shop_images\/member1.jpg",
+              "heading_3": "Guru 3",
+              "description_3": "",
+              "link_3": ""
+            }
+          },
+          "1585865794900": {
+            "type": "four_member",
+            "settings": {
+              "heading": "Gang of Four",
+              "image_1": "shopify:\/\/shop_images\/member1.jpg",
+              "heading_1": "One",
+              "description_1": "",
+              "link_1": "",
+              "image_2": "shopify:\/\/shop_images\/member1.jpg",
+              "heading_2": "Two",
+              "description_2": "",
+              "link_2": "",
+              "image_3": "shopify:\/\/shop_images\/member1.jpg",
+              "heading_3": "Three",
+              "description_3": "",
+              "link_3": "",
+              "image_4": "shopify:\/\/shop_images\/member1.jpg",
+              "heading_4": "Four",
+              "description_4": "",
+              "link_4": ""
+            }
+          }
+        },
+        "block_order": [
+          "1585865430679",
+          "1585865539523",
+          "1585865622867",
+          "1585865794900"
+        ],
+        "settings": {
+          "page_top": "shopify:\/\/shop_images\/img1-bottom-mirora1.jpg",
+          "heading": "Our Team",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec tellus dolor. Donec luctus quam ante, in faucibus nisi porttitor in. Etiam eu risus ut magna viverra ultrices sed fringilla purus. Cras dignissim dolor at dolor aliquam, at consequat libero luctus. Curabitur egestas mauris vel mauris mollis, et blandit ligula vulputate. Phasellus dolor sapien, facilisis eget varius gravida, finibus ac massa. In hac habitasse platea dictumst. Phasellus ornare dui non urna cursus imperdiet. Nulla maximus a purus gravida pellentesque.",
+          "fullwidth": false
+        }
+      },
+      "services-page": {
+        "type": "services-page",
+        "blocks": {
+          "1586445060359": {
+            "type": "three_service",
+            "settings": {
+              "heading": "",
+              "image_1": "shopify:\/\/shop_images\/bags.jpg",
+              "heading_1": "Packaging",
+              "description_1": "Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
+              "link_1": "",
+              "image_2": "shopify:\/\/shop_images\/delivery.jpg",
+              "heading_2": "Delivery",
+              "description_2": "Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
+              "link_2": "",
+              "image_3": "shopify:\/\/shop_images\/bell.jpg",
+              "heading_3": "Support",
+              "description_3": "Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
+              "link_3": ""
+            }
+          },
+          "1586454290396": {
+            "type": "message_box",
+            "settings": {
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec tellus dolor. Donec luctus quam ante, in faucibus nisi porttitor in. Etiam eu risus ut magna viverra ultrices sed fringilla purus. Cras dignissim dolor at dolor aliquam, at consequat libero luctus. Curabitur egestas mauris vel mauris mollis, et blandit ligula vulputate. Phasellus dolor sapien, facilisis eget varius gravida, finibus ac massa. In hac habitasse platea dictumst. Phasellus ornare dui non urna cursus imperdiet. Nulla maximus a purus gravida pellentesque."
+            }
+          },
+          "1586450456882": {
+            "type": "four_service",
+            "settings": {
+              "heading": "",
+              "image_1": "shopify:\/\/shop_images\/storage.jpg",
+              "heading_1": "Storage",
+              "description_1": "Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
+              "link_1": "",
+              "image_2": "shopify:\/\/shop_images\/manufacture.jpg",
+              "heading_2": "Manufacture",
+              "description_2": "Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
+              "link_2": "",
+              "image_3": "shopify:\/\/shop_images\/showcase.jpg",
+              "heading_3": "Showcase",
+              "description_3": "Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
+              "link_3": "",
+              "image_4": "shopify:\/\/shop_images\/delivery.jpg",
+              "heading_4": "Deliver",
+              "description_4": "Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
+              "link_4": ""
+            }
+          },
+          "1586454650018": {
+            "type": "video",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/img-middle-mirora4.jpg",
+              "video_type": "youtube",
+              "video_src": "bLwl0gRbyrk",
+              "video_autoplay": true
+            }
+          }
+        },
+        "block_order": [
+          "1586445060359",
+          "1586454290396",
+          "1586450456882",
+          "1586454650018"
+        ],
+        "settings": {
+          "page_top": "",
+          "heading": "Our Services",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec tellus dolor. Donec luctus quam ante, in faucibus nisi porttitor in. Etiam eu risus ut magna viverra ultrices sed fringilla purus. Cras dignissim dolor at dolor aliquam, at consequat libero luctus. Curabitur egestas mauris vel mauris mollis, et blandit ligula vulputate. Phasellus dolor sapien, facilisis eget varius gravida, finibus ac massa. In hac habitasse platea dictumst. Phasellus ornare dui non urna cursus imperdiet. Nulla maximus a purus gravida pellentesque.",
+          "fullwidth": false
+        }
+      },
+      "16159094311aea70c2": {
+        "type": "html",
+        "disabled": true,
+        "settings": {
+          "text": "<div class=\"padding-box categories\">\n      <div class=\"container-fluid\">\n        <div class=\"heading\">\n<h4>LOWA<\/h4>\n<h1>Categories<\/h1>\n<\/div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <div class=\"category-box\">\n              <div class=\"cat-left-box\">\n                <a href=\"javascript:;\">\n                  <img src=\"images\/mens-boot.png\" class=\"img-fluid\">\n                  <h3>Mens Boots<\/h3>\n                <\/a>\n              <\/div>\n              <div class=\"cat-right-box\">\n                <img src=\"images\/cat-1.png\" class=\"img-fluid\">                \n              <\/div>        \n            <\/div>\n          <\/div>\n          <div class=\"col-md-6\">\n            <div class=\"category-box\">\n              <div class=\"cat-left-box\">\n                <a href=\"javascript:;\">\n                  <img src=\"images\/womens-boot.png\" class=\"img-fluid\">\n                  <h3>Womens Boots<\/h3>\n                <\/a>\n              <\/div>\n              <div class=\"cat-right-box\">\n                <img src=\"images\/cat-2.png\" class=\"img-fluid\">                \n              <\/div>        \n            <\/div>\n          <\/div>\n          <div class=\"col-md-6\">\n            <div class=\"category-box\">\n              <div class=\"cat-left-box\">\n                <a href=\"javascript:;\">\n                  <img src=\"images\/kids-boot.png\" class=\"img-fluid\">\n                  <h3>Kids Boots<\/h3>\n                <\/a>\n              <\/div>\n              <div class=\"cat-right-box\">\n                <img src=\"images\/cat-3.png\" class=\"img-fluid\">                \n              <\/div>        \n            <\/div>\n          <\/div>\n          <div class=\"col-md-6\">\n            <div class=\"category-box\">\n              <div class=\"cat-left-box\">\n                <a href=\"javascript:;\">\n                  <img src=\"images\/accessories.png\" class=\"img-fluid\">\n                  <h3>Accessories<\/h3>\n                <\/a>\n              <\/div>\n              <div class=\"cat-right-box\">\n                <img src=\"images\/cat-4.png\" class=\"img-fluid\">                \n              <\/div>        \n            <\/div>\n          <\/div>\n        <\/div>\n      <\/div>\n    <\/div>\n\n    <div class=\"padding-box review-box\">\n      <div class=\"container\">\n        <div class=\"row\">\n          <div class=\"col-md-1\"><\/div>\n          <div class=\"col-md-6\">\n            <p>For 90+ years, LOWA BOOTS have been acclaimed as the finest outdoor boots in the world by climbers, mountaineers, hikers, the media and certified quality testers. Our attention to every detail in design and European manufacturing has earned our reputation for building the world's most comfortable and durable boots since 1923.<\/p>\n          <\/div>\n          <div class=\"col-md-1\"><\/div>\n          <div class=\"col-md-3\">\n            <div class=\"review-sub\">              \n              <h4>Excellent<\/h4>\n              <ul class=\"nav\">\n                <li><i class=\"fas fa-star\"><\/i><\/li>\n                <li><i class=\"fas fa-star\"><\/i><\/li>\n                <li><i class=\"fas fa-star\"><\/i><\/li>\n                <li><i class=\"fas fa-star\"><\/i><\/li>\n                <li><i class=\"fas fa-star-half-alt\"><\/i><\/li>\n              <\/ul>\n              <div class=\"rating\">\n                <span><div class=\"number\">4.68<\/div>\n<p>Average<\/p><\/span>\n                <span><div class=\"number\">994<\/div>\n<p>Reviews<\/p><\/span>\n              <\/div>\n              <a href=\"javascript:;\" class=\"Review-btn\"><i class=\"fas fa-star\"><\/i> <span style=\"text-transform: uppercase;\">Review<\/span> <small>.io<\/small><\/a>\n            <\/div>\n          <\/div>\n        <\/div>\n      <\/div>\n      <div class=\"img-sub\"><img src=\"images\/made-europe-badge.png\" class=\"img-fluid\"><\/div>\n    <\/div>\n\n    <div class=\"review-img-box\"><\/div>\n\n    <div class=\"padding-box product\">\n      <div class=\"container\">\n        <div class=\"heading\">\n<h4>Similar<\/h4>\n<h1>Products<\/h1>\n<\/div>\n        <ul class=\"row product-slider\">\n          <li>\n            <div class=\"product-box\">              \n                <a href=\"javascript:;\">\n                  <div class=\"img-box\">\n<img src=\"images\/mens-boot.png\" class=\"img-fluid\"> <i class=\"far fa-heart\"><\/i>\n<\/div>\n                  <h3>RENEGADE GTX® MID <br>£185.00<\/h3>\n                  <p>or £23p\/m<\/p>\n                <\/a>                     \n            <\/div>\n          <\/li>\n          <li>\n            <div class=\"product-box\">              \n                <a href=\"javascript:;\">\n                  <div class=\"img-box\">\n<img src=\"images\/mens-boot.png\" class=\"img-fluid\"> <i class=\"far fa-heart\"><\/i>\n<\/div>\n                  <h3>RENEGADE GTX® MID <br>£185.00<\/h3>\n                  <p>or £23p\/m<\/p>\n                <\/a>                     \n            <\/div>\n          <\/li>\n          <li>\n            <div class=\"product-box\">              \n                <a href=\"javascript:;\">\n                  <div class=\"img-box\">\n<img src=\"images\/mens-boot.png\" class=\"img-fluid\"> <i class=\"far fa-heart\"><\/i>\n<\/div>\n                  <h3>RENEGADE GTX® MID <br>£185.00<\/h3>\n                  <p>or £23p\/m<\/p>\n                <\/a>                     \n            <\/div>\n          <\/li>\n          <li>\n            <div class=\"product-box\">              \n                <a href=\"javascript:;\">\n                  <div class=\"img-box\">\n<img src=\"images\/mens-boot.png\" class=\"img-fluid\"> <i class=\"far fa-heart\"><\/i>\n<\/div>\n                  <h3>RENEGADE GTX® MID <br>£185.00<\/h3>\n                  <p>or £23p\/m<\/p>\n                <\/a>                     \n            <\/div>\n          <\/li>\n          \n        <\/ul>\n      <\/div>\n    <\/div>\n\n    <div class=\"padding-box feat-box\">\n      <div class=\"container\">\n        <div class=\"heading\">\n<h4>Technology<\/h4>\n<h1>features<\/h1>\n<\/div>\n        <div class=\"row\">          \n            <p>We believe in polyurethane (PU). It's a terrific shock absorber and longer lasting than the more common EVA midsole. Plus, PU involves a much cleaner, environmental manufacturing process than EVA. Combine a LOWA PU midsole with one of LOWA's patented sole units, or a VIBRAM® acclaimed sole unit and you get a double dose of durability, comfort and superb performance.<\/p>     \n            <div class=\"feat-sub\">\n              <img src=\"images\/mens-boot-line.png\" class=\"img-fluid\">\n              <a href=\"javascript:;\">read more<\/a>\n              <img src=\"images\/mens-boot-line.png\" class=\"img-fluid\">\n            <\/div>            \n        <\/div>\n      <\/div>      \n    <\/div>\n\n    <div class=\"padding-box about\">\n      <div class=\"container-fluid\">\n        <div class=\"heading\">\n<h4>About<\/h4>\n<h1>Lowa<\/h1>\n<\/div>\n        <ul class=\"about-slider\">          \n            <li class=\"\">\n              <div class=\"about-box\">              \n                  <a href=\"javascript:;\">\n                    <div class=\"img-box\">\n                      <img src=\"images\/about-rowa.png\" class=\"img-fluid\">\n                      <div class=\"cont-box\">\n                        <h3>The Lowa Story<\/h3>\n                        <p>PRECISION, INNOVATION AND PERFORMANCE<\/p>\n                      <\/div>\n                    <\/div>\n                  <\/a>                     \n              <\/div>\n            <\/li>\n            <li class=\"\">\n              <div class=\"about-box\">              \n                  <a href=\"javascript:;\">\n                    <div class=\"img-box\">\n                      <img src=\"images\/about-rowa.png\" class=\"img-fluid\">\n                      <div class=\"cont-box\">\n                        <h3>The Lowa Story<\/h3>\n                        <p>PRECISION, INNOVATION AND PERFORMANCE<\/p>\n                      <\/div>\n                    <\/div>\n                  <\/a>                     \n              <\/div>\n            <\/li>\n            <li class=\"\">\n              <div class=\"about-box\">              \n                  <a href=\"javascript:;\">\n                    <div class=\"img-box\">\n                      <img src=\"images\/about-rowa.png\" class=\"img-fluid\">\n                      <div class=\"cont-box\">\n                        <h3>The Lowa Story<\/h3>\n                        <p>PRECISION, INNOVATION AND PERFORMANCE<\/p>\n                      <\/div>\n                    <\/div>\n                  <\/a>                     \n              <\/div>\n            <\/li>\n            <li class=\"\">\n              <div class=\"about-box\">              \n                  <a href=\"javascript:;\">\n                    <div class=\"img-box\">\n                      <img src=\"images\/about-rowa.png\" class=\"img-fluid\">\n                      <div class=\"cont-box\">\n                        <h3>The Lowa Story<\/h3>\n                        <p>PRECISION, INNOVATION AND PERFORMANCE<\/p>\n                      <\/div>\n                    <\/div>\n                  <\/a>                     \n              <\/div>\n            <\/li>\n            <li class=\"\">\n              <div class=\"about-box\">              \n                  <a href=\"javascript:;\">\n                    <div class=\"img-box\">\n                      <img src=\"images\/about-rowa.png\" class=\"img-fluid\">\n                      <div class=\"cont-box\">\n                        <h3>The Lowa Story<\/h3>\n                        <p>PRECISION, INNOVATION AND PERFORMANCE<\/p>\n                      <\/div>\n                    <\/div>\n                  <\/a>                     \n              <\/div>\n            <\/li> \n        <\/ul>\n      <\/div>\n    <\/div>\n\n    <div class=\"padding-box categories news-main\">\n      <div class=\"container-fluid\">\n        <div class=\"heading\">\n<h4>Latest<\/h4>\n<h1>News &amp; info<\/h1>\n<\/div>\n        <div class=\"form-box\"><form><select><option>Latest News<\/option><\/select><\/form><\/div>\n        <ul class=\"news-slider\">          \n          <li>\n            <div class=\"news-box\">\n              <div class=\"img-box\">\n                <img src=\"images\/news-img.png\" class=\"img-fluid\">                      \n              <\/div>\n              <div class=\"cont-box\">\n                <h3>5 OF THE UK’S MOST CHALLENGING WALKS<\/h3>\n                <a href=\"javascript:;\">Read More<\/a>\n              <\/div>                                       \n            <\/div>\n          <\/li> \n          <li>\n            <div class=\"news-box\">\n              <div class=\"img-box\">\n                <img src=\"images\/news-img.png\" class=\"img-fluid\">                      \n              <\/div>\n              <div class=\"cont-box\">\n                <h3>5 OF THE UK’S MOST CHALLENGING WALKS<\/h3>\n                <a href=\"javascript:;\">Read More<\/a>\n              <\/div>                                       \n            <\/div>\n          <\/li> \n          <li>\n            <div class=\"news-box\">\n              <div class=\"img-box\">\n                <img src=\"images\/news-img.png\" class=\"img-fluid\">                      \n              <\/div>\n              <div class=\"cont-box\">\n                <h3>5 OF THE UK’S MOST CHALLENGING WALKS<\/h3>\n                <a href=\"javascript:;\">Read More<\/a>\n              <\/div>                                       \n            <\/div>\n          <\/li> \n          <li>\n            <div class=\"news-box\">\n              <div class=\"img-box\">\n                <img src=\"images\/news-img.png\" class=\"img-fluid\">                      \n              <\/div>\n              <div class=\"cont-box\">\n                <h3>5 OF THE UK’S MOST CHALLENGING WALKS<\/h3>\n                <a href=\"javascript:;\">Read More<\/a>\n              <\/div>                                       \n            <\/div>\n          <\/li> \n          <li>\n            <div class=\"news-box\">\n              <div class=\"img-box\">\n                <img src=\"images\/news-img.png\" class=\"img-fluid\">                      \n              <\/div>\n              <div class=\"cont-box\">\n                <h3>5 OF THE UK’S MOST CHALLENGING WALKS<\/h3>\n                <a href=\"javascript:;\">Read More<\/a>\n              <\/div>                                       \n            <\/div>\n          <\/li>            \n        <\/ul>\n      <\/div>\n    <\/div>"
+        }
+      }
+    },
+    "content_for_index": [
+      "1480267833382",
+      "1503231244573",
+      "1528546023823",
+      "1501181471034",
+      "1509199306907",
+      "1504983008053",
+      "1507135844484",
+      "1530150956492",
+      "1527122301416",
+      "1527121164309",
+      "1509373704466",
+      "1528559564920",
+      "1504781997946",
+      "16159094311aea70c2"
+    ]
+  },
+  "presets": {
+  }
+}

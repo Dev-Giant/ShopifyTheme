@@ -1,0 +1,476 @@
+{% include 'breadcrumb' %}
+<div id="product-category" class="layer-category">
+  <div class="layered-navigation-block"></div>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">        
+        <div class="carousel-item active">
+          <img src="{{ 'category-banner.png' | asset_url }}" class="img-fluid">  
+          <div class="text-box"> 
+            <div class="text-sub">
+<!--               <h3>{{ collection.title }}</h3> <br><br> -->
+              <h2>{{ collection.title }}</h2> 
+            </div>  
+          </div>                          
+        </div>               
+      </div>      
+    </div> 
+
+  <div class="clearfix"></div>
+  <div class="category-main">
+      <div class="container">
+        <div class="row">
+         {% if collection.description != blank %}
+        	<div class="category-info col-md-12"><p>{{ collection.description }}</p></div>
+          {% else %}
+          <div class="category-info col-md-12"><p>Embrace the outdoors with our fantastic range of men’s walking boots, specifically designed for people seeking adventure. Read More</p></div>
+           {% endif %}
+        </div>
+  <div class="row">
+    <div class="col-order">
+      {% if section.settings.show_collection_sidebar == 'left' %}
+      {% include 'collection-sidebar' %}
+      {% endif %}
+     
+      <div id="content" class="{% if section.settings.show_collection_sidebar != 'no' %}col-md-9{% else %}col-md-12{% endif %} col-sm-12 col-xs-12">
+        
+        
+        <div class="custom-category">
+          <div id="wraper_ajax" class="loadding_ajaxcart" ><i class="fa fa-spinner fa-spin"></i></div>
+          {% case template %}
+          {% when 'collection.10' %}
+          {% assign product_count_per_page = 10 %}
+          {% when 'collection.20' %}
+          {% assign product_count_per_page = 20 %}
+          {% when 'collection.30' %}
+          {% assign product_count_per_page = 30 %}
+          {% when 'collection.all' %}
+          {% assign product_count_per_page = 999 %}
+          {% else %}
+          {% assign product_count_per_page = section.settings.product_count_per_page %}
+          {% endcase %}
+          {% paginate collection.products by product_count_per_page %}
+          <div class="toolbar toolbar-products">
+            <div class="modes">{% include 'collection-views' %}</div>
+            <div class="toolbar-amount">{% include 'collection-amount' %}</div>
+            <div class="sorter">{% include 'collection-sorting' %}</div>
+            <div class="limiter">{% include 'collection-show-count' %}</div>
+            <div style=" float: left;">{{ collection.all_products_count }} Style Found</div>
+          </div>
+          <div class="custom-products quickview-products" id="custom-products">
+            <div class="row">
+              {% for product in collection.products %}
+              {% if section.settings.show_collection_sidebar != false %}
+              {% include 'product-grid-item-collection' %}
+              {% else %}
+              {% include 'product-grid-item-collection' %}
+              {% endif %}
+              {% else %}
+              <div class="grid-item">
+                <p>{{ 'collections.general.no_matches' | t }}</p>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% include 'pagination' %}
+          {% endpaginate %}
+        </div>
+      </div>
+      {% if section.settings.show_collection_sidebar == 'right' %}
+      {% include 'collection-sidebar' %}
+      {% endif %}
+    </div>
+  </div>
+    </div>
+  </div>
+<div class="pro-single">
+      <div class="container-fluid">
+        <div class="row">
+          
+          <div class="col-md-5">
+            <div class="pro-single-sub">
+              <div class="heading white"><h4>LOWA</h4><h1>z-6s gtx®</h1></div>
+              <div class="heading second"><h4>Was £170.00</h4><h1>Only £150.00</h1></div>
+              <a href="javascript:;" class="more">Buy Now</a>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+      
+    <div class="faq">
+      <div class="container">        
+        <div class="row accordion" id="faq" role="tablist" aria-multiselectable="true">
+          <div class="col-md-6">
+            <div class=""></div>
+            <div class="head-faq">
+              <p>Embrace the outdoors with our fantastic range of men’s walking boots, specifically designed for people seeking adventure.</p>
+              <a href="javascript:;">Read More</a>
+            </div>
+            <div class="card">
+                  <!-- Card header -->
+                  <div class="card-header" role="tab" id="heading1">
+                    <a data-toggle="collapse" data-parent="#faq" href="#collapse1" aria-expanded="false">
+                      <h5>FAQ question one <i class="fas fa-angle-down rotate-icon"></i></h5>
+                    </a>
+                  </div>
+
+                  <!-- Card body -->
+                  <div id="collapse1" class="collapse show" role="tabpanel" aria-labelledby="heading1"
+                    data-parent="#faq">
+                    <div class="card-body">
+                      <p>Nullam ut fermentum ipsum, quis vulputate enim. Sed eget turpis cursus, vestibulum tellus ut, posuere risus.</p>
+                    </div>
+                  </div>
+            </div>
+            
+            <div class="card">
+
+              <!-- Card header -->
+              <div class="card-header" role="tab" id="heading2">
+                <a class="collapsed" data-toggle="collapse" data-parent="#faq" href="#collapse2"
+                  aria-expanded="false" aria-controls="collapse2">
+                  <h5>FAQ question two <i class="fas fa-angle-down rotate-icon"></i></h5>
+                </a>
+              </div>
+
+              <!-- Card body -->
+              <div id="collapse2" class="collapse" role="tabpanel" aria-labelledby="heading2"
+                data-parent="#faq">
+                <div class="card-body">
+                  <p>Nullam ut fermentum ipsum, quis vulputate enim. Sed eget turpis cursus, vestibulum tellus ut, posuere risus.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+
+              <!-- Card header -->
+              <div class="card-header" role="tab" id="heading3">
+                <a class="collapsed" data-toggle="collapse" data-parent="#faq" href="#collapse3"
+                  aria-expanded="false" aria-controls="collapse3">
+                  <h5>FAQ question three <i class="fas fa-angle-down rotate-icon"></i></h5>
+                </a>
+              </div>
+
+              <!-- Card body -->
+              <div id="collapse3" class="collapse" role="tabpanel" aria-labelledby="heading3"
+                data-parent="#faq">
+                <div class="card-body">
+                  <p>Nullam ut fermentum ipsum, quis vulputate enim. Sed eget turpis cursus, vestibulum tellus ut, posuere risus.</p>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row review-in">
+              <div class="col-md-4">
+                <div class="review-sub">              
+                  <h4>Excellent</h4>
+                  <ul class="nav">
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star-half-alt"></i></li>
+                  </ul>
+                  <div class="rating">
+                    <span><div class="number">4.68</div><p>Average</p></span>
+                    <span><div class="number">994</div><p>Reviews</p></span>
+                  </div>
+                  <a href="javascript:;" class="Review-btn"><i class="fas fa-star"></i> <span style="text-transform: uppercase;">Review</span> <small>.io</small></a>
+                </div>
+              </div>
+
+              <div class="col-md-8">
+                <ul class="review-slide">
+                  <li>
+                    <span><h5>Anonymous</h5>
+                      <ul class="nav">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                      </ul>
+                    </span>
+                    <p>Great shoes. Really good walking shoes. Very prompt delivery</p>
+                    <h6>posted 10 hours ago</h6>
+                  </li>
+                  <li>
+                    <span><h5>Anonymous</h5>
+                      <ul class="nav">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                      </ul>
+                    </span>
+                    <p>The best footwear produced.</p>
+                    <h6>posted 20 hours ago</h6>
+                  </li>
+                  <li>
+                    <span><h5>Anonymous</h5>
+                      <ul class="nav">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                      </ul>
+                    </span>
+                    <p>The best footwear produced.</p>
+                    <h6>posted 20 hours ago</h6>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+          </div>            
+        </div>
+      </div>
+    </div>
+</div>
+{% schema %}
+{ 
+   "name":"Collection",
+   "settings":[ 
+      { 
+         "type":"text",
+         "id":"product_count_per_page",
+         "label":"Number of products to show",
+         "default":"12"
+      },
+      {
+         "type":"select",
+         "id":"collection_view_default",
+         "label":"Listing View",
+         "options":[
+            {
+               "value":"3",
+               "label":"grid 3"
+            },
+			{
+               "value":"4",
+               "label":"grid 4"
+            },
+			{
+               "value":"5",
+               "label":"grid 5"
+            },
+            {
+               "value":"0",
+               "label":"List"
+            }
+         ],
+         "default":"0"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_summary",
+        "label": "Show summary in list view",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_summary_stripped",
+        "label": "Strip Summary",
+        "default": true,
+        "info": "Strips html tags to show text without format"
+      },
+      {
+        "type": "text",
+        "id": "product_summary_words",
+        "label": "Words count on summary area",
+        "default": "30"
+      },
+      { 
+         "type":"select",
+         "id":"show_collection_sidebar",
+         "label":"Sidebar position",
+         "options":[ 
+            { 
+               "value":"no",
+               "label":"No Sidebar"
+            },
+            { 
+               "value":"left",
+               "label":"Left Sidebar"
+            },
+            { 
+               "value":"right",
+               "label":"Right Sidebar"
+            }
+         ],
+         "default":"left"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_color_box",
+        "label": "Show Color Box",
+        "default": true,
+        "info": "Shows color variant as color box rather than text"
+      },
+      {
+        "type": "text",
+        "id": "color_box_variant",
+        "label": "Color variant Title",
+        "default": "color",
+        "info": "Name of the color variant on your products. Refresh required to see the correct effect on page."
+      }
+   ],
+   "blocks":[
+	 {
+        "type": "categories",
+        "name": "Sidebar Categories",
+        "settings": [
+          {
+             "type":"text",
+             "id":"category_count",
+             "label":"Categories count on sidebar",
+             "default":"5"
+          }
+        ]
+      },
+      {
+        "type": "links",
+        "name": "Sidebar links menu",
+        "settings": [
+          {
+             "type": "link_list",
+             "id": "collection_sidebar_menu",
+             "label": "Sidebar links menu"
+          }
+        ]
+      },
+      {
+        "type": "vendors",
+        "name": "Sidebar Vendors menu",
+        "settings": [
+          {
+             "type":"checkbox",
+             "id":"show_vendors_title",
+             "label":"Show Title",
+             "default":true
+          }
+        ]
+      },
+      {
+        "type": "filters",
+        "name": "Sidebar Filters",
+        "settings": [
+          {
+             "type":"radio",
+             "id":"collection_sidebar_filters",
+             "label":"Sidebar product filters",
+             "options":[
+                {
+                   "value":"tags",
+                   "label":"By tag"
+                },
+                {
+                   "value":"groups",
+                   "label":"By group"
+                }
+             ],
+             "default":"groups",
+             "info":"[Learn how to set up filter groups](https:\/\/\/docs.shopify.com\/manual\/more\/official-shopify-themes\/supply#enable-group-filtering)."
+          }
+        ]
+      },
+	  {
+        "type": "image",
+        "name": "Sidebar Image",
+        "settings": [
+          {
+             "type":"image_picker",
+             "id":"collection_side_image",
+             "label":"Side image"
+          },
+          {
+             "type":"url",
+             "id":"collection_side_link",
+             "label":"Side image link"
+          }
+        ]
+      }
+   ],
+   "presets":[ 
+
+   ]
+}
+{% endschema %}
+{% if section.settings.show_color_box and section.settings.color_box_variant != blank %}
+<style>
+  [data-filter-group="{{ section.settings.color_box_variant }}"] {
+  float: left;
+  width: 100%;
+  }
+  [data-filter-group="{{ section.settings.color_box_variant }}"] span {
+  float: left;
+  margin: 6px 6px 6px 0px;
+  }
+  [data-filter-group="{{ section.settings.color_box_variant }}"] a.add-filter:before {
+  width: 26px !important;
+  height: 30px !important;
+  line-height: 28px !important;
+  top: 0px;
+  margin-top: 0px;
+  background: inherit !important;
+  border-radius: 0px !important;
+  border: 0px !important; 
+  }
+  [data-filter-group="{{ section.settings.color_box_variant }}"] span a {
+  font-size:0 !important;
+  }
+  [data-filter-group="{{ section.settings.color_box_variant }}"] a:after {
+  top: 6px !important;
+  left: 5px !important;
+  width: 16px !important;
+  height: 18px !important;
+  margin-top: 0px !important;
+  }
+  [data-filter-group="{{ section.settings.color_box_variant }}"] a.advanced-filter:hover:after {
+  line-height: 18px !important;
+  }
+</style>
+{% endif %}
+<script type="text/javascript">
+  function resizeMobGrid(){
+    if ($(window).width() <= 478 ) {
+      category_view.changeView('grid', 2, 'btn-grid-2');
+    }
+  }
+  {% if settings.grid_auto_resize != 'false' -%}
+  // Equal height grid divs 
+  function resizeCollGrid(){
+    var gridtype = localStorage.getItem('type');
+    var gridcols = localStorage.getItem('cols');
+    var gridwidth = -1;
+    var contwidth = 0; 
+
+    if(gridtype == 'list') {
+      gridcols = 3;
+      if ($(window).width() <= 479 ) {
+        gridcols = 1; 
+        contwidth = -60;
+      }
+    }
+    contwidth = contwidth + $('#custom-products').width();
+    gridwidth = contwidth/gridcols - 30;
+    $('#custom-products .product-layout .product-image img').css("height",(gridwidth/img_ratio));
+  }
+  {% endif %}
+  $(window).on("load",function() {
+    {% if settings.grid_auto_resize != 'false' -%}resizeCollGrid();{% endif %}
+    resizeMobGrid();
+  });
+  $(window).resize(function() {
+    setTimeout(function () {
+      {% if settings.grid_auto_resize != 'false' -%}resizeCollGrid();{% endif %}
+      resizeMobGrid();
+    }, 200);
+  });
+</script>
